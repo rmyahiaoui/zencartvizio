@@ -18,7 +18,7 @@
  * @copyright Copyright 2003-2005 Zen Cart Development Team
  * @copyright Portions Copyright 2003 osCommerce
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
- * @version $Id: index.php 2942 2006-02-02 04:41:23Z drbyte $
+ * @version $Id: index.php 2942 2006-02-02 04:41:23Z drbyte $tre
  */
 /**
  * Load common library stuff
