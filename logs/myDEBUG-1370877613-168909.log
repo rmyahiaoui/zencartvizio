@@ -1,0 +1,8 @@
+[10-Jun-2013 15:20:13] PHP Fatal error:  1449:The user specified as a definer ('root'@'%') does not exist :: select fr_text,type_article from eb_contenus where ordre_affichage=0 and page = 'index' in E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php on line 120
+[10-Jun-2013 15:20:13] PHP Stack trace:
+[10-Jun-2013 15:20:13] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[10-Jun-2013 15:20:13] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:43
+[10-Jun-2013 15:20:13] PHP   3. queryFactory->Execute() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\html_header.php:46
+[10-Jun-2013 15:20:13] PHP   4. queryFactory->set_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:227
+[10-Jun-2013 15:20:13] PHP   5. queryFactory->show_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:105
+[10-Jun-2013 15:20:13] PHP   6. trigger_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:120

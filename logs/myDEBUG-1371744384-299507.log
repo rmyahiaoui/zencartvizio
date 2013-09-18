@@ -1,0 +1,7 @@
+[20-Jun-2013 16:06:25] PHP Parse error:  syntax error, unexpected ')' in E:\easylamps\sites\zencartvizio\includes\modules\theme317\additional_images.php on line 103
+[20-Jun-2013 16:06:25] PHP Stack trace:
+[20-Jun-2013 16:06:25] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[20-Jun-2013 16:06:25] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:97
+[20-Jun-2013 16:06:25] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:128
+[20-Jun-2013 16:06:25] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\modules\pages\product_info\main_template_vars.php:178
+[20-Jun-2013 16:06:25] PHP   5. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\templates\tpl_product_info_display.php:163

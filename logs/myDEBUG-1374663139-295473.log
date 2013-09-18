@@ -1,0 +1,8 @@
+[24-Jul-2013 10:52:19] PHP Fatal error:  Cannot use object of type queryFactoryResult as array in E:\easylamps\sites\zencartvizio\includes\templates\theme317\sideboxes\tpl_categories.php on line 141
+[24-Jul-2013 10:52:19] PHP Stack trace:
+[24-Jul-2013 10:52:19] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[24-Jul-2013 10:52:19] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:98
+[24-Jul-2013 10:52:19] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:94
+[24-Jul-2013 10:52:19] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\modules\column_left.php:31
+[24-Jul-2013 10:52:19] PHP   5. require() E:\easylamps\sites\zencartvizio\includes\modules\sideboxes\categories.php:22
+[24-Jul-2013 10:52:19] PHP   6. verifSousCatExist() E:\easylamps\sites\zencartvizio\includes\templates\theme317\sideboxes\tpl_categories.php:150

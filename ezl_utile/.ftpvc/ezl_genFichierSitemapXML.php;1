@@ -1,0 +1,102 @@
+<?php
+require_once('../ezl_page.php');
+require_once('../ezl_localisation.php');
+require_once('../ezl_localisation.php');
+require_once('../includes/languages/ezl_'.$loc->langue->toString('longue_anglais').'.php');
+
+/**
+ * Génére les fichiers robots.txt, sitemap.xml
+ */
+class ezl_genFichierNavSite {
+	/**
+	 * Liste des actions possible
+	 */
+	const ACTION_INITIALISER 				= 0; // Aucune action, affichage seulement
+	const ACTION_ROBOTS_TXT 				= 1; // Génération du fichier robots.txt
+	const ACTION_SITE_MAP_XML 				= 2; // Génération du fichier sitemap.xml
+	const baseXML = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>';
+    public $action = self::ACTION_INITIALISER;
+    public $message = NULL;
+    public $nomFichier = NULL;
+
+	function afficherPage()
+	{
+		$html = '<html><head>';
+		$html .= '<title>Génération des fichiers robots.txt ou sitemap.xml</title>';
+		$html .= '</head>';
+		$html .= '<body>';
+		$html .= '<form name="formulaire" method="post">';
+		$html .= '<h1>Génération des fichiers robots.txt ou sitemap.xml</h1>';
+		if (!empty($this->message)) {
+			$html .= '<em>'.$this->message.'</em>';
+			$html .= '<br/>';
+		}	
+		$html .= '<input type="submit" name="bouton_genFichierRobotsTXT" id="bouton_genFichierRobotsTXT" value="robots.txt"/>';
+		$html .= '<br/>';
+		$html .= '<input type="submit" name="bouton_genFichierSitemapXML" id="bouton_genFichierSitemapXML" value="sitemap.xml"/>';
+		$html .= '</form></body></html>';
+		echo $html;
+	}
+
+	function recupererForm()
+	{
+		$this->action = self::ACTION_INITIALISER;
+		if (array_key_exists('bouton_genFichierRobotsTXT', $_POST)) {
+			$this->action = self::ACTION_ROBOTS_TXT;
+		}
+		if (array_key_exists('bouton_genFichierSitemapXML', $_POST)) {
+			$this->action = self::ACTION_SITE_MAP_XML;
+		}
+	}
+
+	function derouler()
+	{
+		$this->recupererForm();
+		switch ($this->action)
+		{
+			case self::ACTION_INITIALISER:
+				// On fait rien, la page s'affiche plus bas.
+				break;
+			case self::ACTION_ROBOTS_TXT:
+				$this->produireFichierRobotsTXT();
+				break;
+			case self::ACTION_SITE_MAP_XML:
+				$this->produireFichierSitemapXML();
+				break;
+		}
+		$this->afficherPage();
+	}
+
+	public function produireFichierRobotsTXT() {
+		$resultat = NULL;
+		$this->nomFichier = '../robots.txt';
+		$this->message = sprintf('Fichier (%s) généré', $this->nomFichier);
+		return $resultat;
+	}
+
+	public function produireFichierSitemapXML() {
+		global $chainesPages;
+		$resultat = NULL;
+		$this->nomFichier = '../sitemap.xml';
+		$xmlData = new SimpleXMLElement(self::baseXML);
+		foreach ($chainesPages as $id => $chaines) {
+			$url = $xmlData->addChild('url');
+			$url->loc = $chaines[ezl_page::CHAMP_PAGE_LIEN];
+	//		$url->lastmod = 'toto';
+	//		$changefreq = $url->addChild('changefreq');
+			$url->changefreq = 'monthly';
+			$priority = $url->addChild('priority');
+		}	
+
+		// Eciture du fichier
+		$xmlData->asXml($this->nomFichier);
+		$this->message = sprintf('Fichier (%s) généré. ', $this->nomFichier);
+		return $resultat;
+	}
+	
+}
+
+$controleur = new ezl_genFichierNavSite;
+$controleur->derouler();
+
+?>

@@ -1,0 +1,192 @@
+ul li .zmenu {
+	display:none;
+	padding-top:0;
+}
+li:hover .zmenu{
+	display:block;
+	color:black;
+	margin-top:17px;
+	margin-left:-26px;
+	background-color: white;
+	border:2px solid #ccc;
+	width:900px;
+	height:400px;
+	border: 2px solid #efefef;
+	-moz-box-shadow:  2px  2px 5px grey;
+	-webkit-box-shadow:  2px  2px 5px grey;
+	box-shadow:  2px 2px 5px grey;
+	<!--[if lte IE 8]>
+	    filter:progid:DXImageTransform.Microsoft.Shadow(color='#aaaaaa', Direction=135, Strength=5);
+	    zoom: 1;
+	<![endif]-->
+	padding:0;
+
+}
+ul {
+	color:black;
+	margin-top: 0px;
+	list-style:none;
+	text-align: left;
+}
+ul li {
+	display:inline-block;
+	width: 100px;
+	padding:0px;
+	color:black;
+	padding:0;
+	padding-right:1px;
+	/*border:#000 solid 1px;*/
+}
+ul li a {
+	color:black;
+	text-decoration:none;
+	font-size:1em;
+	font-weight: normal;
+}
+ul li p {
+	color:black;
+	text-decoration:none;
+	font-size:0.9em;
+	font-weight: normal;
+	font-family: "Corbel";
+}
+.menu ul li:hover {
+/*background-color: #efefef;*/
+color:#09C;
+cursor: pointer;
+}
+ul #menu_boutique:hover {
+	color:blue;
+	font-size: 1.5em;
+	cursor: pointer;
+}
+.zmenu a {
+	color:black;
+}
+.zmenu a:hover {
+	color:#09C;
+}
+
+/*Style du sous menu zmenu*/
+.zmenu {
+	position:absolute;
+	border:1px solid black;
+	width: 956px;
+	height:2500px;
+	background-color: white;
+	z-index: 999;
+	margin-top:100px;
+}
+.zmenu li {
+	margin-top:2px;
+	background-color:transparent;
+	border: none;
+	color:black;
+}
+.zmenu ul{
+	margin-top: 10px;
+	display:inline-block;
+	width: 410px;
+	color:black;
+}
+.zmenu ul.bord {
+	/*border-right:#000 1px solid;*/
+	color:black;
+}
+.zmenu h3 {
+	background-color:#2798d4;
+	color:white;
+	width:100px;
+	font-size:1.1em;
+	padding:5px;
+}
+.zmenu h4 {
+	color:#2798d4;
+	font-size:1em;
+}
+#gaucheSMenu {
+	margin-left:10px;
+}
+#gaucheSMenu  td {
+	vertical-align:middle;
+	padding-bottom: :10px;
+	height:30px;
+
+}#gaucheSMenu  td a {
+	padding-left:20px;
+} #gaucheSMenu td img{
+	padding-left:20px;
+}
+#droiteSMenu {
+
+	margin-right:110px;
+}
+#droiteSMenu  td {
+	vertical-align:middle;
+	padding-bottom: :5px;
+	height:30px;
+}#droiteSMenu  td a {
+	padding-left:20px;
+} #droiteSMenu td img {
+	padding-left:20px;
+}
+
+/*Style du sous menu zmenu2*/
+/**On gère le menu déroulant*/
+ul li .zmenu2 {
+	display:none;
+}
+li:hover .zmenu2 {
+	display:block;
+	color:#09C;
+	margin-top:5px;
+	margin-left:-6px;
+}
+/*Le style maintenant*/
+.zmenu2 {
+	position:absolute;
+	border:#000 1px solid;
+	width: 256px;
+}
+
+.menu_pub_1 {
+	width:163px;
+	height:113px;
+	position:absolute;
+	background-image: url('../../../../images/tbi_images/menu/pub_menu1.png');
+	background-repeat: no-repeat;
+}
+.menu_pub {
+	width:163px;
+	height:113px;
+	position:absolute;
+	background-image: url('../../../../images/tbi_images/menu/fond_menu.png');
+	background-repeat: no-repeat;
+	color:white;
+	padding-left:5px;
+	text-align: center;
+	padding-top:10px;
+}	
+	.menu_pub span {
+		color:white;
+		font-weight: bold;
+		font-family:Tahoma;
+
+	}
+#illu1_menu {
+	position:absolute;
+	margin-left:290px;
+}
+#illu2_menu {
+	position:absolute;
+	margin-left:790px;
+}
+#separt_menu {
+	background-image: url('../../../../images/tbi_images/menu/separ.png');
+	background-repeat: no-repeat;
+	height:296px;
+	width:2px;
+	position:absolute;
+	margin-left:490px;
+	margin-top:45px;
+}

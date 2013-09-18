@@ -1,0 +1,303 @@
+<? 
+  $screen = 0;
+  // 1 liste cstr
+  // 2 liste video
+  // 3 solutions video
+
+  include('main.php');
+
+
+  $spanish = 1;
+  $lg_id = 2;
+
+  $links = '<a href="http://www.lampevideoprojecteur.fr/"><font size=3>accueil</font></a>';
+
+if ( substr($var,0, 13 ) == "constructeurs"  )
+{
+   $screen = 1;    
+
+   $title = "Achat ampoule et lampe pour videoprojecteur, lampe Toshiba, lampe Sony : lampevideoprojecteur.fr.";
+   $description = "Vous recherchez des ampoules Toshiba ou Sony ? Lampevideoprojecteur.fr, sp&eacute;cialis&eacute; dans l'achat de lampes de vid&eacute;oprojecteur, vous en propose une large gamme. ";
+   $keywords = "ampoule videoprojecteur, achat lampe videoprojecteur, lampe Toshiba, lampe Sony";
+
+   $blabla = '<div id="privacyDefaultMainContent" class="content">
+               Vous voulez <a href="http://www.lampevideoprojecteur.fr/index.php?main_page=page_2">remplacer la lampe de votre vid&eacute;oprojecteur</a> ? 
+               Lampevideoprojecteur.fr vous invite &agrave; consultez sa gamme de <a href="http://www.lampevideoprojecteur.fr/">
+               lampes de vid&eacute;oprojecteur</a> et de <a href="http://www.lampevideoprojecteur.fr/index.php?main_page=page_4">
+               lampes de vid&eacute;oprojecteur compatibles</a> avec toutes les marques.
+              </div>';
+}
+else if ( substr($var,0, 17 ) == "videoprojecteurs-" )
+{
+
+   $screen = 2;    
+
+   $links .= '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="constructeurs.html"><font size=3>constructeurs</font></a>';
+
+
+
+   //echo substr($var,17,44 );exit;
+   $cstr_name = strtoupper (  str_replace ('.html','', substr($var,17,44) )  );
+
+
+   $title = "Lampes videoprojecteur - lampe pour videoprojecteur ". $cstr_name. " : lampevideoprojecteur.fr " ;
+
+   $description = "Vous recherchez une lampe pour un vid&eacute;oprojecteur ". $cstr_name. " ? Adressez-vous &agrave; Lampevid&eacute;oprojecteur.fr, fournisseur de lampes.  ";
+   $keywords = "lampe pour videoprojecteur, lampe ". $cstr_name;
+
+
+   $blabla = 'Vous recherchez un fournisseur de <a href="http://www.lampevideoprojecteur.fr/">lampes de vid&eacute;oprojecteur</a> ? 
+              Lampevideoprojecteur.fr vous propose la vente de <a href="http://www.lampevideoprojecteur.fr/index.php?main_page=privacy">
+             lampes pour vid&eacute;oprojecteur</a> de toutes les marques.';
+
+
+     $sql = 
+         "select cat.categories_id, 
+		      catd.categories_name
+               from   categories as cat,  
+                      categories_description as catd
+               where  cat.categories_id = catd.categories_id
+               and    cat.parent_id =0
+               and    catd.language_id = " . $lg_id  . "
+               and    catd.categories_name <> ". sqlprep($cstr_name). "
+	       order by catd.categories_name";
+
+     $recordSet = &$conn->Execute($sql);      
+
+     $blabla .=  "<br><br>Consultez nos offres de:";
+
+      
+     while (!$recordSet->EOF)
+     {
+        $abrege = str_replace (' ','',$recordSet->fields[1]);
+        $link_name = 'videoprojecteurs-'. strtolower($abrege) . '.html';
+
+        $blabla .=  '<a href="'. $link_name . '">';
+        $blabla .= '<a  style="text-decoration:underline;" href="'. $link_name  . '">lampes  ' . $abrege  .  '</a>, &nbsp;';
+
+        $blabla .=  '</a>';
+        
+
+        $recordSet->moveNext();
+     }
+     // $blabla .= "<img width=112 height=112 VSPACE=10 HSPACE=10  title='Les meilleurs prix pour lampes ". $img_name . "' alt='Lampes de replacement pour videoprojecteur ". $img_name . "' src=../img_cstr/".$img_name.".gif>";
+
+
+
+    $sql = "select catd.categories_id 
+            from   categories as cat, categories_description as catd 
+            where  cat.categories_id = catd.categories_id
+            and    cat.parent_id = 0
+            and     catd.categories_name = '" . $cstr_name  . "'
+            order by catd.categories_name";
+  
+    $cstr_id =  exec_select ($sql);
+}
+else if ( substr($var,0, 12 ) == "lampes-pour-" )
+{
+
+   $screen = 3;    
+
+   //echo substr($var,17,44 );exit;
+   $video_name = strtoupper (  str_replace ('.html','', substr($var,12,44) )  );
+
+
+    $sql = "select catd.categories_id 
+            from   categories as cat, categories_description as catd 
+            where  cat.categories_id = catd.categories_id
+            and     catd.categories_name = '" . $video_name  . "'
+            order by catd.categories_name";
+  
+    $vpr_id =  exec_select ($sql);
+
+    $sql = "select catd.categories_name 
+            from   categories as cat, categories_description as catd 
+            where  cat.categories_id = ". $vpr_id . "
+            and    cat.parent_id = catd.categories_id";
+  
+    $cstr_name =  exec_select ($sql);
+
+
+   $title = "Nos lampes pour un videoprojecteur ". $cstr_name . " "  .  $video_name;
+
+   $links .= '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="constructeurs.html"><font size=3>constructeurs</font></a>';
+   $links .= '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="videoprojecteurs-'. strtolower($cstr_name) . '.html"><font size=3>lampes ' . $cstr_name .'</font></a>';
+
+
+   $blabla = "Vous cherchez une lampe pour un vidéoprojecteur <b>". $cstr_name . " "  .  $video_name . " </b>? <br><br>
+              Lampevideoprojecteur.fr est fournissseur d' accessoire pour videoprojecteur ". $cstr_name . "<br>
+              Lampevideoprojecteur.fr fournit des lampes de remplacement pour vidéoprojecteurs ". $cstr_name . ".<br><br>
+              Toutes les lampes pour vidéoprojecteurs ". $cstr_name . " disponibles en stock sont expédiées le jour-même et généralement livrées le lendemain chez le client partout en France.
+              <br> <img width=112 height=112 title='Les meilleurs prix pour ". $cstr_name . "' alt='Lampes de replacement pour videoprojecteur ". $cstr_name . "' src=../img_cstr/".$cstr_name.".gif>";
+}
+
+  echo '
+    <head>
+    <title>'. $title .'</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="keywords" content=" ' . $keywords . ' " />
+    <meta name="description" content="' . $description . '" />';
+
+  if   ( $screen != 3 ) 
+     echo ' <meta name="robots" content="index, follow" /> ';
+
+  echo '
+    <meta http-equiv="imagetoolbar" content="no" />      
+    <link rel="stylesheet" type="text/css" href="../includes/templates/classic/css/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="../includes/templates/classic/css/stylesheet_css_buttons.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="../includes/templates/classic/css/print_stylesheet.css" />    
+    </head>
+   <body>
+   <table align=center>
+   <tr>
+   <td width=660 bgcolor="white">
+   ' .  $links  .  '
+   <hr>
+   <p align=center>';
+   echo $blabla;
+   echo '</p>';
+
+   if ($screen==1)
+   {
+     $html_output .= '<h4>Veuillez sélectionner la marque de  votre vidéoprojecteur</h4>';
+     $sql = 
+         "select cat.categories_id, 
+		      catd.categories_name
+               from   categories as cat,  
+                      categories_description as catd
+               where  cat.categories_id = catd.categories_id
+               and    cat.parent_id =0
+               and    catd.language_id = " . $lg_id  . "
+	       order by catd.categories_name";
+
+     $recordSet = &$conn->Execute($sql);      
+
+     while (!$recordSet->EOF)
+     {
+        $img_name = str_replace (' ','',$recordSet->fields[1]);
+        $link_name = 'videoprojecteurs-'. strtolower($img_name) . '.html';
+
+        $html_output .=  '<a href="'. $link_name . '">';
+        $html_output .= "<img width=112 height=112 VSPACE=10 HSPACE=10  title='Les meilleurs prix pour lampes ". $img_name . "' alt='Lampes de replacement pour videoprojecteur ". $img_name . "' src=../img_cstr/".$img_name.".gif>";
+        $html_output .=  '</a>';
+        
+
+        $recordSet->moveNext();
+     }
+
+   }
+   if ($screen==2)
+   {
+     $html_output .= '<h4>Veuillez sélectionner le modèle de votre videoprojecteur</h4>';
+
+     $sql = 
+         "select cat.categories_id, 
+		      catd.categories_name
+               from   categories as cat,  
+                      categories_description as catd
+               where  cat.categories_id = catd.categories_id
+               and    cat.parent_id = " . $cstr_id  . "
+               and    catd.language_id = " . $lg_id  . "
+	       order by catd.categories_name";
+
+
+     $recordSet = &$conn->Execute($sql);
+
+//echo $sql;
+
+     while (!$recordSet->EOF)
+     {
+        $video = $recordSet->fields[1];
+        $ref_ctr = $recordSet->fields[2];
+
+        $html_output .= 'Videoprojecteur&nbsp;&nbsp;'. $cstr_name  .  '&nbsp;&nbsp;<a href="lampes-pour-'. $video .'.html">'.$video .'</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>';
+        $recordSet->moveNext();
+     }
+   }
+   if ($screen==3)
+   {
+     $sql = 
+             "select prd.products_id, 
+            		      prdd.products_description,                      
+                      cat.parent_id,
+                      prd.manufacturers_id
+               from   products as prd,  
+                      products_description as prdd,
+                      categories as cat
+               where  prd.products_id = prdd.products_id
+               and    prd.master_categories_id = " . $vpr_id  . "
+               and    prdd.language_id = " . $lg_id  . "
+               and    cat.categories_id = " . $vpr_id  . "
+	       order by prd.manufacturers_id";
+
+     $recordSet = &$conn->Execute($sql);
+
+     $html_output .= '<h4>Nos solutions de lampes pour un videoprojecteur ' . $cstr_name . ' ' .  $video_name . ' </h4>';
+
+     $html_output .= '<table>';
+
+     $cntr = 0;
+     while (!$recordSet->EOF)
+     {
+        $cntr++;
+
+        $video = $recordSet->fields[1];
+        $ctr_id = $recordSet->fields[2];
+        $manu_id = $recordSet->fields[3];
+
+
+//echo $ctr_id.'-----<BR>';
+        if ( $cntr > 1 )
+        {
+          $html_output .= '<TR>';
+          $html_output .= '<TD colspan=3>';
+        }
+
+        if ( $cntr > 1)
+            $html_output .=  '<hr>';
+
+        $html_output .= '</TD>';
+        $html_output .= '</TR>';
+
+        $html_output .= '<TR>';
+        $html_output .= '<TD>';
+
+
+        $html_output .= '&nbsp;&nbsp;-&nbsp;&nbsp;'.$video .'</TD>';
+        $html_output .= '<TD>';
+
+
+        $html_output .= '<TD><img src="../img_cstr/lampe.jpg"  title="' . $video . '" alt="' . $video . '"></TD>';
+
+        $html_output .= '</TR>';
+        $html_output .= '<TR>';
+
+        $html_output .= '<TD colspan=2>';
+
+        if ( ( $manu_id == 4 ) || ( $manu_id == 1 ) )
+        {
+             $html_output .= 'Une lampe originale est certifiée et garantie par le constructeur du vidéoprojecteur.';         
+        }
+        if ( $manu_id == 2 )
+        {
+           $html_output .= 'Toutes les lampes compatibles répondent aux standards ISO 9001, elles sont toutes garanties 3 mois, elles offrent une solution fiable et économique.';
+        }
+        if ( $manu_id == 3 )
+        {
+           $html_output .= 'Le bulbe de la lampe ' . $cstr_name . ' ' .  $video_name . ' peut être extrait et remplacé; les bulbes compatibles répond aux standards ISO 9001, les bulbes compatibles sont garantis 3 mois.';
+        }
+      
+        $html_output .=  '</TD>';
+
+        $html_output .= '</TR>';
+        $recordSet->moveNext();
+     }
+     $html_output .= '</table>';
+
+     $url = 'http://www.lampevideoprojecteur.fr/index.php?main_page=index&cPath='. $ctr_id .'_'. $vpr_id;
+     $html_output .= '<BR><BR><center><a href="'.$url.'"><img src="../img_cstr/consulter_tarifs.gif"></a></center>';
+   }
+   $html_output .= '</td></TR></table></body>';
+
+   echo $html_output;
+?>

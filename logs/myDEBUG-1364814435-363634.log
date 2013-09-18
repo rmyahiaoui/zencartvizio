@@ -1,0 +1,3 @@
+[01-Apr-2013 11:07:16] PHP Parse error:  syntax error, unexpected T_OBJECT_OPERATOR in C:\sites\zencart151\includes\templates\theme317\common\html_header.php on line 31
+[01-Apr-2013 11:07:16] PHP Stack trace:
+[01-Apr-2013 11:07:16] PHP   1. {main}() C:\sites\zencart151\index.php:0

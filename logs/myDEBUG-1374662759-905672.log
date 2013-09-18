@@ -1,0 +1,6 @@
+[24-Jul-2013 10:45:59] PHP Parse error:  syntax error, unexpected T_FOR in E:\easylamps\sites\zencartvizio\includes\templates\theme317\sideboxes\tpl_categories.php on line 138
+[24-Jul-2013 10:45:59] PHP Stack trace:
+[24-Jul-2013 10:45:59] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[24-Jul-2013 10:45:59] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:98
+[24-Jul-2013 10:45:59] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:94
+[24-Jul-2013 10:45:59] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\modules\column_left.php:31

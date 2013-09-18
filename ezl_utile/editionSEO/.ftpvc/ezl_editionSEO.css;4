@@ -1,0 +1,89 @@
+@charset "utf-8";
+/* CSS Document */
+html {
+	font-size: 100%;
+} 
+
+body {
+	font-size: .8em;
+	font-family: Verdana;
+}
+
+input[type="text"]{
+	width: 10em;
+}
+
+label {
+	margin-right: 10px;
+}
+
+#criteres {
+	background: #FFC;
+	border: 1px solid #FB7A31;
+	width: 15em;
+	padding: 1em;
+	padding-top: .1em;
+	padding-bottom: .1em;
+	margin-bottom: 1em;
+}
+
+#criteres h2{
+	padding-top: 0em;
+}
+
+#criteres select {
+	width: 10em;
+	left: 50px;
+	margin-left: 1em;
+}
+
+#criteres label {
+	width: 2em;
+	float: left;
+	text-align: right;
+	margin-right: 1em;
+	display: block
+}
+
+input#bouton_maj {
+	margin-left:1em;
+}
+
+
+#message ul li {
+	font-size: 8pt;	
+}
+
+table {
+	font: 11px/24px Verdana, Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	text-align: left;
+}
+
+tr.ligne_titre {
+	border-top: 1px solid #FB7A31;
+	border-bottom: 1px solid #FB7A31;
+	background:#FFC;
+}
+
+th {
+	padding: 0.5em;
+}
+
+td {
+	border-bottom: 1px solid #CCC;
+	padding: 0 0.5em;
+}
+	
+td:first-child {
+	width: 10em;
+}
+
+td input {
+	margin: 1px;
+}
+
+td+td {
+	border-left: 1px solid #CCC;
+}
+

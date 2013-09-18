@@ -1,0 +1,12 @@
+[22-Aug-2013 15:27:37] PHP Warning:  require() [<a href='function.require'>function.require</a>]: Filename cannot be empty in E:\easylamps\sites\zencartvizio\includes\templates\theme317\templates\tpl_index_default.php on line 39
+[22-Aug-2013 15:27:37] PHP Stack trace:
+[22-Aug-2013 15:27:37] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[22-Aug-2013 15:27:37] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:91
+[22-Aug-2013 15:27:37] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:265
+[22-Aug-2013 15:27:37] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\modules\pages\index\main_template_vars.php:217
+[22-Aug-2013 15:27:37] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required '' (include_path='.;C:\php\pear') in E:\easylamps\sites\zencartvizio\includes\templates\theme317\templates\tpl_index_default.php on line 39
+[22-Aug-2013 15:27:37] PHP Stack trace:
+[22-Aug-2013 15:27:37] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[22-Aug-2013 15:27:37] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:91
+[22-Aug-2013 15:27:37] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:265
+[22-Aug-2013 15:27:37] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\modules\pages\index\main_template_vars.php:217

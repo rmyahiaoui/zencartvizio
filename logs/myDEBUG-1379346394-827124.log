@@ -1,0 +1,5 @@
+[16-Sep-2013 15:46:34] PHP Parse error:  syntax error, unexpected ';' in E:\easylamps\sites\zencartvizio\includes\templates\template_default\templates\tpl_modules_create_account.php on line 142
+[16-Sep-2013 15:46:34] PHP Stack trace:
+[16-Sep-2013 15:46:34] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[16-Sep-2013 15:46:34] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:98
+[16-Sep-2013 15:46:34] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:294

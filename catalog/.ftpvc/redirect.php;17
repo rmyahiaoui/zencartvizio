@@ -1,0 +1,260 @@
+<? 
+	$screen = 0;
+  // 1 liste cstr
+  // 2 liste video
+  // 3 solutions video
+	
+	include('main.php');
+	require_once('../ezl_localisation.php');
+	require_once('../ezl_utile.php');
+	require_once('../includes/languages/ezl_'.$langue->toString('longue_anglais').'.php');
+
+	$links = sprintf('<a href="../"><font size=3>%s</font></a>', ucfirst(REDIRECT_LIENS_LAMPES__ACCUEIL));
+	$codeLangueDB = CODE_LANGUE_FRANCAIS;
+
+	if (chaine_commencePar($var, REDIRECT_LIENS_LAMPES__PREFIXE_PAGE_CONSTRUCTEURS))
+	{
+		$screen = 1;    
+		$title = sprintf(REDIRECT_LIENS_LAMPES__FORMAT_ECRAN1_TITRE, GEN_NOM_DOMAINE);
+		$description = sprintf(REDIRECT_LIENS_LAMPES__FORMAT_ECRAN1_DESCRIPTION, GEN_NOM_DOMAINE);
+		$keywords = REDIRECT_LIENS_LAMPES__FORMAT_ECRAN1_KEYWORDS;
+		$blabla = '<div id="privacyDefaultMainContent" class="content">';
+		$blabla .= sprintf(REDIRECT_LIENS_LAMPES__FORMAT_ECRAN1_BLABLA, GEN_NOM_DOMAINE);
+		$blabla .= '</div>';
+	}
+	else if (chaine_commencePar($var, REDIRECT_LIENS_LAMPES__PREFIXE_PAGE_VIDEOPROJECTEURS))
+	{
+		$screen = 2;    
+		$links .= '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="'.REDIRECT_LIENS_LAMPES__PREFIXE_PAGE_CONSTRUCTEURS.'.html"><font size=3>'.ucwords(REDIRECT_LIENS_LAMPES__PREFIXE_PAGE_CONSTRUCTEURS).'</font></a>';
+		$cstr_name = chaine_suivant($var, REDIRECT_LIENS_LAMPES__PREFIXE_PAGE_VIDEOPROJECTEURS);
+		$cstr_name = strtoupper(chaine_precedent($cstr_name, '.html'));
+
+		$title = sprintf(REDIRECT_LIENS_LAMPES__FORMAT_ECRAN2_TITRE, $cstr_name, GEN_NOM_DOMAINE);
+		$description = sprintf(REDIRECT_LIENS_LAMPES__FORMAT_ECRAN2_DESCRIPTION, $cstr_name, GEN_NOM_DOMAINE);
+		$keywords = sprintf(REDIRECT_LIENS_LAMPES__FORMAT_ECRAN2_KEYWORDS, $cstr_name);
+		$blabla = sprintf(REDIRECT_LIENS_LAMPES__FORMAT_ECRAN2_BLABLA, ucfirst(GEN_NOM_DOMAINE));
+		
+		$sql = 
+			 'select cat.categories_id, 
+				  catd.categories_name
+				   from   categories as cat,  
+						  categories_description as catd
+				   where  cat.categories_id = catd.categories_id
+				   and    cat.parent_id =0
+				   and    catd.language_id = ' . $codeLangueDB  . '
+				   and    catd.categories_name <> '. sqlprep($cstr_name). '
+			   order by catd.categories_name';
+		
+		 $recordSet = &$conn->Execute($sql);      
+		 $blabla .=  sprintf('<br><br>%s: ', REDIRECT_LIENS_LAMPES__CONSULTEZ_NOS_OFFRES_DE);
+		 while (!$recordSet->EOF)
+		 {
+			$abrege = ezl_sansBlancs($recordSet->fields[1]);
+			$link_name = REDIRECT_LIENS_LAMPES__PREFIXE_PAGE_VIDEOPROJECTEURS . strtolower($abrege) . '.html';
+			$chaineAffichee = sprintf(REDIRECT_LIENS_LAMPES__FORMAT_LAMPES_ET_MARQUE, $abrege);
+			$blabla .= sprintf('<a style="text-decoration:underline;" href="%s">%s</a>, &nbsp;', $link_name, $chaineAffichee);
+			$recordSet->moveNext();
+		 }
+		
+		$sql = "select catd.categories_id 
+				from   categories as cat, categories_description as catd 
+				where  cat.categories_id = catd.categories_id
+				and    cat.parent_id = 0
+				and     catd.categories_name = '" . $cstr_name  . "'
+				order by catd.categories_name";
+		
+		$cstr_id =  exec_select ($sql);
+	}
+	else if (chaine_commencePar($var, REDIRECT_LIENS_LAMPES__PREFIXE_PAGE_LAMPES_POUR))
+	{
+		$screen = 3;    
+		
+		$video_name = chaine_suivant($var, REDIRECT_LIENS_LAMPES__PREFIXE_PAGE_LAMPES_POUR);
+		$video_name = strtoupper(chaine_precedent($video_name, '.html'));
+		
+		
+		$sql = "select catd.categories_id 
+				from   categories as cat, categories_description as catd 
+				where  cat.categories_id = catd.categories_id
+				and     catd.categories_name = '" . $video_name  . "'
+				order by catd.categories_name";
+		
+		$vpr_id =  exec_select ($sql);
+		
+		$sql = "select catd.categories_name 
+				from   categories as cat, categories_description as catd 
+				where  cat.categories_id = ". $vpr_id . "
+				and    cat.parent_id = catd.categories_id";
+		
+		$cstr_name =  exec_select ($sql);
+		
+		$title = sprintf(REDIRECT_LIENS_LAMPES__FORMAT_ECRAN3_TITRE, $cstr_name, $video_name);
+		$links .= sprintf('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="%s.html"><font size=3>%s</font></a>', REDIRECT_LIENS_LAMPES__PREFIXE_PAGE_CONSTRUCTEURS, 'héhé');
+		$links .= sprintf('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="%s.html"><font size=3>%s %s</font></a>', REDIRECT_LIENS_LAMPES__PREFIXE_PAGE_VIDEOPROJECTEURS.strtolower($cstr_name), GEN_MOT_LAMPES, $cstr_name);
+		$blabla = sprintf(REDIRECT_LIENS_LAMPES__FORMAT_ECRAN3_BLABLA, $cstr_name, $video_name, GEN_NOM_DOMAINE);
+		$blabla .= sprintf('<br><img width=112 height=112 title="%s %s" alt="%s %2$s" src="../img_cstr/%2$s.gif">', REDIRECT_LIENS_LAMPES__LES_MEILLEURS_PRIX_POUR, $cstr_name, REDIRECT_LIENS_LAMPES__LAMPES_DE_REMPLACEMENT_POUR_VIDEOPROJECTEUR);
+	}
+	
+	echo '<head>
+		<title>'. $title .'</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta name="keywords" content=" ' . $keywords . ' " />
+		<meta name="description" content="' . $description . '" />';
+
+	if ( $screen != 3 ) 
+		echo ' <meta name="robots" content="index, follow" /> ';
+
+	echo '<meta http-equiv="imagetoolbar" content="no" />      
+    <link rel="stylesheet" type="text/css" href="../includes/templates/classic/css/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="../includes/templates/classic/css/stylesheet_css_buttons.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="../includes/templates/classic/css/print_stylesheet.css" />    
+    </head>
+   <body>
+   <table align=center>
+   <tr>
+   <td width=660 bgcolor="white">
+   ' .  $links  .  '
+   <hr>
+   <p align=center>';
+   echo $blabla;
+   echo '</p>';
+
+   if ($screen==1)
+   {
+     $html_output .= sprintf('<h4>%s</h4>', REDIRECT_LIENS_LAMPES__VEUILLEZ_SELECTIONNER_LA_MARQUE_DE_VOTRE_VIDEOPROJECTEUR);
+     $sql = 
+         "select cat.categories_id, 
+		      catd.categories_name
+               from   categories as cat,  
+                      categories_description as catd
+               where  cat.categories_id = catd.categories_id
+               and    cat.parent_id =0
+               and    catd.language_id = " . $codeLangueDB  . "
+	       order by catd.categories_name";
+
+     $recordSet = &$conn->Execute($sql);      
+
+     while (!$recordSet->EOF)
+     {
+        $img_name = str_replace (' ','',$recordSet->fields[1]);
+        $link_name = REDIRECT_LIENS_LAMPES__PREFIXE_PAGE_VIDEOPROJECTEURS . strtolower($img_name) . '.html';
+        $html_output .= sprintf('<a href="%s">', $link_name);
+        $html_output .= sprintf('<img width=112 height=112 VSPACE=10 HSPACE=10 title="%s %s" alt="%s %1$s" src="../img_cstr/%1$s.gif">', REDIRECT_LIENS_LAMPES__LES_MEILLEURS_PRIX_POUR_LAMPES, $img_name, REDIRECT_LIENS_LAMPES__LAMPES_DE_REMPLACEMENT_POUR_VIDEOPROJECTEUR);
+        $html_output .= '</a>';
+        $recordSet->moveNext();
+     }
+   }
+   if ($screen==2)
+   {
+     $html_output .= sprintf('<h4>%s</h4>', REDIRECT_LIENS_LAMPES__VEUILLEZ_SELECTIONNER_LE_MODELE_DE_VOTRE_VIDEOPROJECTEUR);
+
+     $sql = 
+         "select cat.categories_id, 
+		      catd.categories_name
+               from   categories as cat,  
+                      categories_description as catd
+               where  cat.categories_id = catd.categories_id
+               and    cat.parent_id = " . $cstr_id  . "
+               and    catd.language_id = " . $codeLangueDB  . "
+	       order by catd.categories_name";
+
+
+     $recordSet = &$conn->Execute($sql);
+
+//echo $sql;
+
+     while (!$recordSet->EOF)
+     {
+        $video = $recordSet->fields[1];
+        $ref_ctr = $recordSet->fields[2];
+        $html_output .= sprintf('%s &nbsp;&nbsp; %s &nbsp;&nbsp;<a href="%s%s.html">%4$s</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>', GEN_MOT_VIDEOPROJECTEUR, $cstr_name, REDIRECT_LIENS_LAMPES__PREFIXE_PAGE_LAMPES_POUR, $video);
+        $recordSet->moveNext();
+     }
+   }
+   if ($screen==3)
+   {
+     $sql = 
+             "select prd.products_id, 
+            		      prdd.products_description,                      
+                      cat.parent_id,
+                      prd.manufacturers_id
+               from   products as prd,  
+                      products_description as prdd,
+                      categories as cat
+               where  prd.products_id = prdd.products_id
+               and    prd.master_categories_id = " . $vpr_id  . "
+               and    prdd.language_id = " . $codeLangueDB  . "
+               and    cat.categories_id = " . $codeLangueDB  . "
+	       order by prd.manufacturers_id";
+
+     $recordSet = &$conn->Execute($sql);
+
+     $html_output .= sprintf('<h4>%s %s %s</h4>', REDIRECT_LIENS_LAMPES__NOS_SOLUTIONS_DE_LAMPES_POUR_UN_VIDEOPROJECTEUR, $cstr_name, $video_name);
+
+     $html_output .= '<table>';
+
+     $cntr = 0;
+     while (!$recordSet->EOF)
+     {
+        $cntr++;
+
+        $video = $recordSet->fields[1];
+        $ctr_id = $recordSet->fields[2];
+        $manu_id = $recordSet->fields[3];
+
+
+//echo $ctr_id.'-----<BR>';
+        if ( $cntr > 1 )
+        {
+          $html_output .= '<TR>';
+          $html_output .= '<TD colspan=3>';
+        }
+
+        if ( $cntr > 1)
+            $html_output .=  '<hr>';
+
+        $html_output .= '</TD>';
+        $html_output .= '</TR>';
+
+        $html_output .= '<TR>';
+        $html_output .= '<TD>';
+
+
+        $html_output .= '&nbsp;&nbsp;-&nbsp;&nbsp;'.$video .'</TD>';
+        $html_output .= '<TD>';
+
+
+        $html_output .= '<TD><img src="../img_cstr/lampe.jpg"  title="' . $video . '" alt="' . $video . '"></TD>';
+
+        $html_output .= '</TR>';
+        $html_output .= '<TR>';
+
+        $html_output .= '<TD colspan=2>';
+
+        if ( ( $manu_id == 4 ) || ( $manu_id == 1 ) )
+        {
+             $html_output .= REDIRECT_LIENS_LAMPES__UNE_LAMPE_ORIGINALE_EST_CERTIFIEE_ET_GARANTIE_ETC;         
+        }
+        if ( $manu_id == 2 )
+        {
+           $html_output .= REDIRECT_LIENS_LAMPES__TOUTES_LES_LAMPES_COMPATIBLES_REPONDENT_ETC;
+        }
+        if ( $manu_id == 3 )
+        {
+           $html_output .= sprintf(REDIRECT_LIENS_LAMPES__FORMAT_ECRAN3_LE_BULBE_DE_LA_LAMPE_ETC, $cstr_name, $video_name);
+        }
+      
+        $html_output .=  '</TD>';
+
+        $html_output .= '</TR>';
+        $recordSet->moveNext();
+     }
+     $html_output .= '</table>';
+
+     $url = '../index.php?main_page=index&cPath='. $ctr_id .'_'. $vpr_id;
+     $html_output .= '<BR><BR><center><a href="'.$url.'"><img src="../img_cstr/consulter_tarifs.gif"></a></center>';
+   }
+   $html_output .= '</td></TR></table></body>';
+
+   echo $html_output;
+?>

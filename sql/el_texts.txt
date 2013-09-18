@@ -1,0 +1,21 @@
+drop table el_texts;
+
+CREATE TABLE IF NOT EXISTS `el_texts` (
+  `page_code` varchar(12) NOT NULL,
+  `latin_html` text NOT NULL,
+  `utf8_html` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `el_texts`
+--
+
+INSERT INTO `el_texts` (`page_code`, `latin_html`, `utf8_html`) VALUES
+('index', 'répéter', '');
+
+
+
+SELECT CONVERT(_latin1'Müller' USING utf8);
+
+
+update el_texts set utf8_html =  CONVERT(latin_html USING utf8);

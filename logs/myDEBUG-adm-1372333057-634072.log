@@ -1,0 +1,4 @@
+[27-Jun-2013 11:37:37] PHP Fatal error:  Call to a member function objectInfo() on a non-object in E:\easylamps\sites\zencartvizio\ezl_admin\includes\modules\product\collect_info.php on line 74
+[27-Jun-2013 11:37:37] PHP Stack trace:
+[27-Jun-2013 11:37:37] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:0
+[27-Jun-2013 11:37:37] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:138

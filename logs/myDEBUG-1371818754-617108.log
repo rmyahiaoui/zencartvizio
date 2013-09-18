@@ -1,0 +1,7 @@
+[21-Jun-2013 12:45:55] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in E:\easylamps\sites\zencartvizio\includes\modules\theme317\additional_images.php on line 96
+[21-Jun-2013 12:45:55] PHP Stack trace:
+[21-Jun-2013 12:45:55] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[21-Jun-2013 12:45:55] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:97
+[21-Jun-2013 12:45:55] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:128
+[21-Jun-2013 12:45:55] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\modules\pages\product_info\main_template_vars.php:178
+[21-Jun-2013 12:45:55] PHP   5. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\templates\tpl_product_info_display.php:163

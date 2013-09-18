@@ -1,0 +1,5 @@
+[12-Jun-2013 11:22:45] PHP Parse error:  syntax error, unexpected '}' in E:\easylamps\sites\zencartvizio\includes\modules\sideboxes\administration.php on line 13
+[12-Jun-2013 11:22:45] PHP Stack trace:
+[12-Jun-2013 11:22:45] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[12-Jun-2013 11:22:45] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:97
+[12-Jun-2013 11:22:45] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:94

@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="content_edition.css" />
+		<title>CMS Easylamps - Listes de contenus</title>
+	</head>
+	<body>
+		<h3>Liste des articles et textes (métas-informations et contenu éditorial)</h3>
+		<form name="form_lists" method="POST" action=""><!--tous les champs de la page sont définis dans le même formulaire-->
+		
+			<!--Affichage du block pour sélecteurs de page et de type d'article-->
+			<table id="criteres">
+				<tr><td>Sélectionner une page : <select name="selpages">
+<?php 
+					foreach($editeur->optionspage as $key=>$option){
+						$selectattrib=($key==$editeur->page)?' selected ':' ';
+						echo "<option  $selectattrib value=\"$key\">".utf8_encode($option)." \n";
+					}					
+?>
+				</select></td>
+				<td>ET/OU Sélectionner un type d'article : <select name="seltypes">
+<?php 
+					foreach($editeur->optionstype as $key=>$option){
+						$selectattrib=($key==$editeur->type)?' selected ':' ';
+						echo "<option  $selectattrib value=\"$key\">$option \n";
+					}				
+?>			
+				</select></td>
+				<td><input type="submit" name="voir" value="Voir"><input type="submit" name="ajoutarticle" value="Ajouter article"></td></tr>
+			</table>		
+		
+			<!--Affichage du block des articles correspondant aux critères de page et de type-->
+<?php		
+			if(mysql_num_rows($editeur->jeuarticles)){
+				echo '<div id="resultats">';
+				//Affichage des articles et des textes
+				while($articlerow=mysql_fetch_array($editeur->jeuarticles)){
+					echo '<table id="articles">';echo "\n";
+						echo '<tr class="articles">';echo "\n";
+							echo '<td class="id"><input type="submit" name="btnarticle" value="'.$articlerow[id].'" /></td>';echo "\n";
+							echo '<td  class="id">'.utf8_encode($editeur->optionspage[$articlerow[id_page]]).'</td>';echo "\n";
+							echo '<td class="type">'.utf8_encode($articlerow[type]).'</td>';echo "\n";
+							echo '<td class="constructeur">'.$articlerow[constructeur].'</td>';echo "\n";
+							echo '<td class="typeproduit">'.$articlerow[typeproduit].'</td>';echo "\n";
+							echo '<td  class="publi">'.($articlerow[publi]==1?"Publi":"Non Publi").'</td>';echo "\n";
+							echo '<td class="ordre">'.$articlerow[ordre].'</td>';echo "\n";
+							echo '<td class="maj">'.$articlerow[dt_maj].'</td>';echo "\n";
+							echo '<td><input type="submit" name="supprarticle" value="Suppr'.$articlerow[id].'" /></td>';echo "\n"; //cell vide sans taille fixe pour 'absorber' les variations dues à la taille en % de la table
+						echo '</tr>';echo "\n";
+					if($editeur->fairejeutextes($articlerow[id])>0){
+						while($textrow=mysql_fetch_array($editeur->jeutextes)){
+							echo '<tr class="textes">';echo "\n";
+								echo '<td class="id">'.$textrow[id].'</td>';echo "\n";
+								echo '<td  class="format">'.$textrow[format].'</td>';echo "\n";
+								echo '<td class="ordre">'.$textrow[ordre].'</td>';echo "\n";
+								echo '<td class="trunctext">'.substr(utf8_encode($textrow[fr_text]),0,25).'[...]</td>';echo " \n";
+								echo '<td class="trunctext">'.substr(utf8_encode($textrow[en_text]),0,25).'[...]</td>';echo " \n";
+								echo '<td class="trunctext">'.substr(utf8_encode($textrow[sp_text]),0,25).'[...]</td>';echo " \n";
+								echo '<td class="trunctext">'.substr(utf8_encode($textrow[it_text]),0,25).'[...]</td>';echo " \n";
+								echo '<td class="trunctext">'.substr(utf8_encode($textrow[de_text]),0,25).'[...]</td>';echo " \n";
+								echo '<td class="maj">'.$textrow[dt_maj].'</td>';echo "\n";
+								echo '<td></td>';echo "\n"; //cell vide sans taille fixe pour 'absorber' les variations dues à la taille en % de la table
+							echo '</tr>';echo "\n";
+						}
+					}
+					echo '</table>';echo "\n";
+				}
+				mysql_data_seek($editeur->jeuarticles,0);
+				echo '</div>';//fin du block des résultats
+			}
+?>			
+		</form><!--fin du formulaire-->
+	</body>
+</html>

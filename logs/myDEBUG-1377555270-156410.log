@@ -1,0 +1,7 @@
+[26-Aug-2013 22:14:30] PHP Parse error:  syntax error, unexpected '}' in E:\easylamps\sites\zencartvizio\includes\modules\product_listing.php on line 144
+[26-Aug-2013 22:14:30] PHP Stack trace:
+[26-Aug-2013 22:14:30] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[26-Aug-2013 22:14:30] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:98
+[26-Aug-2013 22:14:30] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:382
+[26-Aug-2013 22:14:30] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\modules\pages\index\main_template_vars.php:217
+[26-Aug-2013 22:14:30] PHP   5. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\templates\tpl_index_product_list.php:94

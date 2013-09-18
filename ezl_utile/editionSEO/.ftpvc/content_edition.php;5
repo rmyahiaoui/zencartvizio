@@ -1,0 +1,258 @@
+<?php
+require_once('../../ezl_page.php'); 
+require_once('../../ezl_utile.php'); 
+require_once('../../ezl_langue.php'); 
+require_once('../../catalog/main.php');
+
+//Classe pour l'édition des contenus des pages (textes organisés en articles)
+class content_edition{
+	
+	public $optionspage=array();//Tableau des options pour le sélecteur de page
+	public $optionstype=array();//Tableau des options pour le sélecteur de type d'article	
+	public $optionsconstructeur=array();//Tableau des options pour le sélecteur de constructeur
+	public $optionstypeprod=array();//Tableau des options pour le sélecteur de type produit
+	public $optionsformat=array();//Tableau des options pour le sélecteur de format (de texte)
+	public $page;//indice de la page sélectionnée
+	public $type;//indice du type article sélectionné
+	public $article;//id de l'article sélectionné pour édition
+	public $jeuarticles; //ressource représentant le jeu des articles de la page sélectionnée et/ou du type article sélectionné	
+	public $jeutextes; //ressource représentant le jeu des textes correspondant aux articles sélectionnés
+	public $lignearticle;//ressource représentant la ligne de l'article sélectionné
+	public $idtxt;//stocke l'id du texte édité avec HTMLArea
+	public $cache;//stocke le texte édité avec HTMLArea
+	public $langue;//stocke la langue du texte edité avec HTMLArea
+	
+	Public function __construct(){
+		
+		//Sélection(s):initialisation du contexte
+		isset($_POST['selpages'])?$this->page=$_POST['selpages']:$this->page=0; //Sans page sélectionnée, page=0
+		isset($_POST['seltypes'])?$this->type=$_POST['seltypes']:$this->type=0; //Sans type article sélectionné, type=0
+		isset($_POST["btnarticle"])?$this->article=$_POST['btnarticle']:$this->article=0;//Sans article sélectionné, article=0
+		
+		//Options du sélecteur de pages
+		$this->optionspage[]=' ';//la 1ère option du sélecteur est une chaîne vide (<=>'aucune'). Indice implicite à 0 => option par défaut (cf-//Sélection(s)
+		$sql="SELECT * FROM eb_pages ORDER BY idordered";
+		$jeupages=mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());//liste des pages définies pour le site
+		while($pagerow = mysql_fetch_array($jeupages)){ //Parcours des pages du site
+			$this->optionspage[$pagerow['idordered']]=$pagerow['label'];//pour ajout au tableau du sélecteur
+		}
+		
+		//Options du sélecteur de types article
+		//la 1ère option du sélecteur est une chaîne vide (<=>'aucune')		
+		$this->optionstype[]=' ';//Indice implicite à 0 => option par défaut (cf-//Sélection(s))
+		$this->optionstype[]='Actualité';
+		$this->optionstype[]='Autre';
+		$this->optionstype[]='Meta_Desc';
+		$this->optionstype[]='Meta_Keywords';
+		$this->optionstype[]='Meta_Title';
+		$this->optionstype[]='Témoignage';
+		
+		//Options du sélecteur de constructeur
+		$this->optionsconstructeur[]='';
+		$sql="SELECT DISTINCT libelle_constructeur FROM el_v_constructeurs";
+		$jeu=mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
+		while($row = mysql_fetch_array($jeu)){ //parcours de la liste des constructeurs définis
+			$this->optionsconstructeur[]=$row[libelle_constructeur]; //pour ajout au tableau du sélecteur
+		}
+		
+		//Options du sélecteur de typeproduit
+		$this->optionstypeprod[]='';
+		$sql="SELECT DISTINCT manufacturers_name FROM manufacturers";
+		$jeu=mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
+		while($row = mysql_fetch_array($jeu)){ //parcours de la liste des constructeurs définis
+			$this->optionstypeprod[]=$row[manufacturers_name]; //pour ajout au tableau du sélecteur
+		}
+		
+		//Options du sélecteur de format (de texte)
+		$this->optionsformat[]='Titre';
+		$this->optionsformat[]='Sous-titre';
+		$this->optionsformat[]='Paragraphe';
+		
+		//Jeu des articles ou ligne de l'article sélectionné suivant sélection(s)
+		$this->article>0?$this->fairelignearticle($this->article):$this->fairejeuarticles();
+		
+		//Traitement des demandes (ajout, suppression, édition,...)
+		$this->checkPOST();
+
+	}//Fin de __construct()
+		
+	Public function fairejeuarticles(){
+		$opwhere=($this->page&&!empty($this->type))?'AND':'OR';//initialisation de l'opérateur pour la condition Where 
+		$sql="SELECT * FROM eb_articles WHERE id_page='$this->page' $opwhere type='".utf8_decode($this->optionstype[$this->type])."'";
+		$this->jeuarticles=mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
+		return mysql_num_rows($this->jeuarticles);
+	}
+	
+	Public function fairelignearticle($idart){
+		$sql="SELECT * FROM eb_articles WHERE id='$idart'";
+		$this->lignearticle=mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
+	}
+	
+	Public function fairejeutextes($idart){
+		$sql="SELECT * FROM eb_texts WHERE id_article='$idart' ORDER BY id_article";
+		$this->jeutextes=mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
+		return mysql_num_rows($this->jeutextes);
+	}
+	
+	Private function renvoiPositionLibre($typeelement){
+		if ($typeelement=='article'){
+			$sql="SELECT COUNT(*) FROM eb_articles WHERE id_page='$this->page'";
+		}elseif($typeelement=='texte'){
+			$sql="SELECT COUNT(*) FROM eb_texts WHERE id_article='$this->article'";		
+		}
+		$qry=mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
+		$row = mysql_fetch_row($qry);
+		return $row[0]+1;			
+	}
+	
+	Private function checkPOST(){
+		//Ajout article
+		if(isset($_POST["ajoutarticle"])){
+			//$typearticle=utf8_decode('Actualité');
+			if($this->page==0 OR $this->type==0){
+				echo "<H2 class=\"warning\">Vous devez sélectionner une PAGE et un TYPE pour pouvoir ajouter un article</H1>";
+			}else{
+				$typearticle=utf8_decode($this->optionstype[$this->type]);
+				$freepos=$this->renvoiPositionLibre('article');
+				$sql="INSERT INTO eb_articles (id_page,type,publi,ordre) VALUES ($this->page,'$typearticle',1,$freepos)";
+				mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
+				$this->fairejeuarticles();
+			}
+			//Sortir de checkPOST()
+			return;				
+		}
+		//Suppression d'article
+		if(isset($_POST["supprarticle"])){
+			//Extraction de l'id de l'article à supprimer
+			$idart=substr($_POST["supprarticle"],5);
+			//Suppression des textes affiliés
+			$sql="DELETE FROM eb_texts WHERE id_article='$idart'";
+			$qry=mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
+			//Suppression de l'article
+			$sql="DELETE FROM eb_articles WHERE id='$idart'";
+			$qry=mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
+			//Rafraîchir le jeu d'articles
+			$this->fairejeuarticles();
+			//Sortir de checkPOST()
+			return;			
+		}
+		//Traitements des POST envoyés de l'éditeur
+		//Ajout de texte
+		if(isset($_POST["ajouttexte"])){
+			//Pour rester sur la page d'édition de l'article après l'ajout d'un texte 
+			$this->article=$_POST["idart"];
+			$freepos=$this->renvoiPositionLibre('texte');
+			//Insertion d'un texte
+			$sql="INSERT INTO eb_texts (id_article,ordre,fr_text,en_text,sp_text,it_text,de_text) VALUES ($this->article,$freepos,'French Text','English Text','Spanish Text','Italian Text','Deutsch Text')";
+			mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
+			//Rafraîchir les jeux
+			$this->fairelignearticle($this->article);
+			$this->fairejeutextes($this->article);	
+			//Sortir de checkPOST()
+			return;				
+		}
+		//Suppression de texte
+		if(isset($_POST["supprtexte"])){
+			//Pour rester sur la page d'édition de l'article après l'ajout d'un texte
+			$this->article=$_POST["idart"]; 
+			//Extraction de l'id de l'article à supprimer
+			$idtxt=substr($_POST["supprtexte"],5);
+			//Suppression du texte
+			$sql="DELETE FROM eb_texts WHERE id='$idtxt'";
+			mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
+			//Rafraîchir les jeux
+			$this->fairelignearticle($this->article);
+			$this->fairejeutextes($this->article);	
+			//Sortir de checkPOST()
+			return;			
+		}
+		//Si le code arrive à ce stade et que le bouton back (Retour liste) a été cliqué il n'y a pas à tenir compte du reste
+		if(isset($_POST["back"])) return;
+		//Si demande de mise à jour à partir de l'éditeur
+		if(isset($_POST["update"])){	
+			//Mise à jour des infos de l'article
+			$id=$_POST["idart"];
+			$type=utf8_decode($_POST["seltype$id"]);
+			$constructeur=utf8_decode($_POST["selconstructeur$id"]);
+			$typeprod=utf8_decode($_POST["seltypeprod$id"]);
+			$publi=$_POST["publi$id"];
+			$ordre=$_POST["ordart$id"];
+			$sql="UPDATE eb_articles SET type='$type',constructeur='$constructeur',typeprod='$typeprod',publi='$publi',ordre='$ordre' WHERE id='$id'";
+			$qry=mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
+			//Mise à jour des infos des textes
+			if($this->fairejeutextes($id)>0){
+				while($row=mysql_fetch_array($this->jeutextes)){
+					$id=$row["id"];
+					$format=utf8_decode($_POST["selformat$id"]);
+					$ordre=$_POST["ordtxt$id"];
+					//Mise à jour du texte édité le cas échéant (les paramètres passés en cache non vides)
+					if(!empty($_POST["idtxt"])&&!empty($_POST["cache"])&&!empty($_POST["langue"])){
+						if($_POST["idtxt"]==$row["id"]){
+							switch ($_POST["langue"]){
+								case 'fr':
+									$fr_text=utf8_decode($_POST["cache"]);
+									$sql="UPDATE eb_texts SET format='$format',ordre='$ordre',fr_text='$fr_text' WHERE id='$id'";
+									break;
+								case 'en':
+									$en_text=addslashes(utf8_decode($_POST["cache"]));
+									$sql="UPDATE eb_texts SET format='$format',ordre='$ordre',en_text='$en_text' WHERE id='$id'";
+									break;
+								case 'sp':
+									$sp_text=addslashes(utf8_decode($_POST["cache"]));
+									$sql="UPDATE eb_texts SET format='$format',ordre='$ordre',sp_text='$sp_text' WHERE id='$id'";
+									break;
+								case 'it':
+									$it_text=addslashes(utf8_decode($_POST["cache"]));
+									$sql="UPDATE eb_texts SET format='$format',ordre='$ordre',it_text='$it_text' WHERE id='$id'";
+									break;
+								case 'de':
+									$de_text=addslashes(utf8_decode($_POST["cache"]));
+									$sql="UPDATE eb_texts SET format='$format',ordre='$ordre',de_text='$de_text' WHERE id='$id'";
+									break;
+							}
+						}
+					}else{					
+						$sql="UPDATE eb_texts SET format='$format',ordre='$ordre' WHERE id='$id'";
+					}
+					//exécution de la mise à jour
+					$qry=mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
+				}
+				mysql_data_seek($this->jeutextes,0);
+			}
+			//Rafraîchir les jeux
+			$this->fairejeuarticles($this->article);
+			$this->fairejeutextes($this->article);
+			//Sortir de checkPOST()
+			return;	
+		}
+		//Si le form a été envoyé par click sur un des drapeaux (=demande d'édition de la chaîne de l'élément texte)
+		if(isset($_POST["cache"])){
+			//récupération des infos en cache
+			$this->idtxt=$_POST["idtxt"];
+			$this->cache=$_POST["cache"];
+			$this->langue=$_POST["langue"];
+			//Pour rester sur la page d'édition de l'article après traitement
+			$this->article=$_POST["idart"];
+			//Rafraîchir les jeux
+			$this->fairelignearticle($this->article);
+			$this->fairejeutextes($this->article);
+		}
+	}//fin de checkPOST()
+	
+	Public function faireCACPubli($articleid,$publi){//Génération du code PHP pour l'affichage de la Case A Cocher pour le champ 'Publishing'.
+	//Arguments=id du text et valeur du champ publishing
+		$check=$publi==1?'checked':'';
+		$codepubli='<input type="checkbox" name="publi'.$articleid.'" '.$check.'>';
+		return $codepubli;
+	}//Fin de faireCACPublishing()	
+	
+}//Fin de la classe eb_texts_edition
+
+//Création d'un objet d'édition
+$editeur = new content_edition;
+//Appel du mode liste ou du mode édition suivant si un article est sélectionné
+$editeur->article==0?require_once("content_lists.php"):require_once("content_editor.php");
+
+?>
+
+ 

@@ -1,0 +1,26 @@
+table{
+	border: 1px solid black;
+}
+td{
+	vertical-align: middle;
+	text-align: center;
+}
+.bold{
+font-weight:bold;
+}
+h3{
+	clear: left;
+}
+div.lists{
+	clear:both;
+	margin-top: 15px;
+}
+table.pages{
+	margin-top: 10px;
+}
+.pagerow{
+	background-color: #A5FF7F;
+}
+.pagefld{
+	background-color: #A5FF7F;
+}

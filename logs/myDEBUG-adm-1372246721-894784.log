@@ -1,0 +1,3 @@
+[26-Jun-2013 11:38:42] PHP Parse error:  syntax error, unexpected T_VAR in E:\easylamps\sites\zencartvizio\ezl_admin\includes\modules\product\collect_info.php on line 80
+[26-Jun-2013 11:38:42] PHP Stack trace:
+[26-Jun-2013 11:38:42] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:0

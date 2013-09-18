@@ -1,0 +1,226 @@
+<?php
+require_once('../../ezl_page.php'); 
+require_once('../../ezl_utile.php'); 
+require_once('../../ezl_langue.php'); 
+require_once('../../catalog/main.php');
+
+/**
+ * Permet d'éditer les chaines de la table el_seo_texts
+ */
+class ezl_editeurSEO {
+	/**
+	 * Liste des actions possible
+	 */
+	const ACTION_INITIALISER 			= 0; // Aucune action, affichage seulement
+	const ACTION_EDITER_TEXTE			= 1; // Edition du texte en HTML
+
+	const CHAINE_TITRE					= 'Edition des champs d\'écrans Easylamps'; // Titre page
+	const NOM_SELECT_NOM_PAGE			= 'nom_page';
+	const NOM_SELECT_NOM_ZONE			= 'nom_zone';
+	const MAX_CARACTERES_TEXTE_FR		= 50;
+
+    public $action = self::ACTION_INITIALISER;
+    public $idLangue = ezl_langue::CODE_LANGUE_FRANCAIS;
+    public $idPage = NULL;
+    public $idsZonesPage = NULL;
+	static public $colonnes = array (
+		'Page'				=> 'screen_code', 
+		'Zone'				=> 'screen_zone', 
+		'Type<br/>fabr.'	=> 'type_cstr', 
+		'Type<br/>lampe'	=> 'type_lamp', 
+		'Indice'			=> 'indice', 
+		'Texte fr'			=> 'screen_text_fr', 
+		'Langues'			=> '');
+
+	function __construct() {
+		$this->idPage = ezl_page::PAGE_ACCUEIL;
+		$this->idsZonesPage = array(ezl_page::ZONE_PAGE_META_TITLE);
+	}
+
+	private function get_nomPage() {
+		return ezl_page::$chaines_db[$this->idPage];
+	}
+
+	private function set_nomPage($nom) {
+		$this->idPage = array_search($nom, ezl_page::$chaines_db);
+	}
+
+	private function get_nomsZones() {
+		$resultat = array();
+		foreach ($this->idsZonesPage as $idZone) {
+			$resultat[] = ezl_page::$chaines_db_zone[$idZone];
+		}
+		return $resultat;
+	}
+
+	private function set_nomsZones($noms) {
+		$this->idsZonesPage = array();
+		foreach ($noms as $nom) {
+			$this->idsZonesPage[] = array_search($nom, ezl_page::$chaines_db_zone);
+		}
+	}
+	
+	function selectionnerLesChaines() {
+		global $conn;
+		$resultat = array();
+		$sql = sprintf("
+			SELECT screen_code, screen_zone, type_cstr, type_lamp, indice, screen_text_fr 
+			FROM el_seo_texts
+			WHERE screen_code='%s'
+				AND screen_zone IN ('%s')", $this->get_nomPage(), implode($this->get_nomsZones(), "','"));
+		print_r($sql);		
+		$recordSet =& $conn->Execute($sql);
+		if (isset($recordSet)) {
+			while (!$recordSet->EOF) {
+				$nouvelleLigne = array();
+				foreach (self::$colonnes as $colonne => $champ_db) {
+					if (!empty($champ_db)) {
+						$nouvelleLigne[$champ_db] = $recordSet->fields[$champ_db];
+					}	
+				}
+				$resultat[] = $nouvelleLigne;
+				$recordSet->moveNext();
+			}
+		}
+		return $resultat;
+	}			
+		
+	function ajouterMessage($texte) {
+/*		if (!empty($this->message)) {
+			$this->message .= '<br/>'
+		}
+*/		
+		$this->message .= $texte;
+	}
+	
+	/**
+	 * Affichage de la page
+	 */
+	function afficherPage()	{
+		$html = '<html><head>';
+		$html .= '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
+		$html .= '<link rel="stylesheet" type="text/css" href="ezl_editeurSEO.css" />';
+		$html .= '<script type="text/javascript">';
+//		$html .= 'function relancer(event){document.forms[0].submit();}'; alert("hi");
+		$html .= 'function recharger() { window.location.reload();}';
+		$html .= '</script>';
+		$html .= sprintf('<title>%s</title>', self::CHAINE_TITRE);;
+		$html .= '</head>';
+		$html .= '<body>';
+		$html .= sprintf('<h1>%s</h1>', self::CHAINE_TITRE);;
+		$html .= '<div id="message">';
+		if (!empty($this->message)) {
+			$html .= $this->message;
+		}	
+		$html .= '</div>';
+		$html .= '<form name="formulaire" method="post">';
+		$html .= '<div id="criteres">';
+		$html .= '<h2>Critères:</h2>';
+		$html .= '<label for="screen_code">Page:</label>';
+		$html .= sprintf('<select name="%s"  onchange="recharger()">', self::NOM_SELECT_NOM_PAGE);
+		foreach (ezl_page::$chaines_db as $idPage => $nomPage) {
+			$attributSelection = ($idPage == $this->idPage) ? ' selected="selected"' : '';	
+			$html .= sprintf('<option value="%s"%s>%1$s</option>', $nomPage, $attributSelection);
+		}	
+		$html .= '</select>';
+		$html .= '<br/>';
+		$html .= '<label for="screen_zone">Zone:</label>';
+		$html .= sprintf('<select name="%s[]" multiple="multiple" size="6" onchange="recharger()">', self::NOM_SELECT_NOM_ZONE);
+		foreach (ezl_page::$chaines_db_zone as $idZone => $nomZone) {		
+			$attributSelection = in_array($idZone, $this->idsZonesPage) ? ' selected="selected"' : '';	
+			$html .= sprintf('<option value="%s"%s>%1$s</option>', $nomZone, $attributSelection);
+		}	
+		$html .= '</select>';
+		$html .= '</div>'; // id="criteres"
+		$html .= $this->faireTable();
+		$html .= '<input type="submit" name="bouton_envoyer" id="bouton_envoyer" value="sitemap.xml"/>';
+		$html .= '</form></body></html>';
+		echo $html;
+	}
+
+	/**
+	 * Remplit la table
+	 */
+	function faireTable()	{
+		$html = '';
+		$htmlDrapeaux = '';
+		foreach (ezl_langue::$chaines_langues as $langue => $chaines) {
+			$htmlDrapeaux .= sprintf('<input name="bouton_drapeau_%s[]" type="image" src="images/drapeau_%1$s.png" alt="Edition du champ %2$s" />', $chaines['courte'], $chaines['longue']);
+		}
+		$html .= '<table width="80%" border="0">';
+//		$html .= '<caption>Chaines SEO répondant aux critères (écran + zone) sélectionnés</caption>';
+		// Les titres
+		$html .= '<tr class="ligne_titre">';
+		foreach (self::$colonnes as $colonne => $champ_db) {
+			$html .= sprintf('<th scope="col">%s</th>', $colonne);
+		}
+		$html .= '</tr>';
+		$valeursTable  =& $this->selectionnerLesChaines();
+//		print_r($valeursTable);
+		foreach ($valeursTable as $valeursLigne) {
+			$valeursLigne['screen_text_fr'] = strip_tags(ezl_utile::tronquerChaine($valeursLigne['screen_text_fr'], self::MAX_CARACTERES_TEXTE_FR));
+			$html .= '<tr>';
+			foreach (self::$colonnes as $colonne => $champ_db) {
+				if (!empty($champ_db)) {
+					$html .= sprintf('<td>%s</td>', $valeursLigne[$champ_db]);
+				}	
+			}
+			$html .= sprintf('<td>%s</td>', $htmlDrapeaux);
+			$html .= '</tr>';
+		}
+		$html .= '</table>';
+		return $html;
+}
+
+	/**
+	 * Rcupre les donnes de la page
+	 */
+	function recupererForm()
+	{
+		$this->action = self::ACTION_INITIALISER;
+		if (array_key_exists(self::NOM_SELECT_NOM_PAGE, $_POST)) {
+			$this->set_nomPage($_POST[self::NOM_SELECT_NOM_PAGE]);
+		}
+		if (array_key_exists(self::NOM_SELECT_NOM_ZONE, $_POST)) {
+			$this->set_nomsZones($_POST[self::NOM_SELECT_NOM_ZONE]);
+		}
+		print_r($_POST);
+		foreach (ezl_langue::$chaines_langues as $idLangue => $chaines) {
+			if (array_key_exists(sprintf('bouton_drapeau_%s', $chaines['courte']), $_POST)) {
+				$this->action = self::ACTION_EDITER_TEXTE;
+				$this->idLangue = $idLangue;
+				printf('Edition langue (%s)<br/>', $chaines['courte']);
+			}
+		}	
+	}
+
+	/**
+	 * Mcanique d'xecution
+	 */
+	function derouler()	{
+		$this->recupererForm();
+		switch ($this->action)
+		{
+			case self::ACTION_INITIALISER:
+				// On fait rien, la page s'affiche plus bas.
+				break;
+			case self::ACTION_EDITER_TEXTE:
+				$this->editerTexte();
+				break;
+		}
+		$this->afficherPage();
+	}
+	
+	/**
+	 * Lit les donnes du flux
+	 */
+	public function editerTexte() {
+		$resultat = NULL;
+		return $resultat;
+	}
+}
+
+$controleur = new ezl_editeurSEO;
+$controleur->derouler();
+
+?>

@@ -1,0 +1,9 @@
+[16-Jul-2013 16:02:48] PHP Fatal error:  Call to undefined function int() in E:\easylamps\sites\zencartvizio\includes\functions\functions_general.php on line 505
+[16-Jul-2013 16:02:48] PHP Stack trace:
+[16-Jul-2013 16:02:48] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[16-Jul-2013 16:02:48] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:98
+[16-Jul-2013 16:02:48] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:128
+[16-Jul-2013 16:02:48] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\modules\pages\index\main_template_vars.php:217
+[16-Jul-2013 16:02:48] PHP   5. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\templates\tpl_index_product_list.php:96
+[16-Jul-2013 16:02:48] PHP   6. include() E:\easylamps\sites\zencartvizio\includes\templates\template_default\templates\tpl_modules_product_listing.php:11
+[16-Jul-2013 16:02:48] PHP   7. zen_create_sort_heading() E:\easylamps\sites\zencartvizio\includes\modules\product_listing.php:63

@@ -1,0 +1,7 @@
+[10-Jul-2013 14:21:03] PHP Fatal error:  Call to undefined function zen_href_link() in E:\easylamps\sites\zencartvizio\includes\languages\french.php on line 544
+[10-Jul-2013 14:21:03] PHP Stack trace:
+[10-Jul-2013 14:21:03] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[10-Jul-2013 14:21:03] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:26
+[10-Jul-2013 14:21:03] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\application_top.php:149
+[10-Jul-2013 14:21:03] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[10-Jul-2013 14:21:03] PHP   5. include_once() E:\easylamps\sites\zencartvizio\includes\init_includes\init_templates.php:72

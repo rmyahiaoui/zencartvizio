@@ -1,0 +1,3 @@
+[13-Sep-2013 16:02:31] PHP Parse error:  syntax error, unexpected $end in E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php on line 290
+[13-Sep-2013 16:02:31] PHP Stack trace:
+[13-Sep-2013 16:02:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0

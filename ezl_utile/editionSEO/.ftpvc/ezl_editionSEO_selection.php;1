@@ -1,0 +1,126 @@
+<?php
+require_once('../../ezl_page.php'); 
+
+/**
+ * Permet d'éditer les chaines de la table el_seo_texts
+ */
+class ezl_editeurSEO {
+	/**
+	 * Liste des actions possible
+	 */
+	const ACTION_INITIALISER 			= 0; // Aucune action, affichage seulement
+	const ACTION_EDITER_TEXTE			= 1; // Edition du texte en HTML
+	const CHAINE_TITRE					= 'Edition des champs d\'écrans Easylamps'; // Titre page
+    public $action = self::ACTION_INITIALISER;
+	static public $colonnes = array ('Ecran', 'Zone', 'Type<br/>fabr.', 'Type<br/>lampe', 'Indice', 'Texte fr', 'Langues');
+
+	function ajouterMessage($texte) {
+/*		if (!empty($this->message)) {
+			$this->message .= '<br/>'
+		}
+*/		
+		$this->message .= $texte;
+	}
+	
+	/**
+	 * Affichage de la page
+	 */
+	function afficherPage()	{
+		$html = '<html><head>';
+		$html .= '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
+		$html .= '<link rel="stylesheet" type="text/css" href="ezl_editeurSEO.css" />';
+		$html .= sprintf('<title>%s</title>', self::CHAINE_TITRE);;
+		$html .= '</head>';
+		$html .= '<body>';
+		$html .= sprintf('<h1>%s</h1>', self::CHAINE_TITRE);;
+		$html .= '<div id="message">';
+		if (!empty($this->message)) {
+			$html .= $this->message;
+		}	
+		$html .= '</div>';
+		$html .= '<form name="formulaire" method="post">';
+		$html .= '<div id="criteres">';
+		$html .= '<h2>Critères:</h2>';
+		$html .= '<label for="screen_code">Ecran:</label>';
+		$html .= '<select name="screen_code">';
+		foreach (ezl_page::$chaines_db as $nomPage) {		
+			$html .= sprintf('<option value="%s">%1$s</option>', $nomPage);
+		}	
+		$html .= '</select>';
+		$html .= '<br/>';
+		$html .= '<label for="screen_zone">Zone:</label>';
+		$html .= '<select name="screen_zone" multiple="multiple" size="6">';
+		foreach (ezl_page::$chaines_db_zone as $nomZone) {		
+			$html .= sprintf('<option value="%s">%1$s</option>', $nomZone);
+		}	
+		$html .= '</select>';
+		$html .= '</div>'; // id="criteres"
+		$html .= $this->contenuTable(array('1', '2'));
+		$html .= '</form></body></html>';
+		echo $html;
+	}
+
+	function contenuTable($valeurs)	{
+		$html = '';
+		$html .= '<table width="80%" border="0">';
+		$html .= '<caption>Chaines SEO répondant aux critères (écran + zone) sélectionnés</caption>';
+		// Les titres
+		$html .= '<tr>';
+		foreach (self::$colonnes as $colonne) {
+			$html .= sprintf('<th scope="col">%s</th>', $colonne);
+		}
+		$html .= '</tr>';
+		foreach ($valeurs as $valeur) {
+			$html .= '<tr>';
+			foreach (self::$colonnes as $colonne) {
+				$html .= sprintf('<td>&nbsp;</td>');
+			}
+			$html .= '</tr>';
+		}
+		$html .= '</table>';
+		return $html;
+}
+
+	/**
+	 * Rcupre les donnes de la page
+	 */
+	function recupererForm()
+	{
+		$this->action = self::ACTION_INITIALISER;
+		if (array_key_exists('bouton_lireRSS', $_POST)) {
+			$this->action = self::ACTION_LIRE_FLUX;
+			$this->adresseFluxRSS = $_POST['input_adresseFluxRSS'];
+		}
+//		$this->modeTest = array_key_exists('option_test', $_POST);
+	}
+
+	/**
+	 * Mcanique d'xecution
+	 */
+	function derouler()	{
+		$this->recupererForm();
+		switch ($this->action)
+		{
+			case self::ACTION_INITIALISER:
+				// On fait rien, la page s'affiche plus bas.
+				break;
+			case self::ACTION_EDITER_TEXTE:
+				$this->editerTexte();
+				break;
+		}
+		$this->afficherPage();
+	}
+	
+	/**
+	 * Lit les donnes du flux
+	 */
+	public function editerTexte() {
+		$resultat = NULL;
+		return $resultat;
+	}
+}
+
+$controleur = new ezl_editeurSEO;
+$controleur->derouler();
+
+?>

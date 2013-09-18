@@ -1,0 +1,191 @@
+<?php
+require_once('../ezl_const.php');
+require_once('../ezl_page.php');
+require_once('../ezl_lien.php');
+require_once('../ezl_localisation.php');
+require_once('../includes/languages/ezl_'.$loc->langue->toString('longue_anglais').'.php');
+require_once('../ezl_db.php');
+require_once('../catalog/main.php');
+
+/**
+ * Génére les fichiers robots.txt, sitemap.xml
+ */
+class ezl_genFichierNavSite {
+	/**
+	 * Liste des actions possible
+	 */
+	const ACTION_INITIALISER 				= 0; // Aucune action, affichage seulement
+	const ACTION_ROBOTS_TXT 				= 1; // Génération du fichier robots.txt
+	const ACTION_SITE_MAP_XML 				= 2; // Génération du fichier sitemap.xml
+	const baseXML = '<?xml version="1.0" encoding="UTF-8"?><elementUrlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></elementUrlset>';
+    public $action = self::ACTION_INITIALISER;
+    public $xmlData = NULL;
+    public $modeTest = true;
+    public $message = '';
+    public $nomFichier = NULL;
+	// Mapping des id avec la nomenclature de la base 'table el_seo_texts'
+	static public $frequenceModifPages = array (
+		ezl_page::PAGE_ACCUEIL						=> 'weekly',
+		ezl_page::PAGE_QUI_SOMMES_NOUS				=> 'monthly',
+		ezl_page::PAGE_LAMPES_ORIGINALES 			=> 'monthly',
+		ezl_page::PAGE_LAMPES_COMPATIBLES 			=> 'monthly',
+		ezl_page::PAGE_RECHERCHE 					=> 'monthly',
+		ezl_page::PAGE_NOUVELLES_PROMOTIONS 		=> 'monthly',
+		ezl_page::PAGE_PANIER 						=> 'monthly',
+		ezl_page::PAGE_GARANTIE 					=> 'monthly',
+		ezl_page::PAGE_ENVIRONNEMENT 				=> 'monthly',
+		ezl_page::PAGE_VIDEOS 						=> 'monthly',
+		ezl_page::PAGE_SOYEZ_CREATIFS 				=> 'monthly',
+		ezl_page::PAGE_CONFIDENTIALITE_SECURITE 	=> 'monthly',
+		ezl_page::PAGE_TEMOIGNAGE_CLIENTS 			=> 'monthly',
+		ezl_page::PAGE_CONTACT 						=> 'monthly',
+		ezl_page::PAGE_LIENS 						=> 'monthly',
+		ezl_page::PAGE_DEVIS 						=> 'monthly',
+		ezl_page::PAGE_SAV 							=> 'monthly',
+		ezl_page::PAGE_RMA 							=> 'monthly',
+		ezl_page::PAGE_CONDITIONS					=> 'monthly',
+		ezl_page::PAGE_LOGIN						=> 'monthly',
+		ezl_page::PAGE_CONSTRUCTEURS				=> 'weekly',
+		ezl_page::PAGE_LAMPES_UN_CONSTRUCTEUR		=> 'weekly',
+		ezl_page::PAGE_VIDEOPROJECTEURS_UNE_LAMPE	=> 'monthly',
+		ezl_page::PAGE_PAGE_INTROUVABLE				=> 'monthly'
+	);
+
+	function ajouterMessage($texte) {
+/*		if (!empty($this->message)) {
+			$this->message .= '<br/>';
+		}
+*/		
+		$this->message .= $texte;
+	}
+	
+	function afficherPage()
+	{
+		$html = '<html><head>';
+		$html .= '<title>G&eacute;n&eacute;ration du fichier sitemap.xml</title>';
+		$html .= '<link rel="stylesheet" type="text/css" href="ezl_genFichierSitemapXML.css" />';
+		$html .= '</head>';
+		$html .= '<body>';
+		$html .= '<h1>G&eacute;n&eacute;ration du fichier sitemap.xml</h1>';
+		$html .= '<div id="message">';
+		if (!empty($this->message)) {
+			$html .= $this->message;
+		}	
+		$html .= '</div>';
+		$html .= '<form name="formulaire" method="post">';
+		$html .= '<label for="option_test">Test</label>';
+		$html .= '<input type="checkbox" name="option_test" id="option_test" value="mode_test" checked="checked" />';
+		$html .= '<br/>';
+		$html .= '<input type="submit" name="bouton_genFichierSitemapXML" id="bouton_genFichierSitemapXML" value="sitemap.xml"/>';
+//		$html .= '<input type="submit" name="bouton_genFichierRobotsTXT" id="bouton_genFichierRobotsTXT" value="robots.txt"/>';
+		$html .= '</form></body></html>';
+		echo $html;
+	}
+
+	function recupererForm()
+	{
+		$this->action = self::ACTION_INITIALISER;
+		if (array_key_exists('bouton_genFichierRobotsTXT', $_POST)) {
+			$this->action = self::ACTION_ROBOTS_TXT;
+		}
+		if (array_key_exists('bouton_genFichierSitemapXML', $_POST)) {
+			$this->action = self::ACTION_SITE_MAP_XML;
+		}
+		$this->modeTest = array_key_exists('option_test', $_POST);
+	}
+
+	function derouler()
+	{
+		$this->recupererForm();
+		switch ($this->action)
+		{
+			case self::ACTION_INITIALISER:
+				// On fait rien, la page s'affiche plus bas.
+				break;
+			case self::ACTION_ROBOTS_TXT:
+				$this->produireFichierRobotsTXT();
+				break;
+			case self::ACTION_SITE_MAP_XML:
+				$this->produireFichierSitemapXML();
+				break;
+		}
+		$this->afficherPage();
+	}
+
+	public function produireFichierRobotsTXT() {
+		$resultat = NULL;
+		$this->nomFichier = '../robots.txt';
+		$this->ajouterMessage(sprintf('Fichier (%s) g&eacute;n&eacute;r&eacute;', $this->nomFichier));
+		return $resultat;
+	}
+
+	public function ajouterUrl($cheminRelatif, $idPage) {
+		$elementUrl = $this->xmlData->addChild('elementUrl');
+		$adresseComplete = 'www.'. GEN_NOM_DOMAINE/*$_SERVER['SERVER_NAME']*/;
+		if (!empty($cheminRelatif)) {
+			$adresseComplete .= '/' . $cheminRelatif;
+		}
+		$elementUrl->loc = $adresseComplete;
+//		$elementUrl->lastmod = 'toto';
+//		$changefreq = $elementUrl->addChild('changefreq');
+		$elementUrl->changefreq = self::$frequenceModifPages[$idPage];
+//		$elementUrl->priority = '1';
+		return $adresseComplete;
+	}
+	 
+	public function produireFichierSitemapXML() {
+		global $chainesPages;
+		global $loc;
+		global $conn;
+		
+		$resultat = NULL;
+		$this->nomFichier = '../'.($this->modeTest?'test_':'').'sitemap.xml';
+		$this->xmlData = new SimpleXMLElement(self::baseXML);
+		$listeIDsPages = range(ezl_page::PAGE_ACCUEIL, ezl_page::PAGE_PAGE_INTROUVABLE);
+
+		// Traitemant à part de la page d'accueil
+		$urlPageAccueil = $this->ajouterUrl('', ezl_page::PAGE_ACCUEIL);
+
+		// On retire la page d'accueil déjç traitée
+		array_splice($listeIDsPages, array_search(ezl_page::PAGE_ACCUEIL, $listeIDsPages), 1);
+		// On retire les pages catalog qui contiennent des paramètres et sont traitées plus bas
+		array_splice($listeIDsPages, array_search(ezl_page::PAGE_VIDEOPROJECTEURS_UNE_LAMPE, $listeIDsPages), 1);
+		array_splice($listeIDsPages, array_search(ezl_page::PAGE_LAMPES_UN_CONSTRUCTEUR, $listeIDsPages), 1);
+		// On retire page sav
+		array_splice($listeIDsPages, array_search(ezl_page::PAGE_SAV, $listeIDsPages), 1);
+
+		foreach ($listeIDsPages as $idPage) {
+			$url = ezl_lien::genererUrlPage($idPage);
+			$adresseComplete = $this->ajouterUrl($url, $idPage);
+		}
+
+		// Les pages parametrées
+		$listeFabricants = ezl_db::extraireListeFabricants($conn, $loc);
+		$this->ajouterMessage('<ul id="listeFabricants">');
+		foreach ($listeFabricants as $nomFabricant) {
+			$url = ezl_lien::genererUrlPage(ezl_page::PAGE_LAMPES_UN_CONSTRUCTEUR, $nomFabricant);
+			$this->ajouterUrl($url, ezl_page::PAGE_LAMPES_UN_CONSTRUCTEUR);
+			$listeLampes = ezl_db::extraireLampesUnFabricant($conn, $loc->langue->id, $nomFabricant, false);
+//			print_r($listeLampes);
+			foreach ($listeLampes as $modele_lampe) {
+				$url = ezl_lien::genererUrlPage(ezl_page::PAGE_VIDEOPROJECTEURS_UNE_LAMPE, $nomFabricant, $modele_lampe);
+				$this->ajouterUrl($url, ezl_page::PAGE_VIDEOPROJECTEURS_UNE_LAMPE);
+			}
+			$this->ajouterMessage(sprintf('<li>%s (%d)</li>', $nomFabricant, count($listeLampes)));
+		}
+
+		$this->ajouterMessage('</ul>');
+		$this->ajouterMessage(sprintf('<a href="http://%s" target="_blank">Tester l\'url de la page d\'accueil</a><br/>', $urlPageAccueil));
+
+		// Eciture du fichier
+		$this->xmlData->asXml($this->nomFichier);
+		$this->ajouterMessage(sprintf('<em>Fichier (%s) g&eacute;n&eacute;r&eacute;.</em>', $this->nomFichier));
+		return $resultat;
+	}
+	
+}
+
+$controleur = new ezl_genFichierNavSite;
+$controleur->derouler();
+
+?>

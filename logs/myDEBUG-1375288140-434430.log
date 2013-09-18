@@ -1,0 +1,8 @@
+[31-Jul-2013 16:29:01] PHP Fatal error:  1065:Query was empty ::  in E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php on line 120
+[31-Jul-2013 16:29:01] PHP Stack trace:
+[31-Jul-2013 16:29:01] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[31-Jul-2013 16:29:01] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:37
+[31-Jul-2013 16:29:01] PHP   3. queryFactory->Execute() E:\easylamps\sites\zencartvizio\includes\modules\pages\index\header_php.php:53
+[31-Jul-2013 16:29:01] PHP   4. queryFactory->set_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:227
+[31-Jul-2013 16:29:01] PHP   5. queryFactory->show_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:105
+[31-Jul-2013 16:29:01] PHP   6. trigger_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:120

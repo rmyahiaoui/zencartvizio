@@ -1,0 +1,7 @@
+[30-Mar-2013 14:51:30] PHP Parse error:  syntax error, unexpected T_STRING in C:\sites\zencart151\includes\languages\french\meta_tags.php on line 36
+[30-Mar-2013 14:51:30] PHP Stack trace:
+[30-Mar-2013 14:51:30] PHP   1. {main}() C:\sites\zencart151\index.php:0
+[30-Mar-2013 14:51:30] PHP   2. require() C:\sites\zencart151\index.php:26
+[30-Mar-2013 14:51:30] PHP   3. require() C:\sites\zencart151\includes\application_top.php:149
+[30-Mar-2013 14:51:30] PHP   4. require() C:\sites\zencart151\includes\autoload_func.php:48
+[30-Mar-2013 14:51:30] PHP   5. include_once() C:\sites\zencart151\includes\init_includes\init_templates.php:72

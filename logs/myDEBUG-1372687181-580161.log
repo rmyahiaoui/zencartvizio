@@ -1,0 +1,7 @@
+[01-Jul-2013 13:59:41] PHP Fatal error:  Call to undefined method category_tree::zen_show_category() in E:\easylamps\sites\zencartvizio\includes\classes\category_tree.php on line 140
+[01-Jul-2013 13:59:41] PHP Stack trace:
+[01-Jul-2013 13:59:41] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[01-Jul-2013 13:59:41] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:97
+[01-Jul-2013 13:59:41] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:94
+[01-Jul-2013 13:59:41] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\modules\column_left.php:31
+[01-Jul-2013 13:59:41] PHP   5. category_tree->zen_category_tree() E:\easylamps\sites\zencartvizio\includes\modules\sideboxes\categories.php:19

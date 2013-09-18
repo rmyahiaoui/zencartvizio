@@ -1,0 +1,562 @@
+* {
+	padding:0;
+	margin:0;
+}
+/*body {
+	height:900px;
+}*/
+#noslide {
+	background-image: url('../../../../images/tbi_images/slide/noslide.png');
+	width:1366px;
+	height:256px;
+}
+#slide_bulle {
+	position:relative;
+	background-color:white;
+	height:643px;
+	width:100%;
+	background-image: url('../../../../images/tbi_images/slide/bas_ombre.png');
+	background-repeat:no-repeat;
+	background-position:center 595px;
+	margin-left:auto;
+	margin-right:auto;
+	}
+	div[id^="slideshow"] {
+		background-position: -110px -12px;
+		background-repeat:no-repeat;
+		width:1586;
+		height:579px;
+		z-index: :999;
+		border:1px solid black;
+	}
+	#slideshow1 {
+		background-image: url('../../../../images/tbi_images/slide/slide1.jpg');
+	}#slideshow2 {
+		background-image: url('../../../../images/tbi_images/slide/slide2.jpg');
+	}#slideshow3 {
+		background-image: url('../../../../images/tbi_images/slide/slide3.jpg');
+	}#slideshow4 {
+		background-image: url('../../../../images/tbi_images/slide/slide4.jpg');
+	}
+	#wrap_menu {
+		position:absolute;
+		height:150px;
+		width:78%;
+		/*background-color:#bf4b25;*/
+		/*border: 1px dotted black;*/
+		margin-left:12%;
+		margin-top:-18px;
+		z-index: 888;
+	}
+		#logo {
+			position:absolute;
+			background-image: url('../../../../images/tbi_images/header/logo.png');
+			width:281px;
+			height:144px;
+		}
+			#logo a {
+				display:block;
+				height:100%;
+				width:100%;
+			}
+		#tel {
+			position:absolute;
+			background-image: url('../../../../images/tbi_images/header/tel.png');
+			width:268px;
+			height:120px;
+			margin-left:291px;
+			margin-top :30px;
+		}
+		#devis_head {
+			position:absolute;
+			background-image: url('../../../../images/tbi_images/header/devis.png');
+			width:188px;
+			height:94px;
+			margin-left:575px;
+			margin-top :31px;
+		}
+		#panier {
+			position:absolute;
+			background-image: url('../../../../images/tbi_images/header/panier.png');
+			width:161px;
+			height:95px;
+			margin-left: 750px;
+			margin-top :29px;
+		}
+		#esp_client {
+			position:absolute;
+			background-image: url('../../../../images/tbi_images/header/esp_client.png');
+			width:94px;
+			height:85px;
+			margin-left:922px;
+			margin-top :32px;
+		}
+		#barre_menu {
+			position:absolute;
+			background-image: url('../../../../images/tbi_images/header/barre_menu.png');
+			background-repeat:no-repeat;
+			width:979px;
+			height:38px;
+			margin-left:36px;
+			margin-top :150px;
+		}
+#body {
+	position:relative;
+	background-color:white;
+	height:945px;
+	width:100%;
+}
+	#wrap_body {
+		position:absolute;
+		height:945px;
+		width:78%;
+		background-color:white;
+/*		border-left: 1px solid black;
+		border-right: 1px solid black;*/
+		margin-left:12%;
+	}
+		#bloc_droite {
+			height:900px;
+			width:200px;
+			/*border:1px solid black;*/
+			float:right;
+		}
+		#bloc_droite h3 {
+			font-size: 1.4em;
+			color:white;
+		}#bloc_droite a {
+			width:100%;
+			height:100%;
+			display:block;
+			color:white;
+			text-decoration:none;
+		}
+			#boutique {
+				margin-bottom:11px;
+				color:white;
+				font-family:Corbel;
+				font-size:0.9em;
+				background-image: url('../../../../images/tbi_images/body/bloc_droite/boutique.png');
+				background-repeat: no-repeat;
+				width:200px;
+				height:87px;
+			}
+				#boutique h3 {
+					padding-top:19px;
+					padding-left:10px;
+				}
+			#grand_compte {
+				margin-bottom:11px;
+				color:white;
+				font-family:Corbel;
+				font-size:0.9em;
+				background-image: url('../../../../images/tbi_images/body/bloc_droite/grand_compte.png');
+				background-repeat: no-repeat;
+				width:201px;
+				height:241px;
+			}
+				#grand_compte h3 {
+					padding-top:16px;
+					padding-left:12px;
+				}
+			#installation {
+				margin-bottom:11px;
+				color:white;
+				font-family:Corbel;
+				font-size:0.9em;
+				background-image: url('../../../../images/tbi_images/body/bloc_droite/installation.png');
+				background-repeat: no-repeat;
+				width:201px;
+				height:171px;
+			}
+				#installation h3 {
+				padding-top:20px;
+				padding-left:12px;
+			}#formation {
+				margin-bottom:11px;
+				color:white;
+				font-family:Corbel;
+				font-size:0.9em;
+				background-image: url('../../../../images/tbi_images/body/bloc_droite/formation.png');
+				background-repeat: no-repeat;
+				width:200px;
+				height:186px;
+			} #formation h3 {
+				padding-top:20px;
+				padding-left:12px;
+			}
+		#bonnes_affaires {
+			background-image: url('../../../../images/tbi_images/body/b_aff.png');
+			background-repeat: no-repeat;
+			background-position:40% 0px;
+			height:399px;
+			width:975px;
+			margin-top:-25px;
+			margin-right:auto;
+			margin-left:auto;
+		}
+			div[id^="home_produi"] {
+				width:176px;
+				position:absolute;
+				margin-top:70px;
+				z-index: :79;
+			}
+			div[id^="home_produi"] .titre {
+				font-family: corbel, verdana;
+				color:#2697d3;
+				font-size:0.8em;
+				font-weight:bold;
+			}
+			div[id^="home_produi"] .home_texte_prod {
+				font-size: 0.8em;
+				font-family: Tahoma;
+				color:#424344;
+			}
+			div[id^="home_produi"] .imgtexte {
+				padding-left:15px;
+				width:176px;
+				height:50px;
+			}
+			div[id^="home_produi"] .boutonprod {
+				padding-left:15px;
+			}
+			#home_produit1 {
+				/**/
+			}
+			#home_produit2 {
+				margin-left:190px;
+			}
+			#home_produit3 {
+				margin-left:415px;
+			}
+			#home_produit4 {
+				margin-left:610px;
+			}
+				div[id^="pastille"] {
+					background-image: url('../../../../images/tbi_images/body/splashprix.png');
+					width : 69px;
+					height:66px;
+					position:absolute;
+					margin-top: -12px;
+					z-index: :800;
+					text-align:center;
+				}
+					 span[class^="home_prix"] {
+					 	color:white;
+					 	font-weight:bold;
+					 	display:block;
+					 	font-family: "Comic sans MS";
+					 }
+					 .home_prix {
+						margin-top:20px;
+						margin-left:-5px;
+					 	font-size:0.9em;
+					 }
+					 .home_prix_barre {
+						margin-top:-20px;
+						margin-left:1px;
+						font-size:0.7em;
+					 }
+
+				#pastille1 {
+					margin-left:125px;
+				}#pastille2 {
+					margin-left:148px;
+				}#pastille3 {
+					margin-left:110px;
+				}#pastille4 {
+					margin-left:110px;
+				}
+		#devis_body {
+			height:368px;
+			width:1100px;
+			background-position:35% 0px;
+			background-image: url('../../../../images/tbi_images/body/devis/titre_qavi.png');
+			background-repeat:no-repeat;
+			margin-right:auto;
+			margin-left:auto;
+
+		}
+			#home_image_devis {
+				margin-left:17px;
+				background-image: url('../../../../images/tbi_images/body/devis/qavi.png');
+				position:absolute;
+				margin-top:34px;
+				width:808px;
+				height:277px;
+			}
+		#temoignages {
+			height:200px;
+			width:1100px;
+			background-image: url('../../../../images/tbi_images/body/temoignage/home_titre_temoignage.png');
+			background-repeat:no-repeat;
+			background-position:35% 0px;
+			margin-right:auto;
+			margin-left:auto;
+		}
+			div[id^="fond_com"] {
+				background-image: url('../../../../images/tbi_images/body/temoignage/fond.png');
+				background-repeat: no-repeat;
+				width:264px;
+				height:125px;
+				margin-top:45px;
+				margin-left:17px;
+				position:absolute;
+
+			}
+			#fond_com2 {
+				margin-left:289px;
+			}
+			#fond_com3 {
+				margin-left:560px;
+			}
+				div[id^="aste_temoi"] {
+					background-image: url('../../../../images/tbi_images/body/temoignage/mini_img.png');
+					width:58px;
+					height:36px;
+					margin-left:200px;
+					margin-top:6px;
+					position:absolute;
+				}
+					div[id^="fond_com"] h4 {
+						color:white;
+						margin-top:20px;
+						margin-left:35px;
+						font-family: Corbel;
+						font-size: 0.9em;
+					}
+					div[id^="fond_com"] p  {
+						margin-left:35px;
+						font-style:italic;
+						font-weight:none;
+						font-size:0.8em;
+						height:55px;
+						width:195px;
+						overflow:hidden;
+						font-family: Corbel;
+						color:white;
+					}
+					#aste_temoi1 {
+						background-position:0px 0px;
+						width:33px;
+						margin-left:226px;
+					}
+					#aste_temoi2 {
+						background-position:-50px 0px;
+					}
+#footer {
+	position:absolute;
+	background-color:#e0e2e4;
+	height:250px;
+	width:100%;
+	background-image:  url('../../../../images/tbi_images/footer/bande_separ.png');
+	background-repeat: repeat-x;
+	padding-bottom: 11px;
+
+}
+	#wrap_footer {
+		height:220px;
+		background-color:#e0e2e4;
+		position:relative;
+		margin-top:18px;
+		width:1000px;
+		margin-right:auto;
+		margin-left:auto;
+	}
+	div[id^="footBloc"] {
+		position:absolute;
+		background-image:  url('../../../../images/tbi_images/footer/border.png');
+		background-repeat:no-repeat;
+		height:180px;
+		font-size:0.7em;
+		color: #3f4548;
+		padding-left:10px;
+		padding-top:10px;
+		font-family: "Arial";
+		letter-spacing: 0px;
+		/*font-weight:bold;*/
+
+	}
+	div[id^="footBloc"] h4 {
+		padding-bottom: 15px;
+	}
+	#footBloc1 {
+		
+	}
+	#footBloc2 {
+		margin-left:150px;
+
+	}
+	#footBloc3 { 
+		margin-left:305px;
+	}
+	#footBloc4 {
+		margin-left:470px;
+	}
+	#footBloc5 {
+		margin-left:632px;
+	}
+	#footBloc6 {
+		margin-left:795px;
+	}
+	#reseauxSoc {
+		position:absolute;
+		margin-left:950px;
+		padding-top:20px;
+		height:400px;
+	}
+ #menu_test {
+ 	border : 2px solid #97bc5d;
+ 	width:200px;
+ 	position:absolute;
+ 	font-size:0.9em;
+ 	margin-left:155px;
+ 	margin-top:-27px;
+ }
+ 	#menu_test .lienAvecSousCat { 
+ 		background-image: url('../../../../images/tbi_images/page_prod/fond_menu.png');
+ 		cursor: pointer;
+ 		font-size: 1.1em;
+ 		margin-top:-10px;
+ 		height:26px;
+ 		background-repeat:repeat-x;
+ 		background-color:white;
+ 		border:0;
+ 		font-weight:normal;
+ 		font-family: Tahoma;
+ 	}
+ 	#menu_test .lienSansSousCat { 
+		font-family:Arial;
+		padding-left:18px;
+		margin-bottom:10px;
+		margin-top:-10px;
+ 	}	
+ 	#filtre_prod { 
+ 		
+ 		cursor: pointer;
+ 		border: 1px solid black;
+ 		font-size: 1.1em;
+ 	}
+ 	#menu_test h3 { 
+ 		cursor: pointer;
+ 		font-size: 1.1em;
+ 		font-weight:normal;
+ 	}
+.productListing-data {
+	padding:0;
+}
+#wrap_body_code {
+	width:700px;
+	position:absolute;
+	margin-top:-0px;
+	margin-left:165px
+}/*#shoppingCartDefault {margin-top:50px;;margin-left:-220px;}*/
+#listeBod {
+padding-left:15px;
+background-image:url("../../../../images/tbi_images/page_prod/fond_prod.png");
+background-repeat:no-repeat;
+padding-right:15px;
+padding-top:5px;
+padding-bottom:0px;
+font-weight:none;
+font-family:Verdana;
+margin-top:-10px;
+margin-bottom:-10px;
+font-size:0.8em;
+width:394px;
+height:120px;
+}
+
+/*// Liste produit */
+#wrapListeCat {
+	width:747px;
+	height:150px;
+	position:relative;
+	margin-bottom:0px;
+	border: 1px solid #ccc;
+}
+#descListeCat {
+	/*border : 1px solid black;*/
+	position:absolute;
+	margin-left:206px;
+
+}
+#imgListeCat {
+	/*border : 1px solid black;*/
+	position:absolute;
+	width:207px;
+	height:149px;
+	text-align:center;
+
+} #imgListeCat img {
+	width:130px;
+}
+#prixListeCat {
+	/*border : 1px solid black;*/
+	position:absolute;
+	margin-left:600px;
+	margin-top:82px;
+
+} #prixListeCat .prixListeCatOk {
+	font-weight:normal;
+	font-size:1.5em;
+	text-align:center;
+	width:100px;
+	position:absolute;
+	margin-top:-75px;
+	margin-left:-10px;
+	color:#2798d4;
+	position:absolute;
+	font-family: Tahoma;
+}
+#prixListeCat .prixListeCatBarre {
+	background-image:url("../../../../images/tbi_images/page_prod/barred.png");
+	background-repeat:no-repeat;
+	width:41px;
+	height:25px;
+	color:#2798d4;
+	margin-top:-40px;
+	margin-left:76px;
+	font-size:1.1em;
+	font-weight:normal;
+	font-family: Tahoma;
+}
+#prixListeCat .prixListeCatAjouter {
+	position:absolute;
+	margin-top:45px;
+
+}
+#prixListeCat .prixListeCatStock {
+	position:absolute;
+	margin-top:10px;
+	margin-left:41px;
+	font-weight:normal;
+	font-family: "Times new Roman";
+
+} 
+
+#barreTriProduit {
+	background-image: url("../../../../images/tbi_images/page_prod/fond_barre.png");
+	padding-top:7px;
+	padding-left:15px;
+	color:#5c6c74;
+	font-family: sylfaen;
+	width:747px;
+	height:38px;
+	border: 1px solid #ccc;
+	font-size:0.9em;
+	font-weight:bold;
+}
+#barreTriProduit select {
+	background-color:#808080;
+	padding:4px;
+	color:white;
+	font-family: Verdana;
+	width : 150px;
+	font-size:0.9em;
+	text-align:center;
+	border:0;
+	margin-left:23px;
+	margin-top:2px;
+}
+

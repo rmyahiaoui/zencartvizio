@@ -1,0 +1,6 @@
+[16-Jul-2013 16:00:43] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in E:\easylamps\sites\zencartvizio\includes\functions\functions_general.php on line 509
+[16-Jul-2013 16:00:43] PHP Stack trace:
+[16-Jul-2013 16:00:43] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[16-Jul-2013 16:00:43] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:27
+[16-Jul-2013 16:00:43] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\application_top.php:149
+[16-Jul-2013 16:00:43] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48

@@ -1,0 +1,5 @@
+[24-Jun-2013 09:11:11] PHP Parse error:  syntax error, unexpected $end in E:\easylamps\sites\zencartvizio\includes\templates\theme317\templates\tpl_product_info_display.php on line 275
+[24-Jun-2013 09:11:11] PHP Stack trace:
+[24-Jun-2013 09:11:11] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[24-Jun-2013 09:11:11] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:97
+[24-Jun-2013 09:11:11] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:128

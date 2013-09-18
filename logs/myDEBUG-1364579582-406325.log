@@ -1,0 +1,11 @@
+[29-Mar-2013 17:53:02] PHP Fatal error:  1146:Table 'zencart151.configuration' doesn't exist :: select configuration_key as cfgkey, configuration_value as cfgvalue
+                                 from configuration in C:\sites\zencart151\includes\classes\db\mysql\query_factory.php on line 120
+[29-Mar-2013 17:53:02] PHP Stack trace:
+[29-Mar-2013 17:53:02] PHP   1. {main}() C:\sites\zencart151\index.php:0
+[29-Mar-2013 17:53:02] PHP   2. require() C:\sites\zencart151\index.php:26
+[29-Mar-2013 17:53:02] PHP   3. require() C:\sites\zencart151\includes\application_top.php:149
+[29-Mar-2013 17:53:02] PHP   4. require() C:\sites\zencart151\includes\autoload_func.php:48
+[29-Mar-2013 17:53:02] PHP   5. queryFactory->Execute() C:\sites\zencart151\includes\init_includes\init_db_config_read.php:19
+[29-Mar-2013 17:53:02] PHP   6. queryFactory->set_error() C:\sites\zencart151\includes\classes\db\mysql\query_factory.php:171
+[29-Mar-2013 17:53:02] PHP   7. queryFactory->show_error() C:\sites\zencart151\includes\classes\db\mysql\query_factory.php:105
+[29-Mar-2013 17:53:02] PHP   8. trigger_error() C:\sites\zencart151\includes\classes\db\mysql\query_factory.php:120

@@ -1,0 +1,4 @@
+[27-Aug-2013 09:31:59] PHP Parse error:  syntax error, unexpected $end in E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_footer.php on line 202
+[27-Aug-2013 09:31:59] PHP Stack trace:
+[27-Aug-2013 09:31:59] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[27-Aug-2013 09:31:59] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:98

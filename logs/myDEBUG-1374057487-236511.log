@@ -1,0 +1,6 @@
+[17-Jul-2013 10:38:07] PHP Parse error:  syntax error, unexpected '.' in E:\easylamps\sites\zencartvizio\includes\functions\functions_general.php on line 1097
+[17-Jul-2013 10:38:07] PHP Stack trace:
+[17-Jul-2013 10:38:07] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[17-Jul-2013 10:38:07] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:27
+[17-Jul-2013 10:38:07] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\application_top.php:149
+[17-Jul-2013 10:38:07] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48

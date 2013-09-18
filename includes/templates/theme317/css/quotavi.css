@@ -1,0 +1,302 @@
+/*header*/
+
+.devis_reset
+{
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	background: url(/quotavi/images/body-bg.png) 0 0 repeat transparent;
+	padding-bottom: 10px;
+}
+
+.devis_header
+{
+	background: url(/quotavi/images/header-bg.png) 0 0 no-repeat transparent;
+    width: 940px;
+    height: 80px;
+    color: #000;
+}
+#content h2.devis_title
+{
+	background: url(/quotavi/images/logo_01.png) 0 20px no-repeat transparent;
+	color: #fff;
+	font-size: 18px;
+	display: inline-block;
+	margin-left: 20px;
+    padding-left: 42px;
+}
+
+.devis_number,.devis_montant
+{
+	margin-left: 45px;
+	font-weight: 600;
+}
+
+.devis_tel
+{
+	background: url(/quotavi/images/contact-ico.png) 0 10px no-repeat transparent;	
+	display: inline-block;
+	height: 50px;
+	line-height: 50px;
+    margin-top: 20px;
+    margin-right: 20px;
+    padding-left: 35px;
+    color: #fff;
+    float: right;
+    
+}
+/* */
+.devis_breadcrumb
+{
+	color: #000;
+	font-size: 14px;
+	font-weight: 600;
+	margin-left: 20px;
+	margin-top: 15px;
+}
+.devis_breadcrumb a
+{
+	color: #000;
+	text-decoration: underline;
+}
+.devis_breadcrumb a.active
+{
+	color: #93c224;
+	text-decoration: none;
+}
+
+/*navigation*/
+
+.devis_navigation_pipe
+{
+	clear: both;
+	border-bottom: 1px solid #bfd4dc;
+	padding-bottom: 15px;
+	margin-bottom: 15px
+}
+.devis_step
+{
+	position: relative;
+	height: 112px;
+}
+.devis_step li
+{
+	float: left;
+	display: inline-block;
+	width: 150px;
+	text-align: center;
+}
+.devis_step a
+{
+	color: #000;
+}
+.devis_step span
+{
+	background: url(/quotavi/images/1-icon.png) center 0 no-repeat transparent;
+	height: 71px;
+	margin-bottom: 10px;
+	width: 150px;
+	display: block;
+}
+li.step_active span
+{
+	background: url(/quotavi/images/1-icon.png) center bottom no-repeat transparent;
+}
+li.one span
+{
+	background-image: url(/quotavi/images/1-icon.png);
+}
+li.two span
+{
+	background-image: url(/quotavi/images/2-icon.png);
+}
+	li.three span
+{
+	background-image: url(/quotavi/images/3-icon.png);
+}
+li.four span
+{
+	background-image: url(/quotavi/images/4-icon.png);
+}
+li.five span
+{
+	background-image: url(/quotavi/images/5-icon.png);
+}
+li.six span
+{
+	background-image: url(/quotavi/images/6-icon.png);
+}
+
+li span.arrow
+{
+	background: url(/quotavi/images/arrows.png) 0 0 no-repeat transparent;
+	height: 14px;
+	width: 50px;
+	position: absolute; 
+	right: -22px;
+	top: 28px;
+} 
+
+li.step_active span.arrow
+{
+	background: url(/quotavi/images/arrows.png) 0 100% no-repeat transparent;
+
+}
+li.last_step span.arrow
+{
+	background: none;
+}
+.devis_choix
+{
+	color: #d81974;
+	font-size:24px;
+	display: block;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	padding-left: 20px;
+}
+/*product*/
+.devis_pr_content
+{
+	width: 700px;
+	padding-top: 20px;
+	margin-right: 20px;
+}
+.devis_product_description
+{
+	float: left;
+	width: 400px;
+}
+
+.devis_pr_content img
+{
+	float: left;
+	margin-left: 20px;
+    margin-right: 20px;
+}
+#content h2.devis_pr_title, .devis_pr_price
+{
+	color: #154a5c;
+	font-size: 18px;
+	font-weight: 600;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+	line-height: 18px;
+	margin-bottom: 10px;
+}
+.devis_pr_price span
+{
+	color: #154a5c;
+}
+.devis_pr_price
+{
+	color: #de1877;
+	display: block;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #bfd4dc;
+	padding-bottom: 20px;
+}
+.devis_sidebar
+{
+	width: 220px;
+	
+}
+.devis_pr_content, .devis_sidebar
+{
+	background: #e5f2f8;
+	float: left; 
+	margin-top: 25px;
+	min-height: 520px; 
+	-webkit-border-radius: 20px;
+	border-radius: 20px; 
+}
+.devis_description h4
+{
+	padding-top: 20px;
+	color: #154a5c;
+	font-size: 15px;
+}
+.devis_description dl
+{
+	color: #154a5c;
+	font-size: 13px;
+}
+
+.devis_descProduct{
+	height:350px;
+	overflow: hidden;
+}
+
+dt
+{
+	font-weight: 600; 
+	float: left;
+	clear: both;
+	margin-top: 15px;
+}
+dd
+{
+	float: left;
+	margin-top: 15px;
+}
+/*sidebar*/
+.devis_sidebar h3
+{
+	background: url(/quotavi/images/sidebar-bg.png) 0 0 no-repeat transparent;
+	color: #FFFFFF;
+    height: 41px;
+    line-height: 41px;
+    font-size: 16px;
+    text-align: center;
+}
+.devis_sidebar strong
+{	
+	color: #154A5C;
+    display: block;
+    font-size: 16px;
+    margin-top: 15px;
+    padding-left: 15px;
+}
+.devis_sidebar ul
+{
+	margin: 0;
+}
+.devis_sidebar li
+{
+
+	background: url(/quotavi/images/list-style.png) 0 0 no-repeat transparent;
+	padding-left: 15px;
+	font-size: 12px;
+	color: #154a5c;
+	margin-top: 25px;
+	  padding-left: 15px;
+	  margin-left: 15px;
+}
+
+/*buttons*/
+.devis_pr, .devis_suiv
+{
+	background: url(/quotavi/images/next-prev-button.png) 0 0 no-repeat transparent;
+	font-size: 15px;
+	color: #fff;
+	text-transform: uppercase;
+	width: 109px;
+	height: 60px; 
+	line-height: 60px;
+	float: left;
+	padding-left: 77px;
+	margin-top: 20px;
+	text-decoration: none;
+}
+.devis_suiv
+{
+     background: url(/quotavi/images/next-prev-button.png) 100% 0 no-repeat transparent;
+     float: right;
+     padding-left: 23px;
+     width: 164px;
+}
+.devis_reset form
+{
+	margin-left:20px;
+}

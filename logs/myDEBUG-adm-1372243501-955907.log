@@ -1,0 +1,4 @@
+[26-Jun-2013 10:45:01] PHP Fatal error:  Call to undefined function products_description() in E:\easylamps\sites\zencartvizio\ezl_admin\includes\modules\product\collect_info.php on line 406
+[26-Jun-2013 10:45:01] PHP Stack trace:
+[26-Jun-2013 10:45:01] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:0
+[26-Jun-2013 10:45:01] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:138

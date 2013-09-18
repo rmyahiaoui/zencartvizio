@@ -1,0 +1,38 @@
+table{
+	border: 1px solid black;
+}
+td{
+	vertical-align: middle;
+	text-align: center;
+}
+.articles{
+	background-color: #a7b4c0;
+}
+.textes{
+	background-color: #d0d8e1;
+}
+table#criteres{
+	border:none;
+	width:auto;
+}
+table#criteres td{
+	text-align: left;
+}
+div#resultats{
+	margin-top: 15px;
+}
+table#articles{
+	margin-top: 10px;
+}
+table#coltextes,table#textes{
+	margin-top:3px;
+}
+.warning{
+	color: red;
+}
+#editeurHTML {
+	width: 50%;
+	padding: 5px;
+	height: 300px;
+	border: 1px solid #FB7A31;	
+}

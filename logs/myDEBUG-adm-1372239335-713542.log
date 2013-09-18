@@ -1,0 +1,23 @@
+[26-Jun-2013 09:35:35] PHP Fatal error:  1054:Unknown column 'pd.avantagesd.products_url' in 'field list' :: select pd.products_name, pd.products_description, pd.avantagesd.products_url,                                      p.products_id, p.products_quantity, p.products_model,
+                                      p.products_image, p.products_price, p.products_virtual, p.products_weight,
+                                      p.products_date_added, p.products_last_modified,
+                                      date_format(p.products_date_available, '%Y-%m-%d') as
+                                      products_date_available, p.products_status, p.products_tax_class_id,
+                                      p.manufacturers_id,
+                                      p.products_quantity_order_min, p.products_quantity_order_units, p.products_priced_by_attribute,
+                                      p.product_is_free, p.product_is_call, p.products_quantity_mixed,
+                                      p.product_is_always_free_shipping, p.products_qty_box_status, p.products_quantity_order_max,
+                                      p.products_sort_order,
+                                      p.products_discount_type, p.products_discount_type_from,
+                                      p.products_price_sorter, p.master_categories_id
+                              from products p, products_description pd
+                              where p.products_id = '105'
+                              and p.products_id = pd.products_id
+                              and pd.language_id = '2' in E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php on line 120
+[26-Jun-2013 09:35:35] PHP Stack trace:
+[26-Jun-2013 09:35:35] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:0
+[26-Jun-2013 09:35:35] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:138
+[26-Jun-2013 09:35:35] PHP   3. queryFactory->Execute() E:\easylamps\sites\zencartvizio\ezl_admin\includes\modules\product\collect_info.php:62
+[26-Jun-2013 09:35:35] PHP   4. queryFactory->set_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:227
+[26-Jun-2013 09:35:35] PHP   5. queryFactory->show_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:105
+[26-Jun-2013 09:35:35] PHP   6. trigger_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:120

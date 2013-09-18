@@ -1,0 +1,13 @@
+[26-Jun-2013 10:49:39] PHP Fatal error:  1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.products_description.''
+                             from products_description' at line 1 :: select ''.products_description.''
+                             from products_description
+                             where products_id = '1'
+                             and language_id = '2' in E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php on line 120
+[26-Jun-2013 10:49:39] PHP Stack trace:
+[26-Jun-2013 10:49:39] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:0
+[26-Jun-2013 10:49:39] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:138
+[26-Jun-2013 10:49:39] PHP   3. zen_get_products_affiche_box() E:\easylamps\sites\zencartvizio\ezl_admin\includes\modules\product\collect_info.php:406
+[26-Jun-2013 10:49:39] PHP   4. queryFactory->Execute() E:\easylamps\sites\zencartvizio\ezl_admin\includes\functions\general.php:683
+[26-Jun-2013 10:49:39] PHP   5. queryFactory->set_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:227
+[26-Jun-2013 10:49:39] PHP   6. queryFactory->show_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:105
+[26-Jun-2013 10:49:39] PHP   7. trigger_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:120

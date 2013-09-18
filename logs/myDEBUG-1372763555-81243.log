@@ -1,0 +1,6 @@
+[02-Jul-2013 11:12:35] PHP Parse error:  syntax error, unexpected T_STRING in E:\easylamps\sites\zencartvizio\includes\templates\theme317\sideboxes\tpl_categories.php on line 77
+[02-Jul-2013 11:12:35] PHP Stack trace:
+[02-Jul-2013 11:12:35] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[02-Jul-2013 11:12:35] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:97
+[02-Jul-2013 11:12:35] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:94
+[02-Jul-2013 11:12:35] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\modules\column_left.php:31

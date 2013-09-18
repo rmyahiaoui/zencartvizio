@@ -1,0 +1,5 @@
+[25-Jun-2013 09:47:39] PHP Parse error:  syntax error, unexpected '<' in E:\easylamps\sites\zencartvizio\includes\templates\theme317\templates\tpl_product_info_display.php on line 105
+[25-Jun-2013 09:47:39] PHP Stack trace:
+[25-Jun-2013 09:47:39] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[25-Jun-2013 09:47:39] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:97
+[25-Jun-2013 09:47:39] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:128

@@ -1,0 +1,327 @@
+#a5a5a5 {
+	color: rgb(165, 165, 165);
+}
+TABLE_HEADING_STYLE {
+	
+}
+TABLE_HEADING_COLOR {
+	
+}
+* {
+	margin: 0px; padding: 0px;
+}
+body {
+	background: url("../images/body-tail.gif") repeat-x top rgb(234, 235, 236); color: rgb(133, 133, 133); line-height: 15px; font-family: Arial, Helvetica, sans-serif; font-size: 12px;
+}
+table {
+	font-size: 100%; border-collapse: collapse;
+}
+td {
+	font-size: 100%; border-collapse: collapse;
+}
+table {
+	border: 0px currentColor;
+}
+td {
+	border: 0px currentColor;
+}
+img {
+	border: 0px currentColor;
+}
+form {
+	margin: 0px; padding: 0px;
+}
+td {
+	margin: 0px; padding: 0px;
+}
+td {
+	text-align: left; vertical-align: top;
+}
+#main-width {
+	background: url("../images/main-bg.gif") no-repeat top; margin: 0px auto; width: 940px; text-align: left;
+}
+.fleft {
+	float: left;
+}
+.fright {
+	float: right;
+}
+.clear {
+	clear: both;
+}
+img {
+	vertical-align: top;
+}
+a img {
+	border: 0px currentColor;
+}
+ul {
+	list-style: none;
+}
+.alignright {
+	text-align: right;
+}
+.aligncenter {
+	text-align: center;
+}
+.wrapper {
+	width: 100%; overflow: hidden;
+}
+.container {
+	width: 100%;
+}
+.column-1 {
+	float: left;
+}
+.column-2 {
+	float: left;
+}
+.column-3 {
+	float: left;
+}
+a {
+	color: rgb(165, 165, 165); text-decoration: underline;
+}
+a:hover {
+	text-decoration: none;
+}
+p {
+	margin: 0px; padding: 0px;
+}
+#header {
+	padding-bottom: 17px;
+}
+#header .top {
+	width: 100%; overflow: hidden;
+}
+#header .logo {
+	padding-top: 33px; float: left;
+}
+#header .lang {
+	background: url("../images/lang-tail.gif") repeat-x; color: rgb(13, 13, 13); font-size: 11px; margin-top: 40px; float: right;
+}
+#header .lang .left-bg {
+	background: url("../images/lang-left-bg.gif") no-repeat left top;
+}
+#header .lang .right-bg {
+	background: url("../images/lang-right-bg.gif") no-repeat right top; padding: 5px 9px 8px 12px;
+}
+#header .lang img {
+	margin: 0px 0px 0px 2px; vertical-align: middle;
+}
+#header .cart {
+	background: url("../images/cart-bg.gif") no-repeat 0px 0px; margin: 45px 0px 0px; padding: 1px 32px 0px 24px; color: rgb(138, 138, 138); font-size: 11px; float: right;
+}
+#header .cart a {
+	color: rgb(33, 155, 249); text-transform: uppercase; font-weight: bold; text-decoration: none;
+}
+#header .cart a:hover {
+	color: rgb(138, 138, 138);
+}
+#header .row1 {
+	background: url("../images/row1-tail.gif") repeat-x top; width: 100%; margin-top: 27px;
+}
+#header .row1 .left-bg {
+	background: url("../images/row1-left-bg.gif") no-repeat left top;
+}
+#header .row1 .right-bg {
+	background: url("../images/row1-right-bg.gif") no-repeat right top; width: 100%; height: 41px; overflow: hidden;
+}
+#header .menu {
+	padding: 12px 0px 0px 19px;
+}
+#header .menu ul {
+	margin: 0px; padding: 0px;
+}
+#header .menu li {
+	text-transform: uppercase; overflow: hidden; padding-right: 21px; font-size: 12px; font-weight: bold; float: left;
+}
+#header .menu li a {
+	color: rgb(255, 255, 255); text-decoration: none;
+}
+#header .menu li a:hover {
+	color: rgb(79, 181, 252);
+}
+#header .row2 {
+	background: url("../images/row2-tail.gif") repeat-x top; width: 100%;
+}
+#header .row2 .left-bg {
+	background: url("../images/row2-left-bg.gif") no-repeat left top;
+}
+#header .row2 .right-bg {
+	background: url("../images/row2-right-bg.gif") no-repeat right top; width: 100%; height: 30px; overflow: hidden;
+}
+#header .nav-links {
+	padding: 7px 11px 0px 0px; text-transform: uppercase; font-size: 11px; float: right;
+}
+#header .nav-links a {
+	color: rgb(13, 13, 13); text-decoration: none; margin-left: 21px; display: inline-block;
+}
+#header .nav-links a:hover {
+	color: rgb(78, 166, 234);
+}
+#bannerOne {
+	padding: 10px 0px 12px;
+}
+#bannerTwo {
+	float: left;
+}
+#bannerThree {
+	padding-left: 3px; float: left;
+}
+#bannerFour {
+	padding-left: 2px; float: left;
+}
+#bannerFive {
+	padding-left: 3px; margin-right: -2px; float: left;
+}
+#content {
+	height: 1000px;
+}
+#column-center {
+	padding-left: 3px;
+}
+.main-content {
+	background: rgb(255, 255, 255); width: 100%; margin-bottom: 4px;
+}
+.main-content .left-top-corner {
+	background: url("../images/corner-left-top.gif") no-repeat left top;
+}
+.main-content .right-top-corner {
+	background: url("../images/corner-right-top.gif") no-repeat right top;
+}
+.main-content .right-bot-corner {
+	background: url("../images/corner-right-bot.gif") no-repeat right bottom;
+}
+.main-content .left-bot-corner {
+	background: url("../images/corner-left-bot.gif") no-repeat left bottom; width: 100%;
+}
+.main-indent {
+	padding: 12px 12px 12px 13px;
+}
+.title-left-bg {
+	background: url("../images/title-left-bg.gif") no-repeat left top; display: block;
+}
+.title-right-bg {
+	background: url("../images/title-right-bg.gif") no-repeat right top; padding: 6px 2px 4px 28px; display: block;
+}
+.product-col {
+	padding-bottom: 12px;
+}
+.product .top-border {
+	background: url("../images/prod-border.gif") repeat-x top; width: 100%;
+}
+.product .right-border {
+	background: url("../images/prod-border.gif") repeat-y right;
+}
+.product .bot-border {
+	background: url("../images/prod-border.gif") repeat-x bottom;
+}
+.product .left-border {
+	background: url("../images/prod-border.gif") repeat-y left;
+}
+.product .left-top {
+	background: url("../images/prod-corner-left-top.gif") no-repeat left top;
+}
+.product .right-top {
+	background: url("../images/prod-corner-right-top.gif") no-repeat right top;
+}
+.product .right-bot {
+	background: url("../images/prod-corner-right-bot.gif") no-repeat right bottom;
+}
+.product .left-bot {
+	background: url("../images/prod-corner-left-bot.gif") no-repeat left bottom; width: 100%;
+}
+.prod-indent {
+	padding: 19px 18px 18px;
+}
+.margin-bot {
+	margin-bottom: -8px;
+}
+.img {
+	text-align: center; padding-bottom: 7px;
+}
+.name {
+	color: rgb(7, 54, 153); text-transform: uppercase; font-size: 11px; font-weight: normal; text-decoration: none;
+}
+.name strong {
+	font-weight: normal;
+}
+.name:hover {
+	color: rgb(133, 133, 133);
+}
+.text {
+	font-size: 11px;
+}
+.price {
+	color: rgb(51, 51, 51); font-size: 18px; font-weight: normal;
+}
+.price strong {
+	font-weight: normal;
+}
+.price b {
+	color: rgb(9, 64, 164); text-transform: uppercase; padding-right: 3px; font-size: 11px; font-weight: normal; display: inline-block;
+}
+.product .price {
+	padding: 12px 0px; margin-right: -50px;
+}
+#footer {
+	background: rgb(245, 245, 246); margin: 9px 0px 21px; width: 100%; color: rgb(0, 0, 0); font-size: 11px;
+}
+#footer .left-top {
+	background: url("../images/footer-left-top.gif") no-repeat left top;
+}
+#footer .right-top {
+	background: url("../images/footer-right-top.gif") no-repeat right top;
+}
+#footer .right-bot {
+	background: url("../images/footer-right-bot.gif") no-repeat right bottom;
+}
+#footer .left-bot {
+	background: url("../images/footer-left-bot.gif") no-repeat left bottom;
+}
+#footer .indent {
+	padding: 12px 20px 18px 17px;
+}
+#footer a {
+	color: rgb(9, 64, 164);
+}
+#footer .menu a {
+	color: rgb(134, 132, 132); font-size: 12px; text-decoration: none; margin-right: 21px; display: inline-block;
+}
+#footer .menu a:hover {
+	color: rgb(9, 64, 164);
+}
+#footer p {
+	padding: 2px 0px 0px;
+}
+#footer p span {
+	display: block;
+}
+input {
+	color: rgb(133, 133, 133); line-height: normal; font-family: Arial, Helvetica, sans-serif; font-size: 12px; vertical-align: middle;
+}
+select {
+	color: rgb(133, 133, 133); line-height: normal; font-family: Arial, Helvetica, sans-serif; font-size: 12px; vertical-align: middle;
+}
+textarea {
+	color: rgb(133, 133, 133); line-height: normal; font-family: Arial, Helvetica, sans-serif; font-size: 12px; vertical-align: middle;
+}
+.search-form {
+	padding: 10px 11px 0px 0px; float: right;
+}
+.search-form input {
+	vertical-align: top; display: inline-block;
+}
+.search-form span {
+	background: url("../images/search-form-left-bg.gif") no-repeat left top rgb(255, 255, 255); display: inline-block;
+}
+.search-form span input {
+	padding: 2px 5px; border: 0px solid currentColor; width: 193px;
+}
+* html .search-form span input {
+	padding: 1px 5px;
+}
+*:first-child + html .search-form span input {
+	padding: 1px 5px;
+}

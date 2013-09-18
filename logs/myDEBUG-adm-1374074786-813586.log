@@ -1,0 +1,8 @@
+[17-Jul-2013 15:26:26] PHP Fatal error:  1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 :: select products_id, products_name FROM  products_description WHERE products_id !=  in E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php on line 120
+[17-Jul-2013 15:26:26] PHP Stack trace:
+[17-Jul-2013 15:26:26] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:0
+[17-Jul-2013 15:26:26] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:138
+[17-Jul-2013 15:26:26] PHP   3. queryFactory->Execute() E:\easylamps\sites\zencartvizio\ezl_admin\includes\modules\product\collect_info.php:508
+[17-Jul-2013 15:26:26] PHP   4. queryFactory->set_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:227
+[17-Jul-2013 15:26:26] PHP   5. queryFactory->show_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:105
+[17-Jul-2013 15:26:26] PHP   6. trigger_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:120

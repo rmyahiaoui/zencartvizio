@@ -1,0 +1,12 @@
+[27-Jun-2013 11:32:12] PHP Warning:  reset() expects parameter 1 to be array, null given in E:\easylamps\sites\zencartvizio\ezl_admin\includes\classes\object_info.php on line 29
+[27-Jun-2013 11:32:12] PHP Stack trace:
+[27-Jun-2013 11:32:12] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:0
+[27-Jun-2013 11:32:12] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:138
+[27-Jun-2013 11:32:12] PHP   3. objectInfo->objectInfo() E:\easylamps\sites\zencartvizio\ezl_admin\includes\modules\product\collect_info.php:14
+[27-Jun-2013 11:32:12] PHP   4. reset() E:\easylamps\sites\zencartvizio\ezl_admin\includes\classes\object_info.php:29
+[27-Jun-2013 11:32:12] PHP Warning:  Variable passed to each() is not an array or object in E:\easylamps\sites\zencartvizio\ezl_admin\includes\classes\object_info.php on line 30
+[27-Jun-2013 11:32:12] PHP Stack trace:
+[27-Jun-2013 11:32:12] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:0
+[27-Jun-2013 11:32:12] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:138
+[27-Jun-2013 11:32:12] PHP   3. objectInfo->objectInfo() E:\easylamps\sites\zencartvizio\ezl_admin\includes\modules\product\collect_info.php:14
+[27-Jun-2013 11:32:12] PHP   4. each() E:\easylamps\sites\zencartvizio\ezl_admin\includes\classes\object_info.php:30

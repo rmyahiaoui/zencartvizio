@@ -1,0 +1,4 @@
+RewriteEngine On
+#RewriteCond %{REQUEST_URI} !redirect.php
+#RewriteRule ^(.*)/catalog/(.*).html$ $1/hihi/redirect.php?var=$2
+#RewriteRule ^(.*)/lamp(s|es|ade|aras)/(.*).html$ $1/catalog/redirect.php?var=$3

@@ -1,0 +1,19 @@
+[24-Jul-2013 10:56:14] PHP Fatal error:  1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 :: 
+              select categories_name, cd.categories_id
+              from categories_description cd
+              inner join categories c
+              on c.categories_id = cd.categories_id
+              where parent_id =  in E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php on line 120
+[24-Jul-2013 10:56:14] PHP Stack trace:
+[24-Jul-2013 10:56:14] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[24-Jul-2013 10:56:14] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:98
+[24-Jul-2013 10:56:14] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:94
+[24-Jul-2013 10:56:14] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\modules\column_left.php:31
+[24-Jul-2013 10:56:14] PHP   5. require() E:\easylamps\sites\zencartvizio\includes\modules\sideboxes\categories.php:22
+[24-Jul-2013 10:56:14] PHP   6. verifSousCatExist() E:\easylamps\sites\zencartvizio\includes\templates\theme317\sideboxes\tpl_categories.php:150
+[24-Jul-2013 10:56:14] PHP   7. verifSousCatExist() E:\easylamps\sites\zencartvizio\includes\templates\theme317\sideboxes\tpl_categories.php:143
+[24-Jul-2013 10:56:14] PHP   8. verifSousCatExist() E:\easylamps\sites\zencartvizio\includes\templates\theme317\sideboxes\tpl_categories.php:143
+[24-Jul-2013 10:56:14] PHP   9. queryFactory->Execute() E:\easylamps\sites\zencartvizio\includes\templates\theme317\sideboxes\tpl_categories.php:135
+[24-Jul-2013 10:56:14] PHP  10. queryFactory->set_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:227
+[24-Jul-2013 10:56:14] PHP  11. queryFactory->show_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:105
+[24-Jul-2013 10:56:14] PHP  12. trigger_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:120

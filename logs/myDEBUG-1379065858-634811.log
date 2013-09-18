@@ -1,0 +1,6 @@
+[13-Sep-2013 09:50:59] PHP Warning:  Unterminated comment starting line 30 in E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_box_default_left.php on line 30
+[13-Sep-2013 09:50:59] PHP Stack trace:
+[13-Sep-2013 09:50:59] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[13-Sep-2013 09:50:59] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:98
+[13-Sep-2013 09:50:59] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:285
+[13-Sep-2013 09:50:59] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\modules\column_left.php:31

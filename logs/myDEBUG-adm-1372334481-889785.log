@@ -1,0 +1,3 @@
+[27-Jun-2013 12:01:21] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in E:\easylamps\sites\zencartvizio\ezl_admin\includes\modules\product\collect_info.php on line 421
+[27-Jun-2013 12:01:21] PHP Stack trace:
+[27-Jun-2013 12:01:21] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:0

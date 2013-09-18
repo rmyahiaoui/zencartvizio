@@ -1,0 +1,5 @@
+[20-Jun-2013 10:19:40] PHP Parse error:  syntax error, unexpected '}' in E:\easylamps\sites\zencartvizio\includes\modules\theme317\cart_upsell.php on line 140
+[20-Jun-2013 10:19:40] PHP Stack trace:
+[20-Jun-2013 10:19:40] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[20-Jun-2013 10:19:40] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:97
+[20-Jun-2013 10:19:40] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:128

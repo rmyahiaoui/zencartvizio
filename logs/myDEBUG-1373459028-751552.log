@@ -1,0 +1,5 @@
+[10-Jul-2013 12:23:48] PHP Parse error:  syntax error, unexpected T_STRING in E:\easylamps\sites\zencartvizio\includes\languages\french\index.php on line 44
+[10-Jul-2013 12:23:48] PHP Stack trace:
+[10-Jul-2013 12:23:48] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[10-Jul-2013 12:23:48] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:36
+[10-Jul-2013 12:23:48] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\modules\pages\index\header_php.php:44

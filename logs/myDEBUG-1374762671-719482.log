@@ -1,0 +1,10 @@
+[25-Jul-2013 14:31:11] PHP Fatal error:  1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 :: SELECT categories_name FROM categories_description WHERE categories_id =  in E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php on line 120
+[25-Jul-2013 14:31:11] PHP Stack trace:
+[25-Jul-2013 14:31:11] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[25-Jul-2013 14:31:11] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:98
+[25-Jul-2013 14:31:11] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:128
+[25-Jul-2013 14:31:11] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\modules\pages\product_info\main_template_vars.php:185
+[25-Jul-2013 14:31:11] PHP   5. queryFactory->Execute() E:\easylamps\sites\zencartvizio\includes\templates\theme317\templates\tpl_product_info_display.php:27
+[25-Jul-2013 14:31:11] PHP   6. queryFactory->set_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:227
+[25-Jul-2013 14:31:11] PHP   7. queryFactory->show_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:105
+[25-Jul-2013 14:31:11] PHP   8. trigger_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:120

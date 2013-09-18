@@ -1,0 +1,3 @@
+[27-Jun-2013 14:18:36] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in E:\easylamps\sites\zencartvizio\ezl_admin\includes\modules\product\preview_info.php on line 86
+[27-Jun-2013 14:18:36] PHP Stack trace:
+[27-Jun-2013 14:18:36] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:0

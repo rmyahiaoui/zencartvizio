@@ -1,0 +1,25 @@
+[12-Sep-2013 15:32:34] PHP Warning:  Unterminated comment starting line 30 in E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_box_default_left.php on line 30
+[12-Sep-2013 15:32:34] PHP Stack trace:
+[12-Sep-2013 15:32:34] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[12-Sep-2013 15:32:34] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:98
+[12-Sep-2013 15:32:34] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:285
+[12-Sep-2013 15:32:34] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\modules\column_left.php:31
+[12-Sep-2013 15:32:34] PHP Warning:  Missing argument 2 for queryFactory::query(), called in E:\easylamps\sites\zencartvizio\includes\modules\product_listing.php on line 108 and defined in E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php on line 28
+[12-Sep-2013 15:32:34] PHP Stack trace:
+[12-Sep-2013 15:32:34] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[12-Sep-2013 15:32:34] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:98
+[12-Sep-2013 15:32:34] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:287
+[12-Sep-2013 15:32:34] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\modules\pages\index\main_template_vars.php:217
+[12-Sep-2013 15:32:34] PHP   5. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\templates\tpl_index_product_list.php:94
+[12-Sep-2013 15:32:34] PHP   6. include() E:\easylamps\sites\zencartvizio\includes\templates\template_default\templates\tpl_modules_product_listing.php:11
+[12-Sep-2013 15:32:34] PHP   7. queryFactory->query() E:\easylamps\sites\zencartvizio\includes\modules\product_listing.php:108
+[12-Sep-2013 15:32:34] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php on line 40
+[12-Sep-2013 15:32:34] PHP Stack trace:
+[12-Sep-2013 15:32:34] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[12-Sep-2013 15:32:34] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:98
+[12-Sep-2013 15:32:34] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:287
+[12-Sep-2013 15:32:34] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\modules\pages\index\main_template_vars.php:217
+[12-Sep-2013 15:32:34] PHP   5. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\templates\tpl_index_product_list.php:94
+[12-Sep-2013 15:32:34] PHP   6. include() E:\easylamps\sites\zencartvizio\includes\templates\template_default\templates\tpl_modules_product_listing.php:11
+[12-Sep-2013 15:32:34] PHP   7. queryFactory->query() E:\easylamps\sites\zencartvizio\includes\modules\product_listing.php:108
+[12-Sep-2013 15:32:34] PHP   8. mysql_query() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:40

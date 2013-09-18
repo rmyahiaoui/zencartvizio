@@ -1,0 +1,39 @@
+.left{
+float: left;
+}
+
+.flcr{
+float: left;
+clear: right;
+}
+.clearboth{
+clear: both;
+}
+ul{
+list-style-type: none;
+}
+li span{
+display:block;
+width:50px
+}
+li{
+margin-left: 5px;
+background-repeat: no-repeat;
+}
+/*i textarea{
+width: 50px;
+height: 50px;
+}*/
+#elements{
+width:100%;
+border:1px solid black;
+border-collapse:collapse;
+text-align:left;
+}
+#elements td{
+border-bottom:1px solid black;
+background-position:left;
+background-repeat:no-repeat;
+}
+
+

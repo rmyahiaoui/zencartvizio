@@ -1,0 +1,101 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="content_edition.css" />
+		<title>CMS Easylamps/EasyBatteries - Listes des articles</title>
+	</head>
+	<body>
+		<?php require_once("content_mode.php"); ?>
+		<h3>Liste des articles et textes (métas-informations et contenu éditorial)</h3>
+		<form name="form_lists" method="POST" action=""><!--tous les champs de la page sont définis dans le même formulaire-->
+		
+			<!--Affichage du block pour sélecteurs de page et de type d'article-->
+			<table class="criteres">
+				<tr>
+					<td>Sélectionner une page : <select name="selpages">
+<?php 
+						foreach($editeur->optionspage as $key=>$option){
+							$selectattrib=($key==$editeur->page)?' selected ':' ';
+							echo "<option  $selectattrib value=\"$key\">".utf8_encode($option)." \n";
+						}					
+?>
+					</select></td>
+					<td>ET/OU Sélectionner un type d'article : <select name="seltypes">
+<?php 
+						foreach($editeur->optionstype as $key=>$option){
+							$selectattrib=($key==$editeur->type)?' selected ':' ';
+							echo "<option  $selectattrib value=\"$key\">$option \n";
+						}				
+?>			
+					</select></td>
+				</tr>
+			</table>
+			<table class="criteres">
+				<tr>
+					<!--boutons-drapeaux-->
+<?php 
+					//Initialisation d'un tableau associatif key=langue, value=checked ou chaîne vide, pour l'attribut des boutons radio
+					$selflagattribut["fr"]=($editeur->langue=='fr')?"checked":"";
+					$selflagattribut["en"]=($editeur->langue=='en')?"checked":"";
+					$selflagattribut["sp"]=($editeur->langue=='sp')?"checked":"";
+					$selflagattribut["it"]=($editeur->langue=='it')?"checked":"";
+					$selflagattribut["de"]=($editeur->langue=='de')?"checked":"";
+
+?>
+					<td class="flag">Sélectionner une langue : 
+						<input type="radio" name="flag" value="fr" <?php echo $selflagattribut["fr"]; ?>><img id="flagfr" src="images/drapeau_fr.png" alt="Edition du texte French" title="Edition du texte French">
+						<input type="radio" name="flag" value="en" <?php echo $selflagattribut["en"]; ?>><img id="flagen" src="images/drapeau_en.png" alt="Edition du texte English" title="Edition du texte English">
+						<input type="radio" name="flag" value="sp" <?php echo $selflagattribut["sp"]; ?>><img id="flagsp" src="images/drapeau_sp.png" alt="Edition du texte Spanish" title="Edition du texte Spanish">
+						<input type="radio" name="flag" value="it" <?php echo $selflagattribut["it"]; ?>><img id="flagit" src="images/drapeau_it.png" alt="Edition du texte Italian" title="Edition du texte Italian">
+						<input type="radio" name="flag" value="de" <?php echo $selflagattribut["de"]; ?>><img id="flagde" src="images/drapeau_de.png" alt="Edition du texte Deutschland" title="Edition du texte Deutschland">
+					</td>
+					<td>
+						<input type="submit" name="voir" value="Voir articles"> Ou : <input type="submit" name="ajoutarticle" value="Ajouter 1 article">
+					</td>
+				</tr>
+			</table>		
+		
+			<!--Affichage du block des articles correspondant aux critères de page et de type-->
+<?php		
+			if(mysql_num_rows($editeur->jeuarticles)){
+				echo '<div id="resultats">';
+				//Affichage des articles et des textes
+				while($articlerow=mysql_fetch_array($editeur->jeuarticles)){
+					echo '<table id="articles">';echo "\n";
+						echo '<tr class="articles">';echo "\n";
+							echo '<td class="id"><input type="submit" name="btnarticle" value="'.$articlerow[id].'" /></td>';echo "\n";
+							echo '<td class="champsarticle">page</td><td  class="id">'.utf8_encode($editeur->optionspage[$articlerow[id_page]]).'</td>';echo "\n";
+							echo '<td class="champsarticle">type article</td><td class="type">'.utf8_encode($articlerow[type]).'</td>';echo "\n";
+							echo '<td class="champsarticle">constructeur</td><td class="constructeur">'.$articlerow[constructeur].'</td>';echo "\n";
+							echo '<td class="champsarticle">type produit</td><td class="typeproduit">'.$articlerow[typeproduit].'</td>';echo "\n";
+							echo '<td class="champsarticle">publi</td><td  class="publi">'.($articlerow[publi]==1?"Oui":"Non").'</td>';echo "\n";
+							echo '<td class="champsarticle">ordre</td><td class="ordre">'.$articlerow[ordre].'</td>';echo "\n";
+							echo '<td class="champsarticle">url</td><td class="url">'.utf8_encode($articlerow[url]).'</td>';echo "\n";
+							echo '<td class="champsarticle">maj</td><td class="maj">'.$articlerow[dt_maj].'</td>';echo "\n";
+							echo '<td><input type="submit" name="supprarticle" value="Suppr'.$articlerow[id].'" /></td>';echo "\n"; //cell vide sans taille fixe pour 'absorber' les variations dues à la taille en % de la table
+						echo '</tr>';echo "\n";
+					echo '</table>';echo "\n";
+					if($editeur->fairejeutextes($articlerow[id])>0){
+						echo '<table id="textes">';echo "\n";
+						echo '<tr class="champstexte"><td>N°</td><td>Format</td><td>Ord</td><td>Texte</td><td>Label</td><td>Maj</td></tr>';
+						while($textrow=mysql_fetch_array($editeur->jeutextes)){
+							echo '<tr class="textes">';echo "\n";
+								echo '<td class="id">'.$textrow[id].'</td>';echo "\n";
+								echo '<td  class="format">'.$textrow[format].'</td>';echo "\n";
+								echo '<td class="ordre">'.$textrow[ordre].'</td>';echo "\n";
+								$textfield=$editeur->langue."_text"; //le champ texte à afficher dépend de la langue 'active'
+								echo '<td class="txtloc">'.stripslashes(utf8_encode($textrow[$textfield])).'</td>';echo " \n";
+								echo '<td class="id">'.utf8_encode($textrow[label]).'</td>';echo "\n";
+								echo '<td class="maj">'.$textrow[dt_maj].'</td>';echo "\n";
+							echo '</tr>';echo "\n";
+						}
+						echo '</table>';echo "\n";
+					}
+				}
+				mysql_data_seek($editeur->jeuarticles,0);
+				echo '</div>';//fin du block des résultats
+			}
+?>			
+		</form><!--fin du formulaire-->
+	</body>
+</html>

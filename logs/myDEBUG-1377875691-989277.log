@@ -1,0 +1,27 @@
+[30-Aug-2013 15:14:51] PHP Warning:  Unterminated comment starting line 30 in E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_box_default_left.php on line 30
+[30-Aug-2013 15:14:51] PHP Stack trace:
+[30-Aug-2013 15:14:51] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[30-Aug-2013 15:14:51] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:98
+[30-Aug-2013 15:14:51] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:286
+[30-Aug-2013 15:14:51] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\modules\column_left.php:31
+[30-Aug-2013 15:14:51] PHP Warning:  Missing argument 2 for queryFactory::query(), called in E:\easylamps\sites\zencartvizio\includes\templates\theme317\templates\tpl_index_product_list.php on line 17 and defined in E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php on line 28
+[30-Aug-2013 15:14:51] PHP Stack trace:
+[30-Aug-2013 15:14:51] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[30-Aug-2013 15:14:51] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:98
+[30-Aug-2013 15:14:51] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:288
+[30-Aug-2013 15:14:51] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\modules\pages\index\main_template_vars.php:217
+[30-Aug-2013 15:14:51] PHP   5. queryFactory->query() E:\easylamps\sites\zencartvizio\includes\templates\theme317\templates\tpl_index_product_list.php:17
+[30-Aug-2013 15:14:51] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php on line 40
+[30-Aug-2013 15:14:51] PHP Stack trace:
+[30-Aug-2013 15:14:51] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[30-Aug-2013 15:14:51] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:98
+[30-Aug-2013 15:14:51] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:288
+[30-Aug-2013 15:14:51] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\modules\pages\index\main_template_vars.php:217
+[30-Aug-2013 15:14:51] PHP   5. queryFactory->query() E:\easylamps\sites\zencartvizio\includes\templates\theme317\templates\tpl_index_product_list.php:17
+[30-Aug-2013 15:14:51] PHP   6. mysql_query() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:40
+[30-Aug-2013 15:14:51] PHP Fatal error:  Call to a member function fetchAll() on a non-object in E:\easylamps\sites\zencartvizio\includes\templates\theme317\templates\tpl_index_product_list.php on line 18
+[30-Aug-2013 15:14:51] PHP Stack trace:
+[30-Aug-2013 15:14:51] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[30-Aug-2013 15:14:51] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:98
+[30-Aug-2013 15:14:51] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:288
+[30-Aug-2013 15:14:51] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\modules\pages\index\main_template_vars.php:217

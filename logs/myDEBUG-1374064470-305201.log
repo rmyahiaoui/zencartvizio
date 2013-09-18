@@ -1,0 +1,6 @@
+[17-Jul-2013 12:34:31] PHP Fatal error:  Cannot use object of type queryFactoryResult as array in E:\easylamps\sites\zencartvizio\includes\templates\theme317\templates\tpl_product_info_display.php on line 25
+[17-Jul-2013 12:34:31] PHP Stack trace:
+[17-Jul-2013 12:34:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[17-Jul-2013 12:34:31] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:98
+[17-Jul-2013 12:34:31] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:128
+[17-Jul-2013 12:34:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\modules\pages\product_info\main_template_vars.php:185

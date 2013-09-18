@@ -1,0 +1,147 @@
+[19-Jun-2013 12:15:24] PHP Warning:  sha1_file(/includes/configure.php) [<a href='function.sha1-file'>function.sha1-file</a>]: failed to open stream: No such file or directory in E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php on line 118
+[19-Jun-2013 12:15:24] PHP Stack trace:
+[19-Jun-2013 12:15:24] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:0
+[19-Jun-2013 12:15:24] PHP   2. zen_create_PADSS_password() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:57
+[19-Jun-2013 12:15:24] PHP   3. zen_pwd_rand() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:132
+[19-Jun-2013 12:15:24] PHP   4. zen_get_entropy() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:151
+[19-Jun-2013 12:15:24] PHP   5. sha1_file() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:118
+[19-Jun-2013 12:15:24] PHP Warning:  sha1_file(/includes/configure.php) [<a href='function.sha1-file'>function.sha1-file</a>]: failed to open stream: No such file or directory in E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php on line 118
+[19-Jun-2013 12:15:24] PHP Stack trace:
+[19-Jun-2013 12:15:24] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:0
+[19-Jun-2013 12:15:24] PHP   2. zen_create_PADSS_password() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:57
+[19-Jun-2013 12:15:24] PHP   3. zen_pwd_rand() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:132
+[19-Jun-2013 12:15:24] PHP   4. zen_get_entropy() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:152
+[19-Jun-2013 12:15:24] PHP   5. sha1_file() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:118
+[19-Jun-2013 12:15:24] PHP Warning:  sha1_file(/includes/configure.php) [<a href='function.sha1-file'>function.sha1-file</a>]: failed to open stream: No such file or directory in E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php on line 118
+[19-Jun-2013 12:15:24] PHP Stack trace:
+[19-Jun-2013 12:15:24] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:0
+[19-Jun-2013 12:15:24] PHP   2. zen_create_PADSS_password() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:57
+[19-Jun-2013 12:15:24] PHP   3. zen_pwd_rand() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:132
+[19-Jun-2013 12:15:24] PHP   4. zen_get_entropy() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:153
+[19-Jun-2013 12:15:24] PHP   5. sha1_file() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:118
+[19-Jun-2013 12:15:24] PHP Warning:  sha1_file(/includes/configure.php) [<a href='function.sha1-file'>function.sha1-file</a>]: failed to open stream: No such file or directory in E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php on line 118
+[19-Jun-2013 12:15:24] PHP Stack trace:
+[19-Jun-2013 12:15:24] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:0
+[19-Jun-2013 12:15:24] PHP   2. zen_create_PADSS_password() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:57
+[19-Jun-2013 12:15:24] PHP   3. zen_pwd_rand() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:132
+[19-Jun-2013 12:15:24] PHP   4. zen_get_entropy() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:152
+[19-Jun-2013 12:15:24] PHP   5. sha1_file() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:118
+[19-Jun-2013 12:15:24] PHP Warning:  sha1_file(/includes/configure.php) [<a href='function.sha1-file'>function.sha1-file</a>]: failed to open stream: No such file or directory in E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php on line 118
+[19-Jun-2013 12:15:24] PHP Stack trace:
+[19-Jun-2013 12:15:24] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:0
+[19-Jun-2013 12:15:24] PHP   2. zen_create_PADSS_password() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:57
+[19-Jun-2013 12:15:24] PHP   3. zen_pwd_rand() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:132
+[19-Jun-2013 12:15:24] PHP   4. zen_get_entropy() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:153
+[19-Jun-2013 12:15:24] PHP   5. sha1_file() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:118
+[19-Jun-2013 12:15:24] PHP Warning:  sha1_file(/includes/configure.php) [<a href='function.sha1-file'>function.sha1-file</a>]: failed to open stream: No such file or directory in E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php on line 118
+[19-Jun-2013 12:15:24] PHP Stack trace:
+[19-Jun-2013 12:15:24] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:0
+[19-Jun-2013 12:15:24] PHP   2. zen_create_PADSS_password() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:57
+[19-Jun-2013 12:15:24] PHP   3. zen_pwd_rand() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:132
+[19-Jun-2013 12:15:24] PHP   4. zen_get_entropy() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:152
+[19-Jun-2013 12:15:24] PHP   5. sha1_file() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:118
+[19-Jun-2013 12:15:24] PHP Warning:  sha1_file(/includes/configure.php) [<a href='function.sha1-file'>function.sha1-file</a>]: failed to open stream: No such file or directory in E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php on line 118
+[19-Jun-2013 12:15:24] PHP Stack trace:
+[19-Jun-2013 12:15:24] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:0
+[19-Jun-2013 12:15:24] PHP   2. zen_create_PADSS_password() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:57
+[19-Jun-2013 12:15:24] PHP   3. zen_pwd_rand() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:132
+[19-Jun-2013 12:15:24] PHP   4. zen_get_entropy() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:153
+[19-Jun-2013 12:15:24] PHP   5. sha1_file() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:118
+[19-Jun-2013 12:15:24] PHP Warning:  sha1_file(/includes/configure.php) [<a href='function.sha1-file'>function.sha1-file</a>]: failed to open stream: No such file or directory in E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php on line 118
+[19-Jun-2013 12:15:24] PHP Stack trace:
+[19-Jun-2013 12:15:24] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:0
+[19-Jun-2013 12:15:24] PHP   2. zen_create_PADSS_password() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:57
+[19-Jun-2013 12:15:24] PHP   3. zen_pwd_rand() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:132
+[19-Jun-2013 12:15:24] PHP   4. zen_get_entropy() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:152
+[19-Jun-2013 12:15:24] PHP   5. sha1_file() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:118
+[19-Jun-2013 12:15:24] PHP Warning:  sha1_file(/includes/configure.php) [<a href='function.sha1-file'>function.sha1-file</a>]: failed to open stream: No such file or directory in E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php on line 118
+[19-Jun-2013 12:15:24] PHP Stack trace:
+[19-Jun-2013 12:15:24] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:0
+[19-Jun-2013 12:15:24] PHP   2. zen_create_PADSS_password() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:57
+[19-Jun-2013 12:15:24] PHP   3. zen_pwd_rand() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:132
+[19-Jun-2013 12:15:24] PHP   4. zen_get_entropy() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:153
+[19-Jun-2013 12:15:24] PHP   5. sha1_file() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:118
+[19-Jun-2013 12:15:24] PHP Warning:  sha1_file(/includes/configure.php) [<a href='function.sha1-file'>function.sha1-file</a>]: failed to open stream: No such file or directory in E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php on line 118
+[19-Jun-2013 12:15:24] PHP Stack trace:
+[19-Jun-2013 12:15:24] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:0
+[19-Jun-2013 12:15:24] PHP   2. zen_create_PADSS_password() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:57
+[19-Jun-2013 12:15:24] PHP   3. zen_pwd_rand() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:135
+[19-Jun-2013 12:15:24] PHP   4. zen_get_entropy() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:152
+[19-Jun-2013 12:15:24] PHP   5. sha1_file() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:118
+[19-Jun-2013 12:15:24] PHP Warning:  sha1_file(/includes/configure.php) [<a href='function.sha1-file'>function.sha1-file</a>]: failed to open stream: No such file or directory in E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php on line 118
+[19-Jun-2013 12:15:24] PHP Stack trace:
+[19-Jun-2013 12:15:24] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:0
+[19-Jun-2013 12:15:24] PHP   2. zen_create_PADSS_password() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:57
+[19-Jun-2013 12:15:24] PHP   3. zen_pwd_rand() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:135
+[19-Jun-2013 12:15:24] PHP   4. zen_get_entropy() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:153
+[19-Jun-2013 12:15:24] PHP   5. sha1_file() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:118
+[19-Jun-2013 12:15:24] PHP Warning:  sha1_file(/includes/configure.php) [<a href='function.sha1-file'>function.sha1-file</a>]: failed to open stream: No such file or directory in E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php on line 118
+[19-Jun-2013 12:15:24] PHP Stack trace:
+[19-Jun-2013 12:15:24] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:0
+[19-Jun-2013 12:15:24] PHP   2. zen_create_PADSS_password() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:57
+[19-Jun-2013 12:15:24] PHP   3. zen_pwd_rand() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:132
+[19-Jun-2013 12:15:24] PHP   4. zen_get_entropy() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:152
+[19-Jun-2013 12:15:24] PHP   5. sha1_file() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:118
+[19-Jun-2013 12:15:24] PHP Warning:  sha1_file(/includes/configure.php) [<a href='function.sha1-file'>function.sha1-file</a>]: failed to open stream: No such file or directory in E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php on line 118
+[19-Jun-2013 12:15:24] PHP Stack trace:
+[19-Jun-2013 12:15:24] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:0
+[19-Jun-2013 12:15:24] PHP   2. zen_create_PADSS_password() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:57
+[19-Jun-2013 12:15:24] PHP   3. zen_pwd_rand() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:132
+[19-Jun-2013 12:15:24] PHP   4. zen_get_entropy() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:153
+[19-Jun-2013 12:15:24] PHP   5. sha1_file() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:118
+[19-Jun-2013 12:15:24] PHP Warning:  sha1_file(/includes/configure.php) [<a href='function.sha1-file'>function.sha1-file</a>]: failed to open stream: No such file or directory in E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php on line 118
+[19-Jun-2013 12:15:24] PHP Stack trace:
+[19-Jun-2013 12:15:24] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:0
+[19-Jun-2013 12:15:24] PHP   2. zen_create_PADSS_password() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:57
+[19-Jun-2013 12:15:24] PHP   3. zen_pwd_rand() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:132
+[19-Jun-2013 12:15:24] PHP   4. zen_get_entropy() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:152
+[19-Jun-2013 12:15:24] PHP   5. sha1_file() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:118
+[19-Jun-2013 12:15:24] PHP Warning:  sha1_file(/includes/configure.php) [<a href='function.sha1-file'>function.sha1-file</a>]: failed to open stream: No such file or directory in E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php on line 118
+[19-Jun-2013 12:15:24] PHP Stack trace:
+[19-Jun-2013 12:15:24] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:0
+[19-Jun-2013 12:15:24] PHP   2. zen_create_PADSS_password() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:57
+[19-Jun-2013 12:15:24] PHP   3. zen_pwd_rand() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:132
+[19-Jun-2013 12:15:24] PHP   4. zen_get_entropy() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:153
+[19-Jun-2013 12:15:24] PHP   5. sha1_file() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:118
+[19-Jun-2013 12:15:24] PHP Warning:  sha1_file(/includes/configure.php) [<a href='function.sha1-file'>function.sha1-file</a>]: failed to open stream: No such file or directory in E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php on line 118
+[19-Jun-2013 12:15:24] PHP Stack trace:
+[19-Jun-2013 12:15:24] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:0
+[19-Jun-2013 12:15:24] PHP   2. zen_create_PADSS_password() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:57
+[19-Jun-2013 12:15:24] PHP   3. zen_pwd_rand() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:132
+[19-Jun-2013 12:15:24] PHP   4. zen_get_entropy() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:152
+[19-Jun-2013 12:15:24] PHP   5. sha1_file() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:118
+[19-Jun-2013 12:15:24] PHP Warning:  sha1_file(/includes/configure.php) [<a href='function.sha1-file'>function.sha1-file</a>]: failed to open stream: No such file or directory in E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php on line 118
+[19-Jun-2013 12:15:24] PHP Stack trace:
+[19-Jun-2013 12:15:24] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:0
+[19-Jun-2013 12:15:24] PHP   2. zen_create_PADSS_password() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:57
+[19-Jun-2013 12:15:24] PHP   3. zen_pwd_rand() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:132
+[19-Jun-2013 12:15:24] PHP   4. zen_get_entropy() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:153
+[19-Jun-2013 12:15:24] PHP   5. sha1_file() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:118
+[19-Jun-2013 12:15:24] PHP Warning:  sha1_file(/includes/configure.php) [<a href='function.sha1-file'>function.sha1-file</a>]: failed to open stream: No such file or directory in E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php on line 118
+[19-Jun-2013 12:15:24] PHP Stack trace:
+[19-Jun-2013 12:15:24] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:0
+[19-Jun-2013 12:15:24] PHP   2. zen_create_PADSS_password() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:57
+[19-Jun-2013 12:15:24] PHP   3. zen_pwd_rand() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:135
+[19-Jun-2013 12:15:24] PHP   4. zen_get_entropy() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:152
+[19-Jun-2013 12:15:24] PHP   5. sha1_file() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:118
+[19-Jun-2013 12:15:24] PHP Warning:  sha1_file(/includes/configure.php) [<a href='function.sha1-file'>function.sha1-file</a>]: failed to open stream: No such file or directory in E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php on line 118
+[19-Jun-2013 12:15:24] PHP Stack trace:
+[19-Jun-2013 12:15:24] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:0
+[19-Jun-2013 12:15:24] PHP   2. zen_create_PADSS_password() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:57
+[19-Jun-2013 12:15:24] PHP   3. zen_pwd_rand() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:135
+[19-Jun-2013 12:15:24] PHP   4. zen_get_entropy() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:153
+[19-Jun-2013 12:15:24] PHP   5. sha1_file() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:118
+[19-Jun-2013 12:15:24] PHP Warning:  sha1_file(/includes/configure.php) [<a href='function.sha1-file'>function.sha1-file</a>]: failed to open stream: No such file or directory in E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php on line 118
+[19-Jun-2013 12:15:24] PHP Stack trace:
+[19-Jun-2013 12:15:24] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:0
+[19-Jun-2013 12:15:24] PHP   2. zen_create_PADSS_password() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:57
+[19-Jun-2013 12:15:24] PHP   3. zen_pwd_rand() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:135
+[19-Jun-2013 12:15:24] PHP   4. zen_get_entropy() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:152
+[19-Jun-2013 12:15:24] PHP   5. sha1_file() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:118
+[19-Jun-2013 12:15:24] PHP Warning:  sha1_file(/includes/configure.php) [<a href='function.sha1-file'>function.sha1-file</a>]: failed to open stream: No such file or directory in E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php on line 118
+[19-Jun-2013 12:15:24] PHP Stack trace:
+[19-Jun-2013 12:15:24] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:0
+[19-Jun-2013 12:15:24] PHP   2. zen_create_PADSS_password() E:\easylamps\sites\zencartvizio\ezl_admin\password_forgotten.php:57
+[19-Jun-2013 12:15:24] PHP   3. zen_pwd_rand() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:135
+[19-Jun-2013 12:15:24] PHP   4. zen_get_entropy() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:153
+[19-Jun-2013 12:15:24] PHP   5. sha1_file() E:\easylamps\sites\zencartvizio\includes\functions\password_funcs.php:118

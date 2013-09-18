@@ -1,0 +1,132 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="content_edition.css" />
+		<!--<script type="text/javascript">
+			_editor_url = "../../editors/htmlarea/";
+			_editor_lang = "fr";
+		</script>
+		<script type="text/javascript" src="../../editors/htmlarea/htmlarea.js"></script>-->
+		<script type="text/javascript" src="content_edition.js"></script>
+		<title>CMS Easylamps - Editeur</title>
+	</head>
+	<body>
+		<h3>Edition de l'article n°<?php echo $editeur->article; ?></h3>
+		<form name="form_editor" method="POST" action=""><!--tous les champs de la page sont définis dans le même formulaire-->
+		
+			<!--Affichage du block pour sélecteurs de page et de type d'article-->
+			<table id="criteres">
+				<tr><td>Sélectionner une page : <select name="selpages">
+<?php 
+					foreach($editeur->optionspage as $key=>$option){
+						$selectattrib=($key==$editeur->page)?' selected ':' ';
+						echo "<option  $selectattrib value=\"$key\">".utf8_encode($option)." \n";
+					}					
+?>
+				</select></td>
+				<td>ET/OU Sélectionner un type d'article : <select name="seltypes">
+<?php 
+					foreach($editeur->optionstype as $key=>$option){
+						$selectattrib=($key==$editeur->type)?' selected ':' ';
+						echo "<option  $selectattrib value=\"$key\">$option \n";
+					}				
+?>			
+				</select></td>
+				<td><input type="submit" name="back" value="Retour liste"><!--Bouton pour soumettre les choix de sélection--></td></tr>
+			</table>		
+			<input type="hidden" name="idtxt" /><!--pour mise en cache de l'id du texte à éditer en HTMLArea>-->
+			<input type="hidden" name="cache" /><!-- pour mise en cache du texte à éditer en HTMLArea-->
+			<input type="hidden" name="langue" /><!--pour mise en cache de la langue du texte à éditer en HTMLArea-->
+			<!--Affichage du block pour l'édition de l'article-->
+<?php		
+			echo '<div id="resultats">';
+			while($articlerow=mysql_fetch_array($editeur->lignearticle)){ //Boucle sur une seule ligne par définition de $editeur->lignearticle
+				echo '<table id="articles">';echo "\n";
+					echo '<tr class="articles">';echo "\n";
+						//id
+						echo '<td class="id">'.$articlerow[id].'</td>';echo "\n";
+						//page
+						echo '<td  class="id">'.utf8_encode($editeur->optionspage[$articlerow[id_page]]).'</td>';echo "\n";
+						//sélecteur de type
+						echo '<td class="type"><select name="seltype'.$articlerow[id].'">';echo "\n";
+						foreach($editeur->optionstype as $option){
+							$selectattrib=(utf8_encode($articlerow[type])==$option)?' selected ':' ';
+							echo "<option  $selectattrib value=\"$option\">$option \n";
+						}
+						echo '</select></td>';echo "\n";
+						//sélecteur de constructeur
+						echo '<td class="constructeur"><select name="selconstructeur'.$articlerow[id].'">';echo "\n";
+						foreach($editeur->optionsconstructeur as $option){
+							$selectattrib=(utf8_encode($articlerow[constructeur])==$option)?' selected ':' ';
+							echo "<option  $selectattrib value=\"$option\">$option \n";
+						}
+						echo '</select></td>';echo "\n";
+						//sélecteur de type produit
+						echo '<td class="typeproduit"><select name="seltypeprod'.$articlerow[id].'">';echo "\n";
+						foreach($editeur->optionstypeprod as $option){
+							$selectattrib=(utf8_encode($articlerow[typeprod])==$option)?' selected ':' ';
+							echo "<option  $selectattrib value=\"$option\">$option \n";
+						}
+						echo '</select></td>';echo "\n";
+						//case à cocher (CAC) Publi
+						echo '<td  class="publi">'.$editeur->faireCACPubli($articlerow[id],$articlerow[publi]).'</td>';echo "\n";
+						//input ordre
+						echo '<td class="ordre"><input type="text" name="ordart'.$articlerow[id].'" value="'.$articlerow[ordre].'" size="2" /></td>';echo "\n";
+						//date de dernière mise à jour
+						echo '<td class="maj">'.$articlerow[dt_maj].'</td>';echo "\n";
+						echo '<td><input type="hidden" name="idart" value="'.$articlerow[id].'" /><input type="submit" name="ajouttexte" value="Ajouter texte" /></td>';echo "\n";
+						echo '</tr>';echo "\n";
+				//Et pour chaque article, affichage des textes qui le composent
+				if($editeur->fairejeutextes($articlerow[id])){
+					While($textrow=mysql_fetch_array($editeur->jeutextes)){
+						//Tronquage du texte français par défaut pour affichage ligne
+						$frtrunc=substr(utf8_encode($textrow[fr_text]),0,25);
+						//Préparation des textes pour passage en cache à Textarea	
+						$fr=addslashes(utf8_encode($textrow[fr_text]));
+						$en=addslashes(utf8_encode($textrow[en_text]));
+						$sp=addslashes(utf8_encode($textrow[sp_text]));
+						$it=addslashes(utf8_encode($textrow[it_text]));
+						$de=addslashes(utf8_encode($textrow[de_text]));
+						echo '<tr class="textes">';echo "\n";
+							//id
+							echo '<td class="id">'.$textrow[id].'</td>';echo "\n";
+							//sélecteur de format
+							echo '<td  class="format"><select name="selformat'.$textrow[id].'">';echo "\n";
+							foreach($editeur->optionsformat as $option){
+								$selectattrib=(utf8_encode($textrow[format])==$option)?' selected ':' ';
+								echo "<option  $selectattrib value=\"$option\">$option \n";									
+							}								
+							echo '</select></td>';echo "\n";
+							//input ordre
+							echo '<td class="ordre"><input size="2" type="text" name="ordtxt'.$textrow[id].'" value="'.$textrow[ordre].'" size="2" /></td>';echo "\n";
+							//texte tronqué en Fr
+							echo '<td class="trunctext">'.$frtrunc.'[...]</td>';echo " \n";
+							//boutons-drapeaux
+							echo '<td class="flag">';
+							echo '<input name="flagfr" type="image" src="images/drapeau_fr.png" alt="Edition du texte French" title="Edition du texte French" onclick="mettreEnCache('.$textrow[id].',\''.$fr.'\',\'fr\');"/>';echo "\n";							
+							echo '<input name="flagen" type="image" src="images/drapeau_en.png" alt="Edition du texte English" title="Edition du texte English" onclick="mettreEnCache('.$textrow[id].',\''.$en.'\',\'en\');"/>';echo "\n";							
+							echo '<input name="flagsp" type="image" src="images/drapeau_sp.png" alt="Edition du texte Spanish" title="Edition du texte Spanish" onclick="mettreEnCache('.$textrow[id].',\''.$sp.'\',\'sp\');"/>';echo "\n";							
+							echo '<input name="flagit" type="image" src="images/drapeau_it.png" alt="Edition du texte Italia" title="Edition du texte Italia" onclick="mettreEnCache('.$textrow[id].',\''.$it.'\',\'it\');"/>';echo "\n";							
+							echo '<input name="flagde" type="image" src="images/drapeau_de.png" alt="Edition du texte Deutschland" title="Edition du texte Deutschland" onclick="mettreEnCache('.$textrow[id].',\''.$de.'\',\'de\');"/>';echo "\n";
+							echo '</td>';echo "\n";
+							//date de dernière mise à jour
+							echo '<td class="maj">'.$textrow[dt_maj].'</td>';echo "\n";
+							echo '<td><input type="submit" name="supprtexte" value="Suppr'.$textrow[id].'" /></td>';echo "\n";
+						echo '</tr>';echo "\n";
+					}
+					mysql_data_seek($editeur->jeutextes,0);
+				}
+				echo '</table>';echo "\n";
+			}
+			mysql_data_seek($editeur->lignearticle,0);
+			//Affichage de la zone d'édition des textes
+			echo '<textarea id="editeurHTML">';
+				echo $editeur->cache;
+			echo '</textarea>';
+			echo '<br />';
+			echo '<input name="update" type="image" src="images/bouton_appliquer.gif" alt="Apliquer les changements et revenir aux listes" value="fairemaj" onclick="recupererTextArea('.$editeur->idtxt.',\''.$editeur->langue.'\');"/>';
+			echo '</div>';//fin du block d'édition
+?>			
+		</form><!--fin du formulaire-->
+	</body>
+</html>

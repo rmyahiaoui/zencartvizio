@@ -1,0 +1,23 @@
+[25-Jun-2013 10:55:33] PHP Fatal error:  1054:Unknown column 'pd.product_name' in 'field list' :: select p.products_id, pd.product_name,
+                  pd.products_description, p.products_model,
+                  p.products_quantity, p.products_image,
+                  pd.products_url, p.products_price,
+                  p.products_tax_class_id, p.products_date_added,
+                  p.products_date_available, p.manufacturers_id, p.products_quantity,
+                  p.products_weight, p.products_priced_by_attribute, p.product_is_free,
+                  p.products_qty_box_status,
+                  p.products_quantity_order_max,
+                  p.products_discount_type, p.products_discount_type_from, p.products_sort_order, p.products_price_sorter
+           from   products p, products_description pd
+           where  p.products_status = '1'
+           and    p.products_id = '1'
+           and    pd.products_id = p.products_id
+           and    pd.language_id = '2' in E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php on line 120
+[25-Jun-2013 10:55:33] PHP Stack trace:
+[25-Jun-2013 10:55:33] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[25-Jun-2013 10:55:33] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:97
+[25-Jun-2013 10:55:33] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:128
+[25-Jun-2013 10:55:33] PHP   4. queryFactory->Execute() E:\easylamps\sites\zencartvizio\includes\modules\pages\product_info\main_template_vars.php:57
+[25-Jun-2013 10:55:33] PHP   5. queryFactory->set_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:227
+[25-Jun-2013 10:55:33] PHP   6. queryFactory->show_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:105
+[25-Jun-2013 10:55:33] PHP   7. trigger_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:120

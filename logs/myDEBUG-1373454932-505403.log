@@ -1,0 +1,5 @@
+[10-Jul-2013 11:15:32] PHP Parse error:  syntax error, unexpected '}' in E:\easylamps\sites\zencartvizio\includes\templates\theme317\templates\tpl_index_product_list.php on line 202
+[10-Jul-2013 11:15:32] PHP Stack trace:
+[10-Jul-2013 11:15:32] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[10-Jul-2013 11:15:32] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:97
+[10-Jul-2013 11:15:32] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:128

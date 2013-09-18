@@ -1,0 +1,5 @@
+[28-Aug-2013 15:46:18] PHP Parse error:  syntax error, unexpected ';' in E:\easylamps\sites\zencartvizio\includes\templates\theme317\templates\tpl_product_info_display.php on line 100
+[28-Aug-2013 15:46:18] PHP Stack trace:
+[28-Aug-2013 15:46:18] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[28-Aug-2013 15:46:18] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:98
+[28-Aug-2013 15:46:18] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:288

@@ -1,0 +1,4 @@
+[12-Jul-2013 10:08:21] PHP Parse error:  syntax error, unexpected '}' in E:\easylamps\sites\zencartvizio\includes\index_filters\default_filter.php on line 93
+[12-Jul-2013 10:08:21] PHP Stack trace:
+[12-Jul-2013 10:08:21] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[12-Jul-2013 10:08:21] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:36

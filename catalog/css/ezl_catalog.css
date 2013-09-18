@@ -1,0 +1,124 @@
+#liens_produits {
+	padding: 10px;
+}
+
+#liens_produits h2{
+	background-position: center;
+	color: #b93d09;
+}
+
+#barre_pagination_liens {
+	background-color: #FBF2D3;
+	padding: 10px;
+}
+
+#barre_pagination_liens a {
+	color: #B98670;
+}
+
+#barre_pagination_liens a#pageActive, span {
+	color: #b93d09;
+}
+
+#barre_pagination_liens a#pageActive {
+	font-weight: bolder;
+}
+
+ul#liste_liens li {
+	list-style-type: circle;
+}
+
+#liste_logosMarques ul {
+	list-style-type: none;
+}
+
+#liste_logosMarques ul li{
+	display: inline;
+	margin: 5px;
+}
+
+#IMG_et_lien_page_constructeurs {
+/*	float: right;*/
+	margin-left:15px;
+	margin-bottom:10px;
+}
+
+#lien_page_constructeurs {
+/*	float: left;*/
+	display: inline;
+	margin-left:15px;
+}
+
+#IMG_et_lien_page_constructeurs img{
+	width:112;
+	height:112;
+/*	float: left;*/
+	display: inline;
+}
+
+#IMG_et_lien_page_constructeurs a{
+/*	float: right;*/
+	margin-left:10px;
+	margin-top:30px;
+}
+
+#partie_caracteristiques {
+	margin-left: 15px;
+	padding-right: 15px;
+}
+
+table#liste_lampes caption{
+	margin-top:5px;
+	margin-bottom:10px;
+	font-size:smaller;
+	font-weight: bolder;
+}
+
+table#liste_lampes {
+	margin: auto;
+	font-size:12px;
+	background-color: #FCD3C2;
+	border: thin solid #FF0000;
+	border-collapse: collapse;
+}
+
+table#liste_lampes th {
+	font-weight:bold;
+    vertical-align:middle; 
+	text-align:center;
+	border-width: thin;
+	border-style: solid;
+	padding: 3px;
+}
+
+table#liste_lampes td  {
+    vertical-align: middle; 
+	text-align: left;
+	border-width: thin;
+	border-style: solid;
+	padding: 3px;
+}
+
+.ref_lampe  {
+	width:25%;
+}
+
+.options_lampe  {
+	width:25%;
+}
+
+.ref_video  {
+	width:50%;
+}
+
+ul#liste_videoprojecteursCompatibles, ul#liste_options {
+	margin-left: 20px;
+	list-style-type: none;
+}
+
+ul#liste_D {
+	margin-left: 20px;
+}
+
+
+

@@ -1,0 +1,5 @@
+[01-Jul-2013 11:43:28] PHP Parse error:  syntax error, unexpected ';' in E:\easylamps\sites\zencartvizio\includes\classes\category_tree.php on line 150
+[01-Jul-2013 11:43:28] PHP Stack trace:
+[01-Jul-2013 11:43:28] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[01-Jul-2013 11:43:28] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:26
+[01-Jul-2013 11:43:28] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\application_top.php:149

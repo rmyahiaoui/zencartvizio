@@ -1,0 +1,5 @@
+[01-Jul-2013 09:41:27] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php on line 240
+[01-Jul-2013 09:41:27] PHP Stack trace:
+[01-Jul-2013 09:41:27] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:0
+[01-Jul-2013 09:41:27] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:138
+[01-Jul-2013 09:41:27] PHP   3. queryFactory->Execute() E:\easylamps\sites\zencartvizio\ezl_admin\includes\modules\product\collect_info.php:508

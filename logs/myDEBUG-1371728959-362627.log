@@ -1,0 +1,8 @@
+[20-Jun-2013 11:49:19] PHP Warning:  require(includes/templates/theme317/google_analytics/google_analytics.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php on line 216
+[20-Jun-2013 11:49:19] PHP Stack trace:
+[20-Jun-2013 11:49:19] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[20-Jun-2013 11:49:19] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:97
+[20-Jun-2013 11:49:19] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'includes/templates/theme317/google_analytics/google_analytics.php' (include_path='.;C:\php\pear') in E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php on line 216
+[20-Jun-2013 11:49:19] PHP Stack trace:
+[20-Jun-2013 11:49:19] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[20-Jun-2013 11:49:19] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:97

@@ -1,0 +1,11 @@
+table.clts{
+	border: 1px solid black;
+	margin-top:10px;
+}
+td{
+	vertical-align: middle;
+	text-align: center;
+}
+.bold{
+font-weight:bold;
+}

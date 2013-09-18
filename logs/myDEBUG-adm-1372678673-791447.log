@@ -1,0 +1,5 @@
+[01-Jul-2013 11:37:53] PHP Catchable fatal error:  Object of class queryFactoryResult could not be converted to string in E:\easylamps\sites\zencartvizio\ezl_admin\includes\modules\product\collect_info.php on line 510
+[01-Jul-2013 11:37:53] PHP Stack trace:
+[01-Jul-2013 11:37:53] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:0
+[01-Jul-2013 11:37:53] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:138
+[01-Jul-2013 11:37:53] PHP   3. str_replace() E:\easylamps\sites\zencartvizio\ezl_admin\includes\modules\product\collect_info.php:510

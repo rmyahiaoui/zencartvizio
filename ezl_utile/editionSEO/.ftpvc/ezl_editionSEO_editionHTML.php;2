@@ -1,0 +1,149 @@
+<?php
+require_once('../../ezl_page.php'); 
+require_once('../../ezl_utile.php'); 
+require_once('../../ezl_langue.php'); 
+require_once('../../catalog/main.php');
+require_once('ezl_editionSEO_commun.php');
+
+/**
+ * Permet d'éditer les chaines de la table el_seo_texts
+ */
+class ezl_editionSEO_editionHTML {
+	/**
+	 * Liste des actions possible
+	 */
+	const ACTION_INITIALISER 			= 0; // Aucune action, affichage seulement
+	const ACTION_SOUMETTRE_SAISIE		= 1; // Soumission du texte édité en HTML
+
+	const CHAINE_TITRE					= 'Edition d\'une valeur de champ d\'écran Easylamps'; // Titre page
+	const NOM_PARAM_INDICE				= 'nom_page';
+	const NOM_PARAM_LANGUE				= 'nom_zone';
+
+    public $action = self::ACTION_INITIALISER;
+    public $params = null;
+
+	function __construct() {
+	    $this->params = array();
+	}
+
+	private function get_nomPage() {
+		return ezl_page::$chaines_db[$this->params[ezl_editionSEO_commun::NOM_PARAM_ID_PAGE]];
+	}
+
+	private function get_nomZone() {
+		return ezl_page::$chaines_db_zone[$this->params[ezl_editionSEO_commun::NOM_PARAM_ID_ZONE]];
+	}
+
+	function selectionnerLesChaines() {
+		global $conn;
+		$resultat = array();
+		$sql = sprintf("
+			SELECT screen_code, screen_zone, type_cstr, type_lamp, indice, screen_text_fr 
+			FROM el_seo_texts
+			WHERE screen_code='%s'
+				AND screen_zone IN ('%s')", $this->get_nomPage(), implode($this->get_nomsZones(), "','"));
+		print_r($sql);		
+		$recordSet =& $conn->Execute($sql);
+		if (isset($recordSet)) {
+			while (!$recordSet->EOF) {
+				$nouvelleLigne = array();
+				foreach (self::$colonnes as $colonne => $champ_db) {
+					if (!empty($champ_db)) {
+						$nouvelleLigne[$champ_db] = $recordSet->fields[$champ_db];
+					}	
+				}
+				$resultat[] = $nouvelleLigne;
+				$recordSet->moveNext();
+			}
+		}
+		return $resultat;
+	}			
+		
+	function ajouterMessage($texte) {
+/*		if (!empty($this->message)) {
+			$this->message .= '<br/>'
+		}
+*/		
+		$this->message .= $texte;
+	}
+	
+	/**
+	 * Affichage de la page
+	 */
+	function afficherPage()	{
+		$html = '<html><head>';
+		$html .= '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
+		$html .= '<link rel="stylesheet" type="text/css" href="ezl_editionSEO.css" />';
+		$html .= '<script type="text/javascript" src="ezl_editionSEO.js"></script>';
+		$html .= sprintf('<title>%s</title>', self::CHAINE_TITRE);;
+		$html .= '</head>';
+		$html .= '<body>';
+		$html .= sprintf('<h1>%s</h1>', self::CHAINE_TITRE);;
+		$html .= '<div id="message">';
+		if (!empty($this->message)) {
+			$html .= $this->message;
+		}	
+		$html .= '</div>';
+		$html .= '<form name="formulaire" method="post">';
+		$html .= '<div id="criteres">';
+		$html .= '<h2>Paramètres:</h2>';
+		foreach ($this->params as $nomParam => $valeurParam) {
+			$html .= sprintf('<p>%s : %s</p>', $nomParam, $valeurParam);
+		}	
+		$html .= sprintf('<img src="images/drapeau_%1$s.png"/>', $this->params[ezl_editionSEO_commun::NOM_PARAM_LANGUE]);
+		$html .= '</div>'; // id="criteres"
+		$html .= '</form></body></html>';
+		echo $html;
+	}
+
+	/**
+	 * Rcupre les donnes de la page
+	 */
+	function recupererForm()
+	{
+		$this->action = self::ACTION_INITIALISER;
+		// ezl_editionSEO_selection::NOM_SELECT_NOM_PAGE
+		// ezl_editionSEO_selection::NOM_SELECT_NOM_ZONE
+		// ezl_editionSEO_selection::NOM_PARAM_INDICE
+		// ezl_editionSEO_selection::NOM_PARAM_LANGUE
+		foreach (ezl_editionSEO_commun::$params_editionHTML as $param) {
+			if (!array_key_exists($param, $_GET)) {
+				trigger_error(sprintf('Paramètre (%s) requis', $param), E_USER_ERROR);
+			}
+			$this->params[$param] = $_GET[$param];
+		}
+		// Ids ---> Chaines
+		$this->params[ezl_editionSEO_commun::NOM_PARAM_ID_PAGE] = ezl_page::$chaines_db[$this->params[ezl_editionSEO_commun::NOM_PARAM_ID_PAGE]];
+		$this->params[ezl_editionSEO_commun::NOM_PARAM_ID_ZONE] = ezl_page::$chaines_db_zone[$this->params[ezl_editionSEO_commun::NOM_PARAM_ID_ZONE]];
+	}
+
+	/**
+	 * Mcanique d'xecution
+	 */
+	function derouler()	{
+		$this->recupererForm();
+		switch ($this->action)
+		{
+			case self::ACTION_INITIALISER:
+				// On fait rien, la page s'affiche plus bas.
+				break;
+			case self::ACTION_SOUMETTRE_SAISIE:
+//				$this->editerTexte();
+				break;
+		}
+		$this->afficherPage();
+	}
+	
+	/**
+	 * Lit les donnes du flux
+	 */
+	public function editerTexte() {
+		$resultat = NULL;
+		return $resultat;
+	}
+}
+
+$controleur = new ezl_editionSEO_editionHTML;
+$controleur->derouler();
+
+?>

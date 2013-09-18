@@ -1,0 +1,304 @@
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant IH_RESIZE_TITLE in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 491
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:491
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant IH_RESIZE_TEXT in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 491
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:491
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant SMALL_IMAGE_FILETYPE_TITLE in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 491
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:491
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant SMALL_IMAGE_FILETYPE_TEXT in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 491
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:491
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant SMALL_IMAGE_BACKGROUND_TITLE in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 494
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:494
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant SMALL_IMAGE_BACKGROUND_TEXT in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 494
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:494
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant SMALL_IMAGE_QUALITY_TITLE in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 494
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:494
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant SMALL_IMAGE_QUALITY_TEXT in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 494
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:494
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant WATERMARK_SMALL_IMAGES_TITLE in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 491
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:491
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant WATERMARK_SMALL_IMAGES_TEXT in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 491
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:491
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant ZOOM_SMALL_IMAGES_TITLE in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 491
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:491
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant ZOOM_SMALL_IMAGES_TEXT in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 491
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:491
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant ZOOM_IMAGE_SIZE_TITLE in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 491
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:491
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant ZOOM_IMAGE_SIZE_TEXT in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 491
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:491
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant MEDIUM_IMAGE_FILETYPE_TITLE in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 491
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:491
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant MEDIUM_IMAGE_FILETYPE_TEXT in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 491
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:491
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant MEDIUM_IMAGE_BACKGROUND_TITLE in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 494
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:494
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant MEDIUM_IMAGE_BACKGROUND_TEXT in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 494
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:494
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant MEDIUM_IMAGE_QUALITY_TITLE in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 494
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:494
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant MEDIUM_IMAGE_QUALITY_TEXT in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 494
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:494
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant WATERMARK_MEDIUM_IMAGES_TITLE in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 491
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:491
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant WATERMARK_MEDIUM_IMAGES_TEXT in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 491
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:491
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant LARGE_IMAGE_FILETYPE_TITLE in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 491
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:491
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant LARGE_IMAGE_FILETYPE_TEXT in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 491
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:491
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant LARGE_IMAGE_BACKGROUND_TITLE in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 494
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:494
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant LARGE_IMAGE_BACKGROUND_TEXT in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 494
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:494
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant LARGE_IMAGE_QUALITY_TITLE in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 494
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:494
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant LARGE_IMAGE_QUALITY_TEXT in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 494
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:494
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant WATERMARK_LARGE_IMAGES_TITLE in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 491
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:491
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant WATERMARK_LARGE_IMAGES_TEXT in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 491
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:491
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant LARGE_IMAGE_MAX_WIDTH_TITLE in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 494
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:494
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant LARGE_IMAGE_MAX_WIDTH_TEXT in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 494
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:494
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant LARGE_IMAGE_MAX_HEIGHT_TITLE in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 494
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:494
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant LARGE_IMAGE_MAX_HEIGHT_TEXT in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 494
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:494
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant WATERMARK_GRAVITY_TITLE in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 491
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:491
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant WATERMARK_GRAVITY_TEXT in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 491
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:228
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:491
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant IH_VERSION_TITLE in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 532
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_overwrite_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:255
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:532
+[19-Jun-2013 15:52:31] PHP Warning:  constant() [<a href='function.constant'>function.constant</a>]: Couldn't find constant IH_VERSION_TEXT in E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php on line 532
+[19-Jun-2013 15:52:31] PHP Stack trace:
+[19-Jun-2013 15:52:31] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:0
+[19-Jun-2013 15:52:31] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\categories.php:9
+[19-Jun-2013 15:52:31] PHP   3. require() E:\easylamps\sites\zencartvizio\ezl_admin\includes\application_top.php:147
+[19-Jun-2013 15:52:31] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\autoload_func.php:48
+[19-Jun-2013 15:52:31] PHP   5. xxxx_overwrite_create_menu_item() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:255
+[19-Jun-2013 15:52:31] PHP   6. constant() E:\easylamps\sites\zencartvizio\ezl_admin\includes\init_includes\init_image_handler.php:532

@@ -1,0 +1,14 @@
+- Fichier H:\Sites\zencart_fr\includes\variables_locales.php doit contenir: 
+	define('LOCAL_CODE_PATH_BASE', 'h:\\sites\\zencart_fr\\');	// fvaron: 'c:\\sites\\zencart_fr\\' gilles: 'h:\\sites\\zencart_fr\\'
+	define('LOCAL_ZENCART_CACHE_PATH', LOCAL_CODE_PATH_BASE . 'cache');
+- Supprimer ou renommer le répertoire zc_install s'il est créé 	
+- Moins sûr, fichiers à vérifier 
+  H:\Sites\zencart_fr\admin\includes\variables_locales.php 
+  	define('LOCAL_ZENCART_PATH_BASE', 'h:/sites/zencart_fr/'); // fvaron: 'c:/sites/zencart_fr/' gilles: 'h:/sites/zencart_fr/'
+  H:\Sites\zencart_fr\includes\configure_local.php
+- Fichier H:\Sites\zencart_fr\includes\configure.php contient à présent le mot de passe >>define('DB_SERVER_PASSWORD', 'mysql');<< au lieu de ''
+  
+  
+    
+    	
+	

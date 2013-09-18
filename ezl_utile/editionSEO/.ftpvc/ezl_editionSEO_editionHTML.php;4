@@ -1,0 +1,178 @@
+<?php
+require_once('../../ezl_page.php'); 
+require_once('../../ezl_utile.php'); 
+require_once('../../ezl_langue.php'); 
+require_once('../../catalog/main.php');
+require_once('ezl_editionSEO_commun.php');
+
+/**
+ * Permet d'éditer les chaines de la table el_seo_texts
+ */
+class ezl_editionSEO_editionHTML {
+	/**
+	 * Liste des actions possible
+	 */
+	const ACTION_INITIALISER 			= 0; // Aucune action, affichage seulement
+	const ACTION_APPLIQUER_SAISIE		= 1; // Soumission du texte édité en HTML
+	const ACTION_ANNULER_SAISIE			= 2; // Soumission du texte édité en HTML
+
+	const CHAINE_TITRE					= 'Edition d\'une valeur de champ d\'écran Easylamps'; // Titre page
+
+    public $action = self::ACTION_INITIALISER;
+    public $params = null;
+    public $texte_saisie_HTML = null;
+
+	function __construct() {
+	    $this->params = array();
+	}
+
+	function entrerSortirChaine() {
+		global $conn;
+		$nomChampLangue = sprintf('screen_text_%s', $this->params[ezl_editionSEO_commun::NOM_PARAM_LANGUE]);
+		switch ($this->action) {
+			case self::ACTION_INITIALISER;
+				$sql = sprintf("SELECT %s FROM el_seo_texts", $nomChampLangue);
+				break;
+			case self::ACTION_APPLIQUER_SAISIE;
+				$sql = sprintf("UPDATE el_seo_texts set %s = '%s'", $nomChampLangue, utf8_decode($this->texte_saisie_HTML));
+				break;
+		}
+		$sql .= sprintf(" WHERE 
+			screen_code='%s'
+			AND screen_zone='%s' 
+			AND indice=%d", 
+				$this->params[ezl_editionSEO_commun::NOM_PARAM_ID_PAGE],
+				$this->params[ezl_editionSEO_commun::NOM_PARAM_ID_ZONE],
+				$this->params[ezl_editionSEO_commun::NOM_PARAM_INDICE]
+				);
+//		print_r($sql);
+		$recordSet =& $conn->Execute($sql);
+		if (self::ACTION_INITIALISER == $this->action) {
+			if (!isset($recordSet)) {
+				trigger_error("??? Erreur paramètres : Aucun champ retourné. ???");
+			}	
+			$this->texte_saisie_HTML = utf8_encode($recordSet->fields[$nomChampLangue]);
+		}	
+	}			
+		
+	/**
+	 * Affichage de la page en mode saisie
+	 */
+	function afficherPageSasie()	{
+		$html = '<html><head>';
+		$html .= '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
+		$html .= '<link rel="stylesheet" type="text/css" href="ezl_editionSEO.css" />';
+		$html .= '<script type="text/javascript">
+			_editor_url = "htmlarea";
+			_editor_lang = "fr";
+			</script>';
+		$html .= '<script type="text/javascript" src="htmlarea/htmlarea.js"></script>';
+		$html .= '<script type="text/javascript" src="ezl_editionSEO.js"></script>';
+		$html .= '<script type="text/javascript">
+			preparerEditeurHTML();
+			</script>';
+		$html .= sprintf('<title>%s</title>', self::CHAINE_TITRE);;
+		$html .= '</head>';
+		$html .= '<body onload="preparerEditeurHTML()">';
+		$html .= sprintf('<h1>%s</h1>', self::CHAINE_TITRE);;
+		$html .= '<div id="message">';
+		if (!empty($this->message)) {
+			$html .= $this->message;
+		}	
+		$html .= '</div>';
+		$html .= '<div id="criteres">';
+		$html .= '<h2>Paramètres:</h2>';
+		foreach ($this->params as $nomParam => $valeurParam) {
+			$html .= sprintf('<p>%s : %s</p>', $nomParam, $valeurParam);
+		}	
+		$html .= sprintf('<img src="images/drapeau_%1$s.png"/>', $this->params[ezl_editionSEO_commun::NOM_PARAM_LANGUE]);
+		$html .= '</div>'; // id="criteres"
+		$html .= '<form name="editition" method="post">';
+		$html .= '<textarea id="editeurHTML">';
+		$html .= $this->texte_saisie_HTML;
+		$html .= '</textarea>';
+		$html .= '<input name="texte_saisie_pour_POST" id="texte_saisie_pour_POST" type="hidden"/>';
+//		$html .= sprintf('<input name="%s" id="%1$s" type="hidden" value="%s"/>', self::NOM_PARAM_TOUS_LES_PARAMS, $this->params[self::NOM_PARAM_TOUS_LES_PARAMS]);
+		$urlRelance = $_SERVER['PHP_SELF'] . '?' . $_SERVER['QUERY_STRING'];
+		$html .= sprintf('<input name="bouton_appliquer[]" id="bouton_appliquer" type="image" src="images/bouton_appliquer.gif" alt="Apliquer les changements et fermer" onclick="recupererTexteSaisie(\'%s\')"/>', $urlRelance);
+		$html .= '<input name="bouton_annuler[]" id="bouton_annuler" type="image" src="images/bouton_annuler.gif" alt="Annuler les changements et fermer"/>';
+		$html .= '</form>';
+		$html .= '</body></html>';
+		echo $html;
+	}
+
+	function afficherPageFin()	{
+		$html = '<html><head>';
+		$html .= '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
+		$html .= '<script type="text/javascript" src="ezl_editionSEO.js"></script>';
+		$html .= '<link rel="stylesheet" type="text/css" href="ezl_editionSEO.css" />';
+		$html .= sprintf('<title>%s</title>', self::CHAINE_TITRE);;
+		$html .= '</head>';
+		$html .= '<body onload="declancherFermetureFenetre()">';
+		$html .= sprintf('<h1>%s</h1>', self::CHAINE_TITRE);;
+		$html .= '<div id="criteres">';
+		switch ($this->action) {
+			case self::ACTION_APPLIQUER_SAISIE:
+				$html .= '<p class="messageFinSaisieEnregistree">Saisie enregistrée</p>';
+				break;
+			case self::ACTION_ANNULER_SAISIE:
+				$html .= '<p class="messageFinSaisieAnnulee">Saisie annulée</p>';
+				break;
+		}
+		$html .= '</div>'; // id="criteres"
+		$html .= '</body></html>';
+		echo $html;
+	}
+
+	/**
+	 * Rcupre les donnes de la page
+	 */
+	function recupererForm() {
+		$this->action = self::ACTION_INITIALISER;
+		// La quesy string est identique dans tous les cas
+		foreach (ezl_editionSEO_commun::$params_editionHTML as $param) {
+			if (!array_key_exists($param, $_GET)) {
+				trigger_error(sprintf('Paramètre (%s) requis', $param), E_USER_ERROR);
+			}
+			$this->params[$param] = $_GET[$param];
+		}
+		// Ids ---> Chaines
+		$this->params[ezl_editionSEO_commun::NOM_PARAM_ID_PAGE] = ezl_page::$chaines_db[$this->params[ezl_editionSEO_commun::NOM_PARAM_ID_PAGE]];
+		$this->params[ezl_editionSEO_commun::NOM_PARAM_ID_ZONE] = ezl_page::$chaines_db_zone[$this->params[ezl_editionSEO_commun::NOM_PARAM_ID_ZONE]];
+//		$this->params[self::NOM_PARAM_TOUS_LES_PARAMS] = $_SERVER['QUERY_STRING'];
+
+		if (array_key_exists('bouton_appliquer', $_POST)) {
+			$this->action = self::ACTION_APPLIQUER_SAISIE;
+			$this->texte_saisie_HTML = $_POST['texte_saisie_pour_POST'];
+		}
+		if (array_key_exists('bouton_annuler', $_POST)) {
+			$this->action = self::ACTION_ANNULER_SAISIE;
+		}
+	}
+
+	/**
+	 * Execution du script
+	 */
+	function derouler()	{
+		$this->recupererForm();
+		switch ($this->action) {
+			case self::ACTION_INITIALISER:
+				$this->entrerSortirChaine();
+				$this->afficherPageSasie();
+				break;
+			case self::ACTION_APPLIQUER_SAISIE:
+				$this->entrerSortirChaine();
+				$this->afficherPageFin();
+				break;
+			case self::ACTION_ANNULER_SAISIE:
+				$this->afficherPageFin();
+				break;
+		}
+	}
+	
+}
+
+$controleur = new ezl_editionSEO_editionHTML;
+$controleur->derouler();
+
+?>

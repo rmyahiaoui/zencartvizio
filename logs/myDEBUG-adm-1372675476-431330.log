@@ -1,0 +1,8 @@
+[01-Jul-2013 10:44:36] PHP Fatal error:  1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DESC' at line 1 :: select * FROM categories_description DESC in E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php on line 120
+[01-Jul-2013 10:44:36] PHP Stack trace:
+[01-Jul-2013 10:44:36] PHP   1. {main}() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:0
+[01-Jul-2013 10:44:36] PHP   2. require() E:\easylamps\sites\zencartvizio\ezl_admin\product.php:138
+[01-Jul-2013 10:44:36] PHP   3. queryFactory->Execute() E:\easylamps\sites\zencartvizio\ezl_admin\includes\modules\product\collect_info.php:508
+[01-Jul-2013 10:44:36] PHP   4. queryFactory->set_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:227
+[01-Jul-2013 10:44:36] PHP   5. queryFactory->show_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:105
+[01-Jul-2013 10:44:36] PHP   6. trigger_error() E:\easylamps\sites\zencartvizio\includes\classes\db\mysql\query_factory.php:120

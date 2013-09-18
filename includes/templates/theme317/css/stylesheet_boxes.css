@@ -1,0 +1,164 @@
+
+/* ----------------------- BOXES ------------------------- */
+
+.box{ background:#fff; margin-bottom:4px; width:100%;}
+.box .left-top{ background:url(../images/corner-left-top.gif) left top no-repeat;}
+.box .right-top{ background:url(../images/corner-right-top.gif) right top no-repeat;}
+.box .right-bot{ background:url(../images/corner-right-bot.gif) right bottom no-repeat;}
+.box .left-bot{ background:url(../images/corner-left-bot.gif) left bottom no-repeat; width:100%;}
+.box .indent{ padding:12px;}
+
+.box .box-head{ background:url(../images/box-head-tail.gif) top repeat-x; font-size:12px; text-transform:uppercase; color:#fff; font-weight:bold; margin-bottom:12px;}
+.box .box-head .left-bg{ background:url(../images/box-head-left-bg.gif) left top no-repeat;}
+.box .box-head .right-bg{ background:url(../images/box-head-right-bg.gif) right top no-repeat; padding:5px 4px 5px 30px;}
+.box .box-head a{ color:#fff; text-decoration:none;}
+.box .box-head a:hover{ color:#fff; text-decoration:underline;}
+.box .box-body{ padding-bottom:13px;}
+
+.box ul{ margin:0; padding:11px 0 0 27px;}
+.box ul li{ line-height:28px;}
+.box ul li a{ color:#073699; text-decoration:none;}
+.box ul li a:hover{ color:#9d9c9c;}
+
+.box ol{ margin:0; padding:11px 0 0 27px; list-style:decimal inside;}
+.box ol li{ line-height:28px;}
+.box ol li a{ color:#073699; text-decoration:none;}
+.box ol li a:hover{ color:#9d9c9c;}
+
+
+/* ----------------------- LISTING BOXES ------------------------- */
+
+
+#categories {}
+
+
+#moreinformation {}
+#moreinformation ul{ margin:0 !important; padding:11px 0 0 27px !important;}
+
+#information {}
+#information ul{ margin:0 !important; padding:11px 0 0 27px !important;}
+
+#bestsellers {}
+
+
+#ezpages {}
+#ezpages ul{ margin:0 !important; padding:11px 0 0 27px !important;}
+
+#orderhistory {}
+#orderhistory .box-body img {background:#FFFFFF; padding:2px; border:1px solid #AAAAAA; vertical-align:middle; margin:2px 0px 0 10px;}
+
+
+
+/* ----------------------- BANNER BOXES ------------------------- */
+
+#bannerbox {}
+
+#bannerbox2 {}
+
+#bannerboxall {}
+
+
+
+/* ----------------------- PRODUCT BOXES ------------------------- */
+
+#featured a img, 
+#whatsnew a img, 
+#specials a img, 
+#reviews a img, 
+#manufacturerinfo img, 
+#productnotifications img {margin:0 0 8px;}
+
+#reviews img {margin:5px 0 0;}
+#reviews .box-head{ background:url(../images/box-head-tail2.gif) top repeat-x;}
+#reviews .box-head .left-bg{ background:url(../images/box-head-left-bg2.gif) left top no-repeat;}
+#reviews .box-head .right-bg{ background:url(../images/box-head-right-bg2.gif) right top no-repeat;}
+#reviews .prod-indent{ padding:19px 18px 10px 18px;}
+#reviews .box-body{ padding-bottom:3px;}
+
+
+#featured {}
+#specials .box-body .normalprice {font-size:16px; font-weight:normal; color:#999999; text-decoration:line-through;}
+#featured .box-body .productSpecialPrice, .productSalePrice, .productSpecialPriceSale {font-size:18px; font-weight:normal; color:#333333;}
+#featured .box-head{ background:url(../images/box-head-tail2.gif) top repeat-x;}
+#featured .box-head .left-bg{ background:url(../images/box-head-left-bg2.gif) left top no-repeat;}
+#featured .box-head .right-bg{ background:url(../images/box-head-right-bg2.gif) right top no-repeat;}
+#featured .buttons{ padding-top:6px;}
+#featured .prod-indent{ padding:19px 18px 10px 18px;}
+#featured .box-body{ padding-bottom:3px;}
+
+#whatsnew {}
+#specials .box-body .normalprice {font-size:16px; font-weight:normal; color:#999999; text-decoration:line-through;}
+#whatsnew .box-body .productSpecialPrice, .productSalePrice, .productSpecialPriceSale {font-size:18px; font-weight:normal; color:#333333;}
+#whatsnew .box-head{ background:url(../images/box-head-tail2.gif) top repeat-x;}
+#whatsnew .box-head .left-bg{ background:url(../images/box-head-left-bg2.gif) left top no-repeat;}
+#whatsnew .box-head .right-bg{ background:url(../images/box-head-right-bg2.gif) right top no-repeat;}
+#whatsnew .buttons{ padding-top:6px;}
+#whatsnew .prod-indent{ padding:19px 18px 10px 18px;}
+#whatsnew .box-body{ padding-bottom:3px;}
+
+#specials {}
+#specials .box-body .normalprice {font-size:16px; font-weight:normal; color:#999999; text-decoration:line-through;}
+#specials .box-body .productSpecialPrice, .productSalePrice, .productSpecialPriceSale {font-size:18px; font-weight:normal; color:#333333;}
+#specials .box-head{ background:url(../images/box-head-tail2.gif) top repeat-x;}
+#specials .box-head .left-bg{ background:url(../images/box-head-left-bg2.gif) left top no-repeat;}
+#specials .box-head .right-bg{ background:url(../images/box-head-right-bg2.gif) right top no-repeat;}
+#specials .buttons{ padding-top:6px;}
+#specials .prod-indent{ padding:19px 18px 10px 18px;}
+#specials .box-body{ padding-bottom:3px;}
+
+#reviews {}
+#reviews .box-body{ text-align:center;}
+
+#manufacturerinfo {}
+
+
+#productnotifications {}
+#productnotifications .box-body{ text-align:center;}
+
+
+
+
+/* ----------------------- FORM BOXES ------------------------- */
+
+#search {}
+#search .box-body {text-align:center;}
+#search .input1{ border:solid 1px #3b3b3b; background:#fff; padding:2px 2px 2px 3px; width:150px;}
+
+
+#manufacturers {}
+#manufacturers .box-body {text-align:center;}
+
+
+#currencies {}
+#currencies .box-body {text-align:center;}
+#currencies select{ width:90%;}
+
+
+#tellafriend {}
+
+
+#recordcompanies {}
+#recordcompanies .box-body {text-align:center;}
+
+
+#musicgenres {}
+#musicgenres .box-body {text-align:center;}
+
+
+
+/* ----------------------- TEXT BOXES ------------------------- */
+
+#languages {}
+#languages .box-body {text-align:center;}
+
+
+#whosonline {}
+#whosonline .box-body {text-align:center;}
+
+
+#documentcategories {}
+
+
+#shoppingcart {}
+#shoppingcart .cart_line { border-bottom:solid 1px #858585;}
+#shoppingcart #cartBoxEmpty {text-align:center;}

@@ -1,0 +1,6 @@
+[12-Jun-2013 11:29:28] PHP Parse error:  syntax error, unexpected T_VARIABLE in E:\easylamps\sites\zencartvizio\includes\templates\theme317\sideboxes\tpl_administration.php on line 39
+[12-Jun-2013 11:29:28] PHP Stack trace:
+[12-Jun-2013 11:29:28] PHP   1. {main}() E:\easylamps\sites\zencartvizio\index.php:0
+[12-Jun-2013 11:29:28] PHP   2. require() E:\easylamps\sites\zencartvizio\index.php:97
+[12-Jun-2013 11:29:28] PHP   3. require() E:\easylamps\sites\zencartvizio\includes\templates\theme317\common\tpl_main_page.php:94
+[12-Jun-2013 11:29:28] PHP   4. require() E:\easylamps\sites\zencartvizio\includes\modules\column_left.php:31
